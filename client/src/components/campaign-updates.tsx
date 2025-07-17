@@ -4,21 +4,21 @@ import { Card, CardContent } from "@/components/ui/card";
 export default function CampaignUpdates() {
   const updates = [
     {
-      icon: Megaphone,
-      title: "Campaign Launch Success!",
-      date: "February 1, 2026",
-      content: "We're thrilled to announce that our campaign has officially launched! In just two weeks, we've already raised over $12,000 thanks to the incredible support from our community. Our upcoming gala event is scheduled for February 15th, and we're expecting amazing turnout."
+      icon: Star,
+      title: "Corporate Sponsorships Open",
+      date: "July 17, 2025",
+      content: "We're excited to announce that corporate sponsorships are now open! Businesses and organizations can now partner with The Uplift Project to support our mission of ending blood cancer. If you're interested in sponsoring our campaign, please contact us to learn about the various partnership opportunities available."
     },
     {
-      icon: Star,
-      title: "Corporate Partnership Announced",
-      date: "January 28, 2026",
-      content: "We're excited to announce our partnership with several local businesses who have committed to supporting our cause. Their contributions will help us reach our goal of $50,000 and make a real impact in the fight against blood cancer."
+      icon: Megaphone,
+      title: "Instagram Account Made",
+      date: "July 12, 2025",
+      content: "Follow us on Instagram @theupliftproject25! We've launched our social media presence to share updates, behind-the-scenes content, and stories from our campaign. Follow along as we document our journey to raise $50,000 for blood cancer research and patient support."
     },
     {
       icon: Rocket,
       title: "The Uplift Project Begins",
-      date: "January 16, 2026",
+      date: "May 30, 2025",
       content: "Today marks the official start of The Uplift Project! We're launching with hope and determination to end blood cancer. Our team of dedicated students is ready to make a difference over the next two months."
     }
   ];
