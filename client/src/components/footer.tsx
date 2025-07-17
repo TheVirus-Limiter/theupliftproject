@@ -84,15 +84,10 @@ export default function Footer() {
         
         <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col items-center space-y-6">
-            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+            <div className="flex justify-center">
               <img 
-                src="https://media.discordapp.net/attachments/1212245437080408124/1395527209116106954/SVOY_logo_full_color.png?ex=687ac57e&is=687973fe&hm=31003ac11b5b5081cd953aee9ea1d965e6693c6d6adbac0d04fd7a6a9c7822e1&=&format=webp&quality=lossless&width=1860&height=448" 
+                src="https://media.discordapp.net/attachments/1212245437080408124/1395527978741530634/image-removebg-preview_1.png?ex=687ac635&is=687974b5&hm=afc4a527c42a8f4d04e52aa87419f53f3b18403c5884105ec72655a80b5c835e&=&format=webp&quality=lossless&width=1273&height=306" 
                 alt="Student Visionaries of the Year" 
-                className="h-12 w-auto"
-              />
-              <img 
-                src="https://media.discordapp.net/attachments/1212245437080408124/1395527132087713923/LLS_logo_for_digital_2_1_1.png?ex=687ac56b&is=687973eb&hm=ace521b14d83aae281a285b32148cca456d8adccb527896d745cf0d4ac7ac489&=&format=webp&quality=lossless&width=1295&height=423" 
-                alt="Leukemia & Lymphoma Society" 
                 className="h-12 w-auto"
               />
             </div>
