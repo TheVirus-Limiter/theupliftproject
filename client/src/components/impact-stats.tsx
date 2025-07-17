@@ -5,23 +5,23 @@ export default function ImpactStats() {
   const stats = [
     {
       icon: Heart,
-      value: "150+",
-      label: "Lives Impacted"
+      value: "$1.3B+",
+      label: "LLS Research Investment Since 1949"
     },
     {
       icon: Building2,
-      value: "$85K",
-      label: "Research Funded"
+      value: "26 of 32",
+      label: "FDA Approved Treatments Since 2017"
     },
     {
       icon: Users,
-      value: "75",
-      label: "Families Supported"
+      value: "70%",
+      label: "Leukemia 5-Year Survival Rate"
     },
     {
       icon: GraduationCap,
-      value: "25",
-      label: "Students Involved"
+      value: "1.7M+",
+      label: "People Living with Blood Cancer"
     }
   ];
 
