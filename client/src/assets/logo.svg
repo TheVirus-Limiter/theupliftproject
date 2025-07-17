@@ -1,0 +1,13 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Blood drop shape -->
+  <path d="M60 20 L45 50 Q45 80 60 80 Q75 80 75 50 L60 20 Z" fill="#831919"/>
+  
+  <!-- Heart symbol inside -->
+  <path d="M52 45 Q52 40 57 40 Q60 40 60 43 Q60 40 63 40 Q68 40 68 45 Q68 50 60 58 Q52 50 52 45 Z" fill="white"/>
+  
+  <!-- Hands reaching up -->
+  <path d="M50 65 Q48 62 46 65 Q44 68 46 70 Q48 68 50 65 M70 65 Q72 62 74 65 Q76 68 74 70 Q72 68 70 65" fill="white"/>
+  
+  <!-- Text "UPLIFT" curved around bottom -->
+  <text x="60" y="100" text-anchor="middle" fill="#831919" font-family="Playfair Display" font-size="12" font-weight="bold">THE UPLIFT PROJECT</text>
+</svg>
