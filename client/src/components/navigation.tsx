@@ -7,7 +7,7 @@ export default function Navigation() {
 
   const handleDonateClick = () => {
     // Redirect to external donation platform
-    window.open("https://pages.lls.org/mwoy/or/port25/theupliftproject", "_blank");
+    window.open("https://pages.lls.org/svoy/stx/svoysa26/rrajlf", "_blank");
   };
 
   const scrollToSection = (sectionId: string) => {

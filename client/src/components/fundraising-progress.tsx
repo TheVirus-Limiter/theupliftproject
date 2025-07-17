@@ -9,7 +9,7 @@ export default function FundraisingProgress() {
   const progressPercentage = (currentAmount / goalAmount) * 100;
 
   const handleDonateClick = () => {
-    window.open("https://pages.lls.org/mwoy/or/port25/theupliftproject", "_blank");
+    window.open("https://pages.lls.org/svoy/stx/svoysa26/rrajlf", "_blank");
   };
 
   return (

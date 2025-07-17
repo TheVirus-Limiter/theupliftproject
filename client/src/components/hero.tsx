@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   const handleDonateClick = () => {
-    window.open("https://pages.lls.org/mwoy/or/port25/theupliftproject", "_blank");
+    window.open("https://pages.lls.org/svoy/stx/svoysa26/rrajlf", "_blank");
   };
 
   const scrollToAbout = () => {
@@ -17,11 +17,11 @@ export default function Hero() {
     <section className="bg-white pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <div className="mb-12">
+          <div className="mb-6">
             <img 
               src="https://media.discordapp.net/attachments/1212245437080408124/1393283142831444088/wHlYWz2sW6LkAAAAABJRU5ErkJggg.png?ex=687a848b&is=6879330b&hm=5289b7bfad7fc7df17ee1272f91c07280b6b0dd69016e5cde3af166abd6c6ed3&=&format=webp&quality=lossless&width=523&height=523" 
               alt="The Uplift Project Logo" 
-              className="mx-auto mb-8 h-48 w-48"
+              className="mx-auto mb-4 h-48 w-48"
             />
           </div>
           <h1 className="font-playfair text-5xl sm:text-6xl font-bold text-uplift-red mb-4">
