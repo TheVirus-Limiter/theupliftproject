@@ -1,4 +1,4 @@
-import { Instagram, Twitter, Facebook, Mail, Phone } from "lucide-react";
+import { Instagram, Mail, Phone, DollarSign } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -27,16 +27,18 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="mailto:rehanraj0911@gmail.com" 
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <Twitter className="w-5 h-5" />
+                <Mail className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://pages.lls.org/svoy/stx/svoysa26/rrajlf" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <Facebook className="w-5 h-5" />
+                <DollarSign className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -70,29 +72,45 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Mail className="w-4 h-4 mr-2" />
-                hello@theupliftproject.org
+                rehanraj0911@gmail.com
               </li>
               <li className="flex items-center">
                 <Phone className="w-4 h-4 mr-2" />
-                (555) 123-4567
+                210 992 6174
               </li>
             </ul>
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 The Uplift Project. All rights reserved.</p>
-          <p className="mt-2">
-            In partnership with the{" "}
-            <a 
-              href="https://www.lls.org" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-uplift-red hover:text-red-300 transition-colors"
-            >
-              Leukemia & Lymphoma Society
-            </a>
-          </p>
+        <div className="border-t border-gray-800 mt-8 pt-8">
+          <div className="flex flex-col items-center space-y-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+              <img 
+                src="https://media.discordapp.net/attachments/1212245437080408124/1395527209116106954/SVOY_logo_full_color.png?ex=687ac57e&is=687973fe&hm=31003ac11b5b5081cd953aee9ea1d965e6693c6d6adbac0d04fd7a6a9c7822e1&=&format=webp&quality=lossless&width=1860&height=448" 
+                alt="Student Visionaries of the Year" 
+                className="h-12 w-auto"
+              />
+              <img 
+                src="https://media.discordapp.net/attachments/1212245437080408124/1395527132087713923/LLS_logo_for_digital_2_1_1.png?ex=687ac56b&is=687973eb&hm=ace521b14d83aae281a285b32148cca456d8adccb527896d745cf0d4ac7ac489&=&format=webp&quality=lossless&width=1295&height=423" 
+                alt="Leukemia & Lymphoma Society" 
+                className="h-12 w-auto"
+              />
+            </div>
+            <div className="text-center text-gray-400">
+              <p>&copy; 2025 The Uplift Project. All rights reserved.</p>
+              <p className="mt-2">
+                In partnership with the{" "}
+                <a 
+                  href="https://www.lls.org" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-uplift-red hover:text-red-300 transition-colors"
+                >
+                  Leukemia & Lymphoma Society
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
