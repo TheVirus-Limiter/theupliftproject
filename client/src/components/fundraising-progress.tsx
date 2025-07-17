@@ -58,10 +58,10 @@ export default function FundraisingProgress() {
         <div className="text-center">
           <Button 
             onClick={handleDonateClick}
-            className="bg-uplift-red text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-red-800 transition-colors shadow-lg inline-block"
+            className="bg-uplift-red text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-red-800 transition-colors shadow-lg flex items-center justify-center"
           >
             <Heart className="w-5 h-5 mr-2" />
-            Support Our Mission
+            <span>Support Our Mission</span>
           </Button>
         </div>
       </div>
