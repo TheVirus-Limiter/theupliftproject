@@ -55,7 +55,7 @@ export default function FundraisingProgress() {
           </CardContent>
         </Card>
         
-        <div className="text-center">
+        <div className="flex justify-center">
           <Button 
             onClick={handleDonateClick}
             className="bg-uplift-red text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-red-800 transition-colors shadow-lg flex items-center justify-center"

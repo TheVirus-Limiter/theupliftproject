@@ -29,21 +29,13 @@ export default function CallToAction() {
           Every donation, no matter the size, brings us closer to our goal of ending blood cancer. 
           Together, we can make a difference in the lives of patients and families affected by these diseases.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="flex justify-center">
           <Button 
             onClick={handleDonateClick}
             className="bg-white text-uplift-red px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
           >
             <Heart className="w-5 h-5 mr-2" />
             Make a Donation
-          </Button>
-          <Button 
-            onClick={handleShareClick}
-            variant="outline"
-            className="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-uplift-red transition-colors"
-          >
-            <Share className="w-5 h-5 mr-2" />
-            Share Our Mission
           </Button>
         </div>
       </div>
