@@ -10,7 +10,7 @@ export default function Footer() {
               <img 
                 src="https://media.discordapp.net/attachments/1212245437080408124/1393443019533062284/NA4CIAACIAABBH0ARAAARAAAUsFIIgs5YfGQQAEQAAEIIigD4AACIAACFgq8H8AQzcq9q8tTAgAAAAASUVORK5CYII.png?ex=687a70b0&is=68791f30&hm=69800b08b2b36e86ca9c6fc90e7a8b0c805c71434a7fe6f74e79907dfd2e0395&=&format=webp&quality=lossless&width=523&height=523" 
                 alt="The Uplift Project" 
-                className="h-8 w-8 mr-2"
+                className="h-10 w-10 mr-2"
               />
               <span className="font-playfair font-semibold text-xl">The Uplift Project</span>
             </div>
