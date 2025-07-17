@@ -24,7 +24,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <img 
-              src="https://media.discordapp.net/attachments/1212245437080408124/1393283142831444088/wHlYWz2sW6LkAAAAABJRU5ErkJggg.png?ex=687a848b&is=6879330b&hm=5289b7bfad7fc7df17ee1272f91c07280b6b0dd69016e5cde3af166abd6c6ed3&=&format=webp&quality=lossless&width=523&height=523" 
+              src="https://media.discordapp.net/attachments/1212245437080408124/1395495142391152670/dsda.png?ex=687aa7a0&is=68795620&hm=2ac85c2bbf38d6effcce764f86f275c02124f4da2b2eec7a0915fe2715bb0da5&=&format=webp&quality=lossless&width=319&height=346" 
               alt="The Uplift Project Logo" 
               className="h-12 w-12 mr-3"
             />

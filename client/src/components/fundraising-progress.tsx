@@ -3,9 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function FundraisingProgress() {
-  const currentAmount = 12500;
+  const currentAmount = 0;
   const goalAmount = 50000;
-  const donorCount = 127;
+  const donorCount = 0;
   const progressPercentage = (currentAmount / goalAmount) * 100;
 
   const handleDonateClick = () => {
@@ -44,11 +44,11 @@ export default function FundraisingProgress() {
             
             <div className="grid grid-cols-2 gap-4">
               <div className="text-center">
-                <p className="text-2xl font-bold text-uplift-red">Jan 16</p>
+                <p className="text-2xl font-bold text-uplift-red">Jan 16, 2026</p>
                 <p className="text-gray-600">Campaign Start</p>
               </div>
               <div className="text-center">
-                <p className="text-2xl font-bold text-uplift-red">Mar 16</p>
+                <p className="text-2xl font-bold text-uplift-red">Mar 16, 2026</p>
                 <p className="text-gray-600">Campaign End</p>
               </div>
             </div>
