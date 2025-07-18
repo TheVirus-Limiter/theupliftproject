@@ -54,22 +54,18 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="font-semibold text-lg mb-4">Campaign Info</h4>
+            <h4 className="font-semibold text-lg mb-4">Learn More</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>Goal: $50,000</li>
-              <li>Duration: Jan 16, 2026 - Mar 7, 2026</li>
-              <li>Student Visionaries Program</li>
-              <li>Leukemia & Lymphoma Society</li>
+              <li><a href="https://www.lls.org" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Leukemia & Lymphoma Society</a></li>
+              <li><a href="https://www.lls.org/ways-to-give/student-visionaries" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Student Visionaries</a></li>
+              <li><a href="https://www.lls.org/research" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Research</a></li>
+              <li><a href="https://www.lls.org/treatment" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Treatment</a></li>
             </ul>
           </div>
           
           <div>
             <h4 className="font-semibold text-lg mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400">
-              <li className="flex items-center">
-                <Instagram className="w-4 h-4 mr-2" />
-                @theupliftproject25
-              </li>
               <li className="flex items-center">
                 <Mail className="w-4 h-4 mr-2" />
                 rehanraj0911@gmail.com
@@ -82,7 +78,7 @@ export default function Footer() {
           </div>
         </div>
         
-               <div className="border-t border-gray-800 mt-8 pt-8">
+        <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col items-center space-y-6">
             <div className="flex justify-center">
               <img 
@@ -90,7 +86,6 @@ export default function Footer() {
                 alt="Student Visionaries of the Year" 
                 className="h-24 w-auto"
               />
-            </div>
             </div>
             <div className="text-center text-gray-400">
               <p>&copy; 2025 The Uplift Project. All rights reserved.</p>
