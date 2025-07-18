@@ -15,8 +15,8 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Navigation />
       <Hero />
-      <SupportedBy />
       <FundraisingProgress />
+      <SupportedBy />
       <About />
       <ImpactStats />
       <InstagramPosts />
