@@ -82,14 +82,15 @@ export default function Footer() {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 mt-8 pt-8">
+               <div className="border-t border-gray-800 mt-8 pt-8">
           <div className="flex flex-col items-center space-y-6">
             <div className="flex justify-center">
               <img 
                 src="https://thevirus-limiter.github.io/filestorage/svoywhite.png" 
                 alt="Student Visionaries of the Year" 
-                className="h-12 w-auto"
+                className="h-24 w-auto"
               />
+            </div>
             </div>
             <div className="text-center text-gray-400">
               <p>&copy; 2025 The Uplift Project. All rights reserved.</p>
