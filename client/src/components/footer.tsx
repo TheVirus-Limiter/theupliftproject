@@ -88,7 +88,7 @@ export default function Footer() {
               <img 
                 src="https://media.discordapp.net/attachments/1212245437080408124/1395527978741530634/image-removebg-preview_1.png?ex=687ac635&is=687974b5&hm=afc4a527c42a8f4d04e52aa87419f53f3b18403c5884105ec72655a80b5c835e&=&format=webp&quality=lossless&width=1273&height=306" 
                 alt="Student Visionaries of the Year" 
-                className="h-12 w-auto"
+                className="h-24 w-auto"
               />
             </div>
             <div className="text-center text-gray-400">
