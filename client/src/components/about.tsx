@@ -25,7 +25,7 @@ export default function About() {
             <p className="text-gray-600 mb-6 leading-relaxed">
               As Student Visionaries of the Year, we are committed to raising funds and awareness 
               for the Leukemia & Lymphoma Society. Our fundraising window runs from 
-              <strong> January 16, 2026 to March 16, 2026</strong>, during which we aim to reach our ambitious 
+              <strong> January 16, 2026 to March 7, 2026</strong>, during which we aim to reach our ambitious 
               goal of $50,000.
             </p>
             <p className="text-gray-600 mb-8 leading-relaxed">

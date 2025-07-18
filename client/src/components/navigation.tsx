@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,7 +27,7 @@ export default function Navigation() {
             <img 
               src="https://media.discordapp.net/attachments/1212245437080408124/1395495142391152670/dsda.png?ex=687aa7a0&is=68795620&hm=2ac85c2bbf38d6effcce764f86f275c02124f4da2b2eec7a0915fe2715bb0da5&=&format=webp&quality=lossless&width=319&height=346" 
               alt="The Uplift Project Logo" 
-              className="h-12 w-12 mr-3"
+              className="h-12 w-12 mr-3 object-contain"
             />
             <span className="font-playfair font-semibold text-xl text-uplift-red">
               The Uplift Project
@@ -58,6 +59,9 @@ export default function Navigation() {
             >
               Facts
             </button>
+            <Link href="/corporations" className="text-gray-700 hover:text-uplift-red transition-colors">
+              For Corporations
+            </Link>
             <Button 
               onClick={handleDonateClick}
               className="bg-uplift-red text-white px-6 py-2 rounded-full hover:bg-red-800 transition-colors font-medium"
@@ -106,6 +110,9 @@ export default function Navigation() {
               >
                 Facts
               </button>
+              <Link href="/corporations" className="text-gray-700 hover:text-uplift-red transition-colors py-2 text-left">
+                For Corporations
+              </Link>
               <Button 
                 onClick={handleDonateClick}
                 className="bg-uplift-red text-white px-6 py-2 rounded-full hover:bg-red-800 transition-colors font-medium mt-2"

@@ -48,7 +48,7 @@ export default function FundraisingProgress() {
                 <p className="text-gray-600">Campaign Start</p>
               </div>
               <div className="text-center">
-                <p className="text-2xl font-bold text-uplift-red">Mar 16, 2026</p>
+                <p className="text-2xl font-bold text-uplift-red">Mar 7, 2026</p>
                 <p className="text-gray-600">Campaign End</p>
               </div>
             </div>

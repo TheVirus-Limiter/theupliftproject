@@ -57,7 +57,7 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4">Campaign Info</h4>
             <ul className="space-y-2 text-gray-400">
               <li>Goal: $50,000</li>
-              <li>Duration: Jan 16, 2026 - Mar 16, 2026</li>
+              <li>Duration: Jan 16, 2026 - Mar 7, 2026</li>
               <li>Student Visionaries Program</li>
               <li>Leukemia & Lymphoma Society</li>
             </ul>
