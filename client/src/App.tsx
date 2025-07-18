@@ -6,8 +6,20 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/home";
 import Corporations from "@/pages/corporations";
 import NotFound from "@/pages/not-found";
+import { useEffect } from "react";
 
 function Router() {
+  // Handle GitHub Pages SPA routing
+  useEffect(() => {
+    // Check if we have a redirect from 404.html
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirect = urlParams.get('/');
+    if (redirect) {
+      const route = redirect.replace(/~and~/g, '&');
+      window.history.replaceState(null, '', route);
+    }
+  }, []);
+
   return (
     <Switch>
       <Route path="/" component={Home} />

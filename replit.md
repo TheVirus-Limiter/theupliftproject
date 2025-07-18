@@ -113,3 +113,29 @@ Preferred communication style: Simple, everyday language.
 - **Environment Detection**: NODE_ENV-based configuration switching
 
 The application is designed for deployment on platforms that support Node.js with PostgreSQL databases, with particular optimization for Replit's development environment.
+
+## GitHub Pages Deployment Configuration
+
+The project is now fully configured for static deployment to GitHub Pages with custom domain support:
+
+### Deployment Files Added
+- **`client/public/CNAME`**: Custom domain configuration for theupliftproject.us
+- **`client/public/404.html`**: SPA routing handler for GitHub Pages
+- **`.github/workflows/deploy.yml`**: Automated GitHub Actions deployment workflow
+- **`deploy.sh`**: Manual deployment script with build and deploy commands
+- **`build-static.js`**: Custom static build script optimized for GitHub Pages
+- **`README.md`**: Comprehensive project documentation with deployment instructions
+- **`DEPLOYMENT.md`**: Detailed deployment guide with DNS configuration
+
+### Static Build Process
+- Client-only build without Express server dependencies
+- Optimized for static hosting with proper asset handling
+- SPA routing configured to work with GitHub Pages
+- Custom domain (theupliftproject.us) pre-configured
+
+### Deployment Methods
+1. **Automated**: GitHub Actions workflow on push to main branch
+2. **Manual**: Using deploy.sh script or npm commands
+3. **Development**: Local testing with preview server
+
+The static deployment maintains all functionality while being optimized for GitHub Pages hosting with the custom domain theupliftproject.us.
