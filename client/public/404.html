@@ -2,12 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>The Uplift Project</title>
+    <title>The Uplift Project - Launching Hope, Ending Blood Cancer</title>
+    <meta name="description" content="The Uplift Project is a Leukemia & Lymphoma Society fundraiser raising $50,000 to support those struggling with blood cancer. Join us from January 16, 2026 to March 7, 2026." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://theupliftproject.us/" />
+    <meta property="og:title" content="The Uplift Project - Launching Hope, Ending Blood Cancer" />
+    <meta property="og:description" content="Student Visionaries fundraising $50,000 for blood cancer research and patient support through the Leukemia & Lymphoma Society. Campaign in honor of Miguel Roman." />
+    <meta property="og:image" content="https://theupliftproject.us/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://theupliftproject.us/" />
+    <meta property="twitter:title" content="The Uplift Project - Launching Hope, Ending Blood Cancer" />
+    <meta property="twitter:description" content="Student Visionaries fundraising $50,000 for blood cancer research and patient support through the Leukemia & Lymphoma Society. Campaign in honor of Miguel Roman." />
+    <meta property="twitter:image" content="https://theupliftproject.us/og-image.png" />
+    
     <script type="text/javascript">
-        // Single Page Apps for GitHub Pages
+        // Single Page Apps for GitHub Pages with SEO support
         // https://github.com/rafgraph/spa-github-pages
         var pathSegmentsToKeep = 0;
         var l = window.location;
+        var pathname = l.pathname.slice(1);
+        
+        // Update meta tags based on route
+        if (pathname === 'corporations') {
+            document.title = 'Corporate Partnerships - The Uplift Project';
+            document.querySelector('meta[name="description"]').content = 'Partner with The Uplift Project to support blood cancer research. Exclusive sponsorship opportunities for corporations to make a meaningful impact in the fight against leukemia and lymphoma.';
+            document.querySelector('meta[property="og:title"]').content = 'Corporate Partnerships - The Uplift Project';
+            document.querySelector('meta[property="og:description"]').content = 'Partner with The Uplift Project to support blood cancer research. Exclusive sponsorship opportunities for corporations to make a meaningful impact in the fight against leukemia and lymphoma.';
+            document.querySelector('meta[property="og:image"]').content = 'https://theupliftproject.us/og-image-corporations.png';
+            document.querySelector('meta[property="og:url"]').content = 'https://theupliftproject.us/corporations';
+            document.querySelector('meta[property="twitter:title"]').content = 'Corporate Partnerships - The Uplift Project';
+            document.querySelector('meta[property="twitter:description"]').content = 'Partner with The Uplift Project to support blood cancer research. Exclusive sponsorship opportunities for corporations to make a meaningful impact in the fight against leukemia and lymphoma.';
+            document.querySelector('meta[property="twitter:image"]').content = 'https://theupliftproject.us/og-image-corporations.png';
+            document.querySelector('meta[property="twitter:url"]').content = 'https://theupliftproject.us/corporations';
+        }
+        
         l.replace(
             l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
             l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?p=' +
