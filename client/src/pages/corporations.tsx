@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Building2, Heart, Users, Award, CheckCircle, Mail, Phone, Download, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -12,6 +13,7 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import Navigation from "@/components/navigation";
+import { updateSEO, seoData } from "@/utils/seo";
 
 const corporateFormSchema = z.object({
   companyName: z.string().min(2, "Company name must be at least 2 characters"),
@@ -26,6 +28,10 @@ type CorporateFormData = z.infer<typeof corporateFormSchema>;
 
 export default function Corporations() {
   const { toast } = useToast();
+
+  useEffect(() => {
+    updateSEO(seoData.corporations);
+  }, []);
 
   const form = useForm<CorporateFormData>({
     resolver: zodResolver(corporateFormSchema),
