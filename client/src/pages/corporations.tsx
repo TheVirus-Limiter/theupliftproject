@@ -199,10 +199,10 @@ export default function Corporations() {
       <section className="bg-gradient-to-r from-uplift-red to-red-600 pt-24 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="font-playfair text-5xl font-bold mb-6" style={{color: '#ffffff'}}>
+            <h1 className="font-playfair text-5xl font-bold mb-6" style={{color: '#831919'}}>
               Corporate Partnership Opportunities
             </h1>
-            <p className="text-xl max-w-3xl mx-auto mb-8" style={{color: '#ffffff'}}>
+            <p className="text-xl max-w-3xl mx-auto mb-8" style={{color: '#000000'}}>
               Join The Uplift Project and the Leukemia & Lymphoma Society in the fight against blood cancer. 
               Your corporate partnership creates lasting impact while providing valuable business benefits.
             </p>
