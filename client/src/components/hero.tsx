@@ -1,12 +1,15 @@
 import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics";
 
 export default function Hero() {
   const handleDonateClick = () => {
+    trackEvent('donate_click', 'engagement', 'hero_section');
     window.open("https://pages.lls.org/svoy/stx/svoysa26/rrajlf", "_blank");
   };
 
   const scrollToAbout = () => {
+    trackEvent('learn_more_click', 'navigation', 'hero_section');
     const element = document.getElementById("about");
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });

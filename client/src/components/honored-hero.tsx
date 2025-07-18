@@ -1,8 +1,10 @@
 import { Heart, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { trackEvent } from '@/lib/analytics';
 
 export default function HonoredHero() {
   const handleDonateClick = () => {
+    trackEvent('donate_click', 'engagement', 'honored_hero_section');
     window.open("https://pages.lls.org/svoy/stx/svoysa26/rrajlf", "_blank");
   };
 
