@@ -228,6 +228,39 @@ export default function Corporations() {
         </div>
       </section>
 
+      {/* Benefits Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="font-playfair text-4xl font-bold text-uplift-red mb-4">
+              Why Partner With Us?
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Corporate partnerships with LLS Student Visionaries provide meaningful business value 
+              while supporting life-saving research and patient care.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {benefits.map((benefit, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex items-center space-x-4">
+                    <div className="bg-uplift-red text-white p-3 rounded-full">
+                      <benefit.icon className="w-6 h-6" />
+                    </div>
+                    <CardTitle className="text-lg">{benefit.title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-600">{benefit.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Sponsorship Levels */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -280,39 +313,6 @@ export default function Corporations() {
                   >
                     Download Info
                   </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-playfair text-4xl font-bold text-uplift-red mb-4">
-              Why Partner With Us?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Corporate partnerships with LLS Student Visionaries provide meaningful business value 
-              while supporting life-saving research and patient care.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center space-x-4">
-                    <div className="bg-uplift-red text-white p-3 rounded-full">
-                      <benefit.icon className="w-6 h-6" />
-                    </div>
-                    <CardTitle className="text-lg">{benefit.title}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
