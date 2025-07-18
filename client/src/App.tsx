@@ -13,9 +13,9 @@ function Router() {
   useEffect(() => {
     // Check if we have a redirect from 404.html
     const urlParams = new URLSearchParams(window.location.search);
-    const redirect = urlParams.get('/');
+    const redirect = urlParams.get('p');
     if (redirect) {
-      const route = redirect.replace(/~and~/g, '&');
+      const route = '/' + redirect.replace(/~and~/g, '&');
       window.history.replaceState(null, '', route);
     }
   }, []);
