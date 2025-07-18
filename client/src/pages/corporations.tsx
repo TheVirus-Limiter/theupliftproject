@@ -175,6 +175,18 @@ export default function Corporations() {
         "Receive Honored Hero artwork",
         "Meet virtually with honored hero at midpoint"
       ]
+    },
+    {
+      level: "Digital Program Journal",
+      amount: "Under $5,000",
+      benefits: [
+        "Premier Program Book Tribute ($5,000)",
+        "Full Page Program Book Tribute ($3,500)",
+        "Half Page Program Book Tribute ($2,500)",
+        "Quarter Page Program Book Tribute ($1,500)",
+        "Digital advertising opportunities",
+        "Program recognition and visibility"
+      ]
     }
   ];
 
@@ -208,6 +220,56 @@ export default function Corporations() {
                 Donate Now
               </Button>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Sponsorship Levels */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="font-playfair text-4xl font-bold text-uplift-red mb-4">
+              Partnership Investment Levels
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-8">
+              Choose the partnership level that best fits your company's philanthropic goals and budget.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {sponsorshipLevels.map((level, index) => (
+              <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' })}>
+                <CardHeader className="text-center">
+                  <CardTitle className="text-uplift-red text-xl">{level.level}</CardTitle>
+                  <p className="text-2xl font-bold text-gray-900">{level.amount}</p>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2 mb-6">
+                    {level.benefits.slice(0, 4).map((benefit, benefitIndex) => (
+                      <li key={benefitIndex} className="flex items-start">
+                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm text-gray-600">{benefit}</span>
+                      </li>
+                    ))}
+                    {level.benefits.length > 4 && (
+                      <li className="text-sm text-gray-500 italic">
+                        +{level.benefits.length - 4} more benefits
+                      </li>
+                    )}
+                  </ul>
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-uplift-red text-uplift-red hover:bg-uplift-red hover:text-white"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
+                    Download Info
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
@@ -246,7 +308,7 @@ export default function Corporations() {
       </section>
 
       {/* Download Section */}
-      <section className="py-12 bg-gray-50">
+      <section id="download-section" className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8">
             <h2 className="font-playfair text-3xl font-bold text-uplift-red mb-4">
@@ -311,41 +373,6 @@ export default function Corporations() {
                 </Button>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Sponsorship Levels */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-playfair text-4xl font-bold text-uplift-red mb-4">
-              Sponsorship Levels
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Choose the partnership level that best fits your company's philanthropic goals and budget.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {sponsorshipLevels.map((level, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader className="text-center">
-                  <CardTitle className="text-uplift-red text-xl">{level.level}</CardTitle>
-                  <p className="text-2xl font-bold text-gray-900">{level.amount}</p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-3">
-                    {level.benefits.map((benefit, benefitIndex) => (
-                      <li key={benefitIndex} className="flex items-start space-x-2">
-                        <CheckCircle className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-gray-600">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>

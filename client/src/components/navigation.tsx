@@ -27,7 +27,7 @@ export default function Navigation() {
             <img 
               src="https://media.discordapp.net/attachments/1212245437080408124/1395495142391152670/dsda.png?ex=687aa7a0&is=68795620&hm=2ac85c2bbf38d6effcce764f86f275c02124f4da2b2eec7a0915fe2715bb0da5&=&format=webp&quality=lossless&width=319&height=346" 
               alt="The Uplift Project Logo" 
-              className="h-12 w-12 mr-3 object-contain"
+              className="h-10 w-10 mr-3 object-contain flex-shrink-0"
             />
             <span className="font-playfair font-semibold text-xl text-uplift-red">
               The Uplift Project
