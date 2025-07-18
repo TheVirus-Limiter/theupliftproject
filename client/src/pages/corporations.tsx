@@ -2,82 +2,14 @@ import { useEffect } from "react";
 import { Building2, Heart, Users, Award, CheckCircle, Mail, Phone, Download, FileText } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { useMutation } from "@tanstack/react-query";
-import { apiRequest } from "@/lib/queryClient";
-import { useToast } from "@/hooks/use-toast";
 import Navigation from "@/components/navigation";
+import SimpleContactForm from "@/components/simple-contact-form";
 import { updateSEO, seoData } from "@/utils/seo";
 
-const corporateFormSchema = z.object({
-  companyName: z.string().min(2, "Company name must be at least 2 characters"),
-  contactName: z.string().min(2, "Contact name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(10, "Please enter a valid phone number"),
-  sponsorshipLevel: z.string().min(1, "Please select a sponsorship level"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
-
-type CorporateFormData = z.infer<typeof corporateFormSchema>;
-
 export default function Corporations() {
-  const { toast } = useToast();
-
   useEffect(() => {
     updateSEO(seoData.corporations);
   }, []);
-
-  const form = useForm<CorporateFormData>({
-    resolver: zodResolver(corporateFormSchema),
-    defaultValues: {
-      companyName: "",
-      contactName: "",
-      email: "",
-      phone: "",
-      sponsorshipLevel: "",
-      message: "",
-    },
-  });
-
-  const submitMutation = useMutation({
-    mutationFn: async (data: CorporateFormData) => {
-      return apiRequest("/api/corporate-inquiry", {
-        method: "POST",
-        body: JSON.stringify(data),
-      });
-    },
-    onSuccess: (response: any) => {
-      toast({
-        title: "Thank you for your interest!",
-        description: "We'll be in touch within 24 hours to discuss partnership opportunities.",
-      });
-
-      // Open default email client with pre-filled email
-      if (response.emailData) {
-        const emailUrl = `mailto:${response.emailData.to}?subject=${encodeURIComponent(response.emailData.subject)}&body=${encodeURIComponent(response.emailData.body)}`;
-        window.open(emailUrl);
-      }
-
-      form.reset();
-    },
-    onError: () => {
-      toast({
-        title: "Error",
-        description: "There was an issue submitting your inquiry. Please try again.",
-        variant: "destructive",
-      });
-    },
-  });
-
-  const onSubmit = (data: CorporateFormData) => {
-    submitMutation.mutate(data);
-  };
 
   const benefits = [
     {
@@ -438,141 +370,56 @@ export default function Corporations() {
           </div>
 
           <Card className="p-8">
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <FormField
-                    control={form.control}
-                    name="companyName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Company Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Your Company Name" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="contactName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Contact Name</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Your Full Name" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <div className="grid md:grid-cols-2 gap-6">
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email Address</FormLabel>
-                        <FormControl>
-                          <Input type="email" placeholder="your@company.com" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Phone Number</FormLabel>
-                        <FormControl>
-                          <Input placeholder="(555) 123-4567" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-
-                <FormField
-                  control={form.control}
-                  name="sponsorshipLevel"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Interested Sponsorship Level</FormLabel>
-                      <FormControl>
-                        <select 
-                          {...field}
-                          className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-uplift-red"
-                        >
-                          <option value="">Select a sponsorship level</option>
-                          <option value="mission-impact">Mission Impact Portfolio ($100,000)</option>
-                          <option value="visionary">Visionary Sponsor ($50,000)</option>
-                          <option value="platinum">Platinum Sponsor ($35,000)</option>
-                          <option value="gold">Gold Sponsor ($25,000)</option>
-                          <option value="silver">Silver Sponsor ($15,000)</option>
-                          <option value="hero-circle">Hero Circle Contributor ($10,000)</option>
-                          <option value="digital-journal">Digital Program Journal (Under $5,000)</option>
-                          <option value="custom">Custom Partnership</option>
-                        </select>
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel>Message</FormLabel>
-                      <FormControl>
-                        <Textarea 
-                          placeholder="Tell us about your company's interest in partnering with The Uplift Project..."
-                          className="min-h-32"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <Button 
-                  type="submit" 
-                  className="w-full bg-uplift-red hover:bg-red-700"
-                  disabled={submitMutation.isPending}
-                >
-                  {submitMutation.isPending ? "Sending..." : "Send Partnership Inquiry"}
-                </Button>
-              </form>
-            </Form>
-          </Card>
-
-          <div className="mt-12 text-center">
-            <p className="text-gray-600 mb-4">Prefer to reach out directly?</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="mailto:rehanraj0911@gmail.com" 
-                className="flex items-center space-x-2 text-uplift-red hover:text-red-700"
-              >
-                <Mail className="w-5 h-5" />
-                <span>rehanraj0911@gmail.com</span>
-              </a>
-              <a 
-                href="tel:2109926174" 
-                className="flex items-center space-x-2 text-uplift-red hover:text-red-700"
-              >
-                <Phone className="w-5 h-5" />
-                <span>210 992 6174</span>
-              </a>
+            {/* Google Form Embed Placeholder */}
+            <div className="text-center mb-8">
+              <div className="bg-gray-100 rounded-lg p-12 border-2 border-dashed border-gray-300">
+                <h3 className="text-xl font-semibold text-gray-700 mb-4">
+                  Partnership Interest Form
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  To embed your Google Form here:
+                </p>
+                <ol className="text-left text-sm text-gray-600 max-w-md mx-auto space-y-2">
+                  <li>1. Create a Google Form with corporate partnership questions</li>
+                  <li>2. Click "Send" → "Embed" ({"<>"} icon)</li>
+                  <li>3. Copy the iframe code</li>
+                  <li>4. Replace this placeholder with your iframe</li>
+                </ol>
+              </div>
             </div>
-          </div>
+            
+            {/* Direct Contact Section */}
+            <div className="text-center border-t pt-8">
+              <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                Contact Us Directly
+              </h3>
+              <p className="text-gray-600 mb-6">
+                Prefer to reach out directly? We'd love to hear from you!
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <Button
+                  variant="outline"
+                  className="flex items-center border-uplift-red text-uplift-red hover:bg-uplift-red hover:text-white"
+                  onClick={() => window.open('mailto:rehanraj0911@gmail.com?subject=Corporate Partnership Inquiry - The Uplift Project', '_blank')}
+                >
+                  <Mail className="w-5 h-5 mr-2" />
+                  Email Us
+                </Button>
+                <Button
+                  variant="outline"
+                  className="flex items-center border-uplift-red text-uplift-red hover:bg-uplift-red hover:text-white"
+                  onClick={() => window.open('tel:2109926174', '_blank')}
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  Call Us
+                </Button>
+              </div>
+              <div className="mt-4 space-y-1 text-sm text-gray-600">
+                <p>rehanraj0911@gmail.com</p>
+                <p>(210) 992-6174</p>
+              </div>
+            </div>
+          </Card>
         </div>
       </section>
     </div>
