@@ -22,27 +22,9 @@ const logos: Logo[] = [
   },
   {
     id: 3,
-    src: "https://via.placeholder.com/200x100/831919/FFFFFF?text=Partner+3",
-    alt: "Partner 3",
-    link: "#"
-  },
-  {
-    id: 4,
-    src: "https://via.placeholder.com/200x100/831919/FFFFFF?text=Partner+4",
-    alt: "Partner 4", 
-    link: "#"
-  },
-  {
-    id: 5,
-    src: "https://via.placeholder.com/200x100/831919/FFFFFF?text=Partner+5",
-    alt: "Partner 5",
-    link: "#"
-  },
-  {
-    id: 6,
-    src: "https://via.placeholder.com/200x100/831919/FFFFFF?text=Partner+6",
-    alt: "Partner 6",
-    link: "#"
+    src: "https://media.discordapp.net/attachments/1212245437080408124/1395803610050334750/Your-Logo-here.png?ex=687bc6e9&is=687a7569&hm=c0f0db561ec0a4c2042c9272ad2ad84434df1d0155c3f70319a18ffe4bfd9e30&=&format=webp&quality=lossless&width=438&height=281",
+    alt: "Your Logo Here",
+    link: "https://theupliftproject.us/corporations"
   }
 ];
 
@@ -50,23 +32,20 @@ export default function SupportedBy() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 3) % logos.length);
-    }, 4000); // Rotate every 4 seconds
-
-    return () => clearInterval(interval);
+    // Since we only have 3 logos, show all at once without rotation
+    setCurrentIndex(0);
   }, []);
 
   const getVisibleLogos = () => {
-    const visible = [];
-    for (let i = 0; i < 3; i++) {
-      visible.push(logos[(currentIndex + i) % logos.length]);
-    }
-    return visible;
+    return logos; // Show all 3 logos
   };
 
   const handleLogoClick = (link: string) => {
-    if (link !== "#") {
+    if (link.startsWith('https://theupliftproject.us/')) {
+      // Internal link - navigate within the same tab
+      window.location.href = link;
+    } else {
+      // External link - open in new tab
       window.open(link, '_blank', 'noopener,noreferrer');
     }
   };
@@ -98,20 +77,7 @@ export default function SupportedBy() {
             ))}
           </div>
 
-          {/* Dots indicator */}
-          <div className="flex justify-center mt-8 space-x-2">
-            {Array.from({ length: Math.ceil(logos.length / 3) }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentIndex(index * 3)}
-                className={`w-2 h-2 rounded-full transition-colors duration-300 ${
-                  Math.floor(currentIndex / 3) === index
-                    ? 'bg-uplift-red'
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-              />
-            ))}
-          </div>
+
         </div>
       </div>
     </section>
