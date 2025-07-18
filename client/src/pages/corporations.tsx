@@ -199,7 +199,7 @@ export default function Corporations() {
             <h1 className="font-playfair text-5xl font-bold mb-6">
               Corporate Partnership Opportunities
             </h1>
-            <p className="text-xl max-w-3xl mx-auto mb-8 text-white">
+            <p className="text-xl max-w-3xl mx-auto mb-8">
               Join The Uplift Project and the Leukemia & Lymphoma Society in the fight against blood cancer. 
               Your corporate partnership creates lasting impact while providing valuable business benefits.
             </p>
@@ -259,7 +259,7 @@ export default function Corporations() {
                   </ul>
                   <Button 
                     variant="outline" 
-                    className="w-full border-uplift-red text-uplift-red hover:bg-uplift-red hover:text-white transition-colors"
+                    className="w-full border-uplift-red text-uplift-red hover:bg-uplift-red hover:text-white"
                     onClick={(e) => {
                       e.stopPropagation();
                       document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' });
@@ -267,39 +267,6 @@ export default function Corporations() {
                   >
                     Download Info
                   </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-playfair text-4xl font-bold text-uplift-red mb-4">
-              Why Partner With Us?
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Corporate partnerships with LLS Student Visionaries provide meaningful business value 
-              while supporting life-saving research and patient care.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="flex items-center space-x-4">
-                    <div className="bg-uplift-red text-white p-3 rounded-full">
-                      <benefit.icon className="w-6 h-6" />
-                    </div>
-                    <CardTitle className="text-lg">{benefit.title}</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -352,12 +319,48 @@ export default function Corporations() {
             </p>
           </div>
           
-          <div className="flex justify-center">
-            <Card className="hover:shadow-lg transition-shadow max-w-sm">
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 text-center">
+                <FileText className="w-12 h-12 text-uplift-red mx-auto mb-4" />
+                <h3 className="font-semibold text-lg mb-2">Partnership Benefits Guide</h3>
+                <p className="text-gray-600 text-sm mb-4">Comprehensive overview of all sponsorship levels and benefits</p>
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={() => {
+                    window.open('/downloads/partnership-benefits.html', '_blank');
+                  }}
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Download PDF
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow">
+              <CardContent className="p-6 text-center">
+                <FileText className="w-12 h-12 text-uplift-red mx-auto mb-4" />
+                <h3 className="font-semibold text-lg mb-2">Hero Circle Form</h3>
+                <p className="text-gray-600 text-sm mb-4">Special recognition program for major contributors</p>
+                <Button 
+                  variant="outline" 
+                  className="w-full"
+                  onClick={() => {
+                    window.open('/downloads/hero-circle-form.html', '_blank');
+                  }}
+                >
+                  <Download className="w-4 h-4 mr-2" />
+                  Download PDF
+                </Button>
+              </CardContent>
+            </Card>
+            
+            <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
                 <FileText className="w-12 h-12 text-uplift-red mx-auto mb-4" />
                 <h3 className="font-semibold text-lg mb-2">Digital Program Journal</h3>
-                <p className="text-gray-600 text-sm mb-4">Advertising opportunities for under $5,000 donations</p>
+                <p className="text-gray-600 text-sm mb-4">Advertising opportunities in our event program</p>
                 <Button 
                   variant="outline" 
                   className="w-full"
