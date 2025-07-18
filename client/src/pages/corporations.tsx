@@ -273,26 +273,21 @@ export default function Corporations() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             {sponsorshipLevels.map((level, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer" onClick={() => document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' })}>
+              <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer w-full max-w-sm" onClick={() => document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' })}>
                 <CardHeader className="text-center">
                   <CardTitle className="text-uplift-red text-xl">{level.level}</CardTitle>
                   <p className="text-2xl font-bold text-gray-900">{level.amount}</p>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2 mb-6">
-                    {level.benefits.slice(0, 4).map((benefit, benefitIndex) => (
+                    {level.benefits.map((benefit, benefitIndex) => (
                       <li key={benefitIndex} className="flex items-start">
                         <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                         <span className="text-sm text-gray-600">{benefit}</span>
                       </li>
                     ))}
-                    {level.benefits.length > 4 && (
-                      <li className="text-sm text-gray-500 italic">
-                        +{level.benefits.length - 4} more benefits
-                      </li>
-                    )}
                   </ul>
                   <Button 
                     variant="outline" 
