@@ -7,6 +7,7 @@ import ImpactStats from "@/components/impact-stats";
 import InstagramPosts from "@/components/instagram-posts";
 import CampaignUpdates from "@/components/campaign-updates";
 import BloodCancerFacts from "@/components/blood-cancer-facts";
+import FAQ from "@/components/faq";
 import CallToAction from "@/components/call-to-action";
 import Footer from "@/components/footer";
 
@@ -22,6 +23,7 @@ export default function Home() {
       <InstagramPosts />
       <CampaignUpdates />
       <BloodCancerFacts />
+      <FAQ />
       <CallToAction />
       <Footer />
     </div>
