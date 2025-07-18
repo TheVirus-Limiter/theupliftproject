@@ -2,7 +2,7 @@ import { Heart, Award } from 'lucide-react';
 
 export default function HonoredHero() {
   return (
-    <section className="py-20 bg-uplift-light">
+    <section id="honored-hero" className="py-20 bg-uplift-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-playfair text-4xl font-bold text-uplift-red mb-4">
@@ -17,12 +17,14 @@ export default function HonoredHero() {
           <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
             <div className="lg:flex">
               {/* Image Section */}
-              <div className="lg:w-1/2">
-                <img
-                  src="https://media.discordapp.net/attachments/1212245437080408124/1395807174755618948/image.png?ex=687bca3b&is=687a78bb&hm=124f61085ef638a39831fac90b2848741fb760a5f2c60b32f6ba2367d256da9b&=&format=webp&quality=lossless&width=655&height=765"
-                  alt="Miguel Roman"
-                  className="w-full h-64 lg:h-full object-cover"
-                />
+              <div className="lg:w-1/2 flex justify-center lg:justify-start">
+                <div className="w-full max-w-sm lg:max-w-none lg:w-full lg:h-full">
+                  <img
+                    src="https://media.discordapp.net/attachments/1212245437080408124/1395807174755618948/image.png?ex=687bca3b&is=687a78bb&hm=124f61085ef638a39831fac90b2848741fb760a5f2c60b32f6ba2367d256da9b&=&format=webp&quality=lossless&width=655&height=765"
+                    alt="Miguel Roman"
+                    className="w-full h-80 lg:h-full object-cover object-center"
+                  />
+                </div>
               </div>
 
               {/* Content Section */}
