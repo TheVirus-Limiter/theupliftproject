@@ -3,6 +3,7 @@ import Hero from "@/components/hero";
 import SupportedBy from "@/components/supported-by";
 import FundraisingProgress from "@/components/fundraising-progress";
 import About from "@/components/about";
+import HonoredHero from "@/components/honored-hero";
 import ImpactStats from "@/components/impact-stats";
 import InstagramPosts from "@/components/instagram-posts";
 import CampaignUpdates from "@/components/campaign-updates";
@@ -19,6 +20,7 @@ export default function Home() {
       <FundraisingProgress />
       <SupportedBy />
       <About />
+      <HonoredHero />
       <ImpactStats />
       <InstagramPosts />
       <CampaignUpdates />
