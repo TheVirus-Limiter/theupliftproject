@@ -108,8 +108,8 @@ export default function Corporations() {
 
   const sponsorshipLevels = [
     {
-      level: "Mission Impact Portfolio",
-      amount: "$100,000",
+      level: "Platinum Partner",
+      amount: "$10,000+",
       benefits: [
         "Company highlighted as Presenting Sponsor",
         "Prominent logo placement from Grand Finale lectern",
@@ -122,33 +122,8 @@ export default function Corporations() {
       ]
     },
     {
-      level: "Visionary Sponsor",
-      amount: "$50,000",
-      benefits: [
-        "Logo displayed on Workshop, Kickoff, and Grand Finale",
-        "Recognition in social media announcements",
-        "On-stage recognition at all major events",
-        "Company logo on programs and event signage",
-        "Recognition on event screens during Grand Finale",
-        "10 Grand Finale guests included",
-        "Mission Impact Meeting with LLS leadership"
-      ]
-    },
-    {
-      level: "Platinum Sponsor", 
-      amount: "$35,000",
-      benefits: [
-        "Logo recognition on unique event activation",
-        "Logo displayed on Student Visionaries webpage",
-        "Recognition in group social media posts",
-        "Continual logo placement on audio visual scroll",
-        "8 Grand Finale guests included",
-        "Listing in LLS Annual Report"
-      ]
-    },
-    {
       level: "Gold Sponsor",
-      amount: "$25,000", 
+      amount: "$5,000 - $9,999", 
       benefits: [
         "Logo recognition on event materials",
         "Recognition in candidate communications",
@@ -158,8 +133,8 @@ export default function Corporations() {
       ]
     },
     {
-      level: "Silver Sponsor",
-      amount: "$15,000",
+      level: "Silver Supporter",
+      amount: "$2,500 - $4,999",
       benefits: [
         "Logo displayed on event signage",
         "Recognition in social media posts",
@@ -168,14 +143,24 @@ export default function Corporations() {
       ]
     },
     {
-      level: "Hero Circle Contributor",
-      amount: "$10,000",
+      level: "Bronze Contributor",
+      amount: "$1,000 - $2,499",
       benefits: [
         "4 Guest invitations to Grand Finale Celebration", 
         "Name featured on Honored Hero Table signage",
         "Name featured in Pre-Event Scroll",
-        "Receive Honored Hero artwork",
-        "Meet virtually with honored hero at midpoint"
+        "Recognition in event program"
+      ]
+    },
+    {
+      level: "Custom Partnership",
+      amount: "Contact Us",
+      benefits: [
+        "Tailored sponsorship packages available",
+        "Flexible partnership opportunities",
+        "Custom benefits based on your goals",
+        "Special recognition opportunities",
+        "Contact us to discuss your needs"
       ]
     },
     {
@@ -273,22 +258,23 @@ export default function Corporations() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
             {sponsorshipLevels.map((level, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer w-full max-w-sm" onClick={() => document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' })}>
-                <CardHeader className="text-center">
-                  <CardTitle className="text-uplift-red text-xl">{level.level}</CardTitle>
-                  <p className="text-2xl font-bold text-gray-900">{level.amount}</p>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 mb-6">
-                    {level.benefits.map((benefit, benefitIndex) => (
-                      <li key={benefitIndex} className="flex items-start">
-                        <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm text-gray-600">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
+              <div key={index} className={`w-full max-w-sm ${sponsorshipLevels.length % 3 === 1 && index === sponsorshipLevels.length - 1 ? 'md:col-span-2 lg:col-span-1 lg:col-start-2' : ''}`}>
+                <Card className="hover:shadow-lg transition-shadow cursor-pointer h-full" onClick={() => document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' })}>
+                  <CardHeader className="text-center">
+                    <CardTitle className="text-uplift-red text-xl">{level.level}</CardTitle>
+                    <p className="text-2xl font-bold text-gray-900">{level.amount}</p>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2 mb-6">
+                      {level.benefits.map((benefit, benefitIndex) => (
+                        <li key={benefitIndex} className="flex items-start">
+                          <CheckCircle className="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <span className="text-sm text-gray-600">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
                   <Button 
                     variant="outline" 
                     className="w-full border-uplift-red text-uplift-red hover:text-white"
@@ -309,7 +295,8 @@ export default function Corporations() {
                     Download Info
                   </Button>
                 </CardContent>
-              </Card>
+                </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -398,22 +385,22 @@ export default function Corporations() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
+            <Card className="p-6 text-center bg-white shadow-lg">
               <div className="text-4xl font-bold text-uplift-red mb-2">$1.3B+</div>
               <p className="text-gray-600">Research Investment Since 1949</p>
-            </div>
-            <div className="text-center">
+            </Card>
+            <Card className="p-6 text-center bg-white shadow-lg">
               <div className="text-4xl font-bold text-uplift-red mb-2">26 of 32</div>
               <p className="text-gray-600">FDA Approved Treatments Since 2017</p>
-            </div>
-            <div className="text-center">
+            </Card>
+            <Card className="p-6 text-center bg-white shadow-lg">
               <div className="text-4xl font-bold text-uplift-red mb-2">70%</div>
               <p className="text-gray-600">Leukemia 5-Year Survival Rate</p>
-            </div>
-            <div className="text-center">
+            </Card>
+            <Card className="p-6 text-center bg-white shadow-lg">
               <div className="text-4xl font-bold text-uplift-red mb-2">1.7M+</div>
               <p className="text-gray-600">People Living with Blood Cancer</p>
-            </div>
+            </Card>
           </div>
         </div>
       </section>
