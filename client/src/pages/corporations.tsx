@@ -217,8 +217,8 @@ export default function Corporations() {
               </Button>
               <Button 
                 size="lg" 
-                style={{backgroundColor: 'transparent', border: '2px solid #ffffff', color: '#ffffff'}}
-                className="hover:bg-white hover:text-uplift-red"
+                style={{backgroundColor: '#831919', border: '2px solid #831919', color: '#ffffff'}}
+                className="hover:bg-red-800 hover:border-red-800"
                 onClick={() => window.open("https://pages.lls.org/svoy/stx/svoysa26/rrajlf", "_blank")}
               >
                 Donate Now
@@ -263,7 +263,16 @@ export default function Corporations() {
                   </ul>
                   <Button 
                     variant="outline" 
-                    className="w-full border-uplift-red text-uplift-red hover:bg-uplift-red hover:text-white"
+                    className="w-full border-uplift-red text-uplift-red hover:text-white"
+                    style={{'--hover-bg': '#831919'}}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = '#831919';
+                      e.currentTarget.style.color = '#ffffff';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = 'transparent';
+                      e.currentTarget.style.color = '#831919';
+                    }}
                     onClick={(e) => {
                       e.stopPropagation();
                       document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' });
