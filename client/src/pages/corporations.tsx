@@ -12,6 +12,8 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import Navigation from "@/components/navigation";
+import { useEffect } from "react";
+import { updateSEO, seoData } from "@/utils/seo";
 
 const corporateFormSchema = z.object({
   companyName: z.string().min(2, "Company name must be at least 2 characters"),
@@ -25,6 +27,11 @@ const corporateFormSchema = z.object({
 type CorporateFormData = z.infer<typeof corporateFormSchema>;
 
 export default function Corporations() {
+
+useEffect(() => {
+  updateSEO(seoData.home);
+}, []);
+  
   const { toast } = useToast();
 
   const form = useForm<CorporateFormData>({
