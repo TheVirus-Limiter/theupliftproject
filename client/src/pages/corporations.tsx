@@ -29,7 +29,7 @@ type CorporateFormData = z.infer<typeof corporateFormSchema>;
 export default function Corporations() {
 
 useEffect(() => {
-  updateSEO(seoData.home);
+  updateSEO(seoData.corporations);
 }, []);
   
   const { toast } = useToast();
