@@ -370,22 +370,20 @@ export default function Corporations() {
           </div>
 
           <Card className="p-8">
-            {/* Google Form Embed Placeholder */}
-            <div className="text-center mb-8">
-              <div className="bg-gray-100 rounded-lg p-12 border-2 border-dashed border-gray-300">
-                <h3 className="text-xl font-semibold text-gray-700 mb-4">
-                  Partnership Interest Form
-                </h3>
-                <p className="text-gray-600 mb-6">
-                  To embed your Google Form here:
-                </p>
-                <ol className="text-left text-sm text-gray-600 max-w-md mx-auto space-y-2">
-                  <li>1. Create a Google Form with corporate partnership questions</li>
-                  <li>2. Click "Send" → "Embed" ({"<>"} icon)</li>
-                  <li>3. Copy the iframe code</li>
-                  <li>4. Replace this placeholder with your iframe</li>
-                </ol>
-              </div>
+            {/* Google Form Embed */}
+            <div className="w-full">
+              <iframe 
+                src="https://docs.google.com/forms/d/e/1FAIpQLSc6dh1DvjJd8vxeCIQNB8Vi10IYrA-EQihKLT4sEOrzfQ4uyQ/viewform?embedded=true" 
+                width="100%" 
+                height="1669" 
+                frameBorder="0" 
+                marginHeight={0} 
+                marginWidth={0}
+                title="Corporate Partnership Form"
+                className="rounded-lg"
+              >
+                Loading…
+              </iframe>
             </div>
             
             {/* Direct Contact Section */}
