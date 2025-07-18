@@ -9,6 +9,8 @@ import { updateSEO, seoData } from "@/utils/seo";
 export default function Corporations() {
   useEffect(() => {
     updateSEO(seoData.corporations);
+    // Auto-scroll to top when page loads
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
 
   const benefits = [
