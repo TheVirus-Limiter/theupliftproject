@@ -73,10 +73,10 @@ export default function Navigation() {
               Updates
             </button>
             <button 
-              onClick={() => handleSectionClick("facts")}
+              onClick={() => handleSectionClick("faq")}
               className="text-gray-700 hover:text-uplift-red transition-colors"
             >
-              Facts
+              FAQ
             </button>
             <Link href="/corporations" className="text-gray-700 hover:text-uplift-red transition-colors">
               For Corporations
@@ -124,10 +124,10 @@ export default function Navigation() {
                 Updates
               </button>
               <button 
-                onClick={() => handleSectionClick("facts")}
+                onClick={() => handleSectionClick("faq")}
                 className="text-gray-700 hover:text-uplift-red transition-colors py-2 text-left"
               >
-                Facts
+                FAQ
               </button>
               <Link href="/corporations" className="text-gray-700 hover:text-uplift-red transition-colors py-2 text-left">
                 For Corporations
