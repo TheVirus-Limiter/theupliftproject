@@ -21,7 +21,7 @@ export default function Hero() {
             <img 
               src="https://media.discordapp.net/attachments/1212245437080408124/1395495142391152670/dsda.png?ex=687aa7a0&is=68795620&hm=2ac85c2bbf38d6effcce764f86f275c02124f4da2b2eec7a0915fe2715bb0da5&=&format=webp&quality=lossless&width=319&height=346" 
               alt="The Uplift Project Logo" 
-              className="mx-auto mb-4 h-48 w-48"
+              className="mx-auto mb-4 h-48 w-auto object-contain"
             />
           </div>
           <h1 className="font-playfair text-5xl sm:text-6xl font-bold text-uplift-red mb-4">
