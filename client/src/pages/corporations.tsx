@@ -199,10 +199,10 @@ export default function Corporations() {
       <section className="bg-gradient-to-r from-uplift-red to-red-600 pt-24 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="font-playfair text-5xl font-bold mb-6 text-white">
+            <h1 className="font-playfair text-5xl font-bold mb-6" style={{color: '#ffffff'}}>
               Corporate Partnership Opportunities
             </h1>
-            <p className="text-xl max-w-3xl mx-auto mb-8 text-white opacity-90">
+            <p className="text-xl max-w-3xl mx-auto mb-8" style={{color: '#ffffff'}}>
               Join The Uplift Project and the Leukemia & Lymphoma Society in the fight against blood cancer. 
               Your corporate partnership creates lasting impact while providing valuable business benefits.
             </p>
@@ -217,7 +217,8 @@ export default function Corporations() {
               </Button>
               <Button 
                 size="lg" 
-                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-uplift-red"
+                style={{backgroundColor: 'transparent', border: '2px solid #ffffff', color: '#ffffff'}}
+                className="hover:bg-white hover:text-uplift-red"
                 onClick={() => window.open("https://pages.lls.org/svoy/stx/svoysa26/rrajlf", "_blank")}
               >
                 Donate Now
