@@ -12,7 +12,7 @@ fi
 
 # Build the static site
 echo "🔨 Building static site..."
-npm run build:static
+node build-static.js
 
 if [ $? -eq 0 ]; then
     echo "✅ Build successful!"
