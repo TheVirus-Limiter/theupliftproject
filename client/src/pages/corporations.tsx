@@ -199,7 +199,7 @@ export default function Corporations() {
             <h1 className="font-playfair text-5xl font-bold mb-6">
               Corporate Partnership Opportunities
             </h1>
-            <p className="text-xl max-w-3xl mx-auto mb-8">
+            <p className="text-xl max-w-3xl mx-auto mb-8 text-white">
               Join The Uplift Project and the Leukemia & Lymphoma Society in the fight against blood cancer. 
               Your corporate partnership creates lasting impact while providing valuable business benefits.
             </p>
@@ -214,7 +214,7 @@ export default function Corporations() {
               </Button>
               <Button 
                 size="lg" 
-                className="bg-transparent border-2 border-white hover:bg-white hover:text-uplift-red"
+                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-uplift-red"
                 onClick={() => window.open("https://pages.lls.org/svoy/stx/svoysa26/rrajlf", "_blank")}
               >
                 Donate Now
