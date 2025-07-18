@@ -4,12 +4,14 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import Navigation from "@/components/navigation";
 
 const corporateFormSchema = z.object({
   companyName: z.string().min(2, "Company name must be at least 2 characters"),
@@ -192,14 +194,15 @@ export default function Corporations() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Navigation />
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-uplift-red to-red-600 text-white pt-24 pb-20">
+      <section className="bg-gradient-to-r from-uplift-red to-red-600 pt-24 pb-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <h1 className="font-playfair text-5xl font-bold mb-6">
+            <h1 className="font-playfair text-5xl font-bold mb-6 text-white">
               Corporate Partnership Opportunities
             </h1>
-            <p className="text-xl max-w-3xl mx-auto mb-8 text-white">
+            <p className="text-xl max-w-3xl mx-auto mb-8 text-white opacity-90">
               Join The Uplift Project and the Leukemia & Lymphoma Society in the fight against blood cancer. 
               Your corporate partnership creates lasting impact while providing valuable business benefits.
             </p>
