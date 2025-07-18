@@ -10,7 +10,7 @@ export default function Footer() {
               <img 
                 src="https://thevirus-limiter.github.io/filestorage/logowhite.png" 
                 alt="The Uplift Project" 
-                className="h-10 w-10 mr-2"
+                className="h-20 w-20 mr-2"
               />
               <span className="font-playfair font-semibold text-xl">The Uplift Project</span>
             </div>
