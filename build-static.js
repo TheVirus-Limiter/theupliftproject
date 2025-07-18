@@ -16,6 +16,11 @@ async function buildStatic() {
     console.log('🔨 Building static site for GitHub Pages...');
     
     await build({
+      plugins: [
+        (await import('@vitejs/plugin-react')).default({
+          jsxRuntime: 'automatic'
+        })
+      ],
       root: path.resolve(__dirname, 'client'),
       build: {
         outDir: path.resolve(__dirname, 'dist/public'),
@@ -36,6 +41,10 @@ async function buildStatic() {
       base: '/',
       define: {
         'process.env.NODE_ENV': '"production"',
+        global: 'globalThis',
+      },
+      esbuild: {
+        jsx: 'automatic',
       },
     });
     
