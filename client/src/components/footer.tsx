@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center mb-4">
               <img 
-                src="https://media.discordapp.net/attachments/1212245437080408124/1393443019533062284/NA4CIAACIAABBH0ARAAARAAAUsFIIgs5YfGQQAEQAAEIIigD4AACIAACFgq8H8AQzcq9q8tTAgAAAAASUVORK5CYII.png?ex=687a70b0&is=68791f30&hm=69800b08b2b36e86ca9c6fc90e7a8b0c805c71434a7fe6f74e79907dfd2e0395&=&format=webp&quality=lossless&width=523&height=523" 
+                src="https://thevirus-limiter.github.io/filestorage/logowhite.png" 
                 alt="The Uplift Project" 
                 className="h-10 w-10 mr-2"
               />
@@ -86,7 +86,7 @@ export default function Footer() {
           <div className="flex flex-col items-center space-y-6">
             <div className="flex justify-center">
               <img 
-                src="https://media.discordapp.net/attachments/1212245437080408124/1395527978741530634/image-removebg-preview_1.png?ex=687ac635&is=687974b5&hm=afc4a527c42a8f4d04e52aa87419f53f3b18403c5884105ec72655a80b5c835e&=&format=webp&quality=lossless&width=1273&height=306" 
+                src="https://thevirus-limiter.github.io/filestorage/svoywhite.png" 
                 alt="Student Visionaries of the Year" 
                 className="h-12 w-auto"
               />
