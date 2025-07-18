@@ -273,7 +273,7 @@ export default function Corporations() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+          <div className="flex flex-wrap justify-center gap-8">
             {sponsorshipLevels.map((level, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow cursor-pointer w-full max-w-sm" onClick={() => document.getElementById('download-section')?.scrollIntoView({ behavior: 'smooth' })}>
                 <CardHeader className="text-center">
@@ -504,10 +504,13 @@ export default function Corporations() {
                           className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-uplift-red"
                         >
                           <option value="">Select a sponsorship level</option>
-                          <option value="platinum">Platinum Partner ($10,000+)</option>
-                          <option value="gold">Gold Sponsor ($5,000 - $9,999)</option>
-                          <option value="silver">Silver Supporter ($2,500 - $4,999)</option>
-                          <option value="bronze">Bronze Contributor ($1,000 - $2,499)</option>
+                          <option value="mission-impact">Mission Impact Portfolio ($100,000)</option>
+                          <option value="visionary">Visionary Sponsor ($50,000)</option>
+                          <option value="platinum">Platinum Sponsor ($35,000)</option>
+                          <option value="gold">Gold Sponsor ($25,000)</option>
+                          <option value="silver">Silver Sponsor ($15,000)</option>
+                          <option value="hero-circle">Hero Circle Contributor ($10,000)</option>
+                          <option value="digital-journal">Digital Program Journal (Under $5,000)</option>
                           <option value="custom">Custom Partnership</option>
                         </select>
                       </FormControl>
