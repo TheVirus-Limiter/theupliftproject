@@ -26,7 +26,7 @@ type CorporateFormData = z.infer<typeof corporateFormSchema>;
 
 export default function Corporations() {
   const { toast } = useToast();
-  
+
   const form = useForm<CorporateFormData>({
     resolver: zodResolver(corporateFormSchema),
     defaultValues: {
@@ -51,13 +51,13 @@ export default function Corporations() {
         title: "Thank you for your interest!",
         description: "We'll be in touch within 24 hours to discuss partnership opportunities.",
       });
-      
+
       // Open default email client with pre-filled email
       if (response.emailData) {
         const emailUrl = `mailto:${response.emailData.to}?subject=${encodeURIComponent(response.emailData.subject)}&body=${encodeURIComponent(response.emailData.body)}`;
         window.open(emailUrl);
       }
-      
+
       form.reset();
     },
     onError: () => {
@@ -326,7 +326,7 @@ export default function Corporations() {
               Get detailed information about our sponsorship opportunities and partnership benefits.
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
@@ -337,7 +337,7 @@ export default function Corporations() {
                   variant="outline" 
                   className="w-full"
                   onClick={() => {
-                    window.open('/downloads/partnership-benefits.html', '_blank');
+                    window.open('https://cdn.discordapp.com/attachments/1212245437080408124/1395612526724644985/SponsorshipPacket.pdf?ex=687b14f3&is=6879c373&hm=3b46d78217dbebdd0b5839aa4b9b02118b3b60e9b9433f72e25612e4ce5549b0&', '_blank');
                   }}
                 >
                   <Download className="w-4 h-4 mr-2" />
@@ -345,7 +345,7 @@ export default function Corporations() {
                 </Button>
               </CardContent>
             </Card>
-            
+
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
                 <FileText className="w-12 h-12 text-uplift-red mx-auto mb-4" />
@@ -355,7 +355,7 @@ export default function Corporations() {
                   variant="outline" 
                   className="w-full"
                   onClick={() => {
-                    window.open('/downloads/hero-circle-form.html', '_blank');
+                    window.open('https://cdn.discordapp.com/attachments/1212245437080408124/1395612526724644985/SponsorshipPacket.pdf?ex=687b14f3&is=6879c373&hm=3b46d78217dbebdd0b5839aa4b9b02118b3b60e9b9433f72e25612e4ce5549b0&', '_blank');
                   }}
                 >
                   <Download className="w-4 h-4 mr-2" />
@@ -363,7 +363,7 @@ export default function Corporations() {
                 </Button>
               </CardContent>
             </Card>
-            
+
             <Card className="hover:shadow-lg transition-shadow">
               <CardContent className="p-6 text-center">
                 <FileText className="w-12 h-12 text-uplift-red mx-auto mb-4" />
@@ -373,7 +373,7 @@ export default function Corporations() {
                   variant="outline" 
                   className="w-full"
                   onClick={() => {
-                    window.open('/downloads/digital-program-journal.html', '_blank');
+                    window.open('https://cdn.discordapp.com/attachments/1212245437080408124/1395612526724644985/SponsorshipPacket.pdf?ex=687b14f3&is=6879c373&hm=3b46d78217dbebdd0b5839aa4b9b02118b3b60e9b9433f72e25612e4ce5549b0&', '_blank');
                   }}
                 >
                   <Download className="w-4 h-4 mr-2" />

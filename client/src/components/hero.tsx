@@ -45,7 +45,7 @@ export default function Hero() {
             <Button 
               onClick={scrollToAbout}
               variant="outline"
-              className="border-2 border-uplift-red text-uplift-red px-8 py-4 rounded-full text-lg font-semibold hover:bg-uplift-red hover:text-white transition-colors"
+             className="border-2 border-uplift-red text-uplift-red px-8 py-4 rounded-full text-lg font-semibold hover:bg-uplift-red hover:text-white hover:border-uplift-red transition-all duration-300"
             >
               Learn More
             </Button>

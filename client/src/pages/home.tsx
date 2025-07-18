@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation";
 import Hero from "@/components/hero";
+import SupportedBy from "@/components/supported-by";
 import FundraisingProgress from "@/components/fundraising-progress";
 import About from "@/components/about";
 import ImpactStats from "@/components/impact-stats";
@@ -14,6 +15,7 @@ export default function Home() {
     <div className="min-h-screen bg-white">
       <Navigation />
       <Hero />
+      <SupportedBy />
       <FundraisingProgress />
       <About />
       <ImpactStats />
