@@ -44,7 +44,7 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center cursor-pointer" onClick={handleLogoClick}>
             <img 
-              src="https://media.discordapp.net/attachments/1212245437080408124/1395495142391152670/dsda.png?ex=687aa7a0&is=68795620&hm=2ac85c2bbf38d6effcce764f86f275c02124f4da2b2eec7a0915fe2715bb0da5&=&format=webp&quality=lossless&width=319&height=346" 
+              src="https://thevirus-limiter.github.io/filestorage/dsda.png" 
               alt="The Uplift Project Logo" 
               className="h-10 w-10 mr-3 object-contain flex-shrink-0"
             />
