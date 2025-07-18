@@ -7,6 +7,8 @@ import Home from "@/pages/home";
 import Corporations from "@/pages/corporations";
 import NotFound from "@/pages/not-found";
 import { useEffect } from "react";
+import { initGA } from "./lib/analytics";
+import { useAnalytics } from "./hooks/use-analytics";
 
 function Router() {
   // Handle GitHub Pages SPA routing
@@ -19,6 +21,8 @@ function Router() {
       window.history.replaceState(null, '', route);
     }
   }, []);
+  useAnalytics();
+
 
   return (
     <Switch>
@@ -30,6 +34,9 @@ function Router() {
 }
 
 function App() {
+  useEffect(() => {
+  initGA();
+}, []);
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
