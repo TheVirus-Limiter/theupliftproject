@@ -11,8 +11,13 @@ import BloodCancerFacts from "@/components/blood-cancer-facts";
 import FAQ from "@/components/faq";
 import CallToAction from "@/components/call-to-action";
 import Footer from "@/components/footer";
+import { useEffect } from "react";
+import { updateSEO, seoData } from "@/utils/seo";
 
 export default function Home() {
+  useEffect(() => {
+  updateSEO(seoData.home);
+}, []);
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
