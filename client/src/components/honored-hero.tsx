@@ -1,6 +1,11 @@
 import { Heart, Award } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 export default function HonoredHero() {
+  const handleDonateClick = () => {
+    window.open("https://pages.lls.org/svoy/stx/svoysa26/rrajlf", "_blank");
+  };
+
   return (
     <section id="honored-hero" className="py-20 bg-uplift-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,6 +74,20 @@ export default function HonoredHero() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Donate Button */}
+        <div className="text-center mt-12">
+          <Button 
+            onClick={handleDonateClick}
+            className="bg-uplift-red text-white px-12 py-4 rounded-full text-lg font-semibold hover:bg-red-800 transition-colors shadow-lg"
+          >
+            <Heart className="w-5 h-5 mr-2" />
+            Donate in Miguel's Honor
+          </Button>
+          <p className="text-gray-600 mt-4 text-sm">
+            Every donation helps support families like Miguel's
+          </p>
         </div>
       </div>
     </section>
