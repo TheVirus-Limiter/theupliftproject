@@ -1,4 +1,4 @@
-import { CheckCircle, AlertTriangle, XCircle, ExternalLink, DollarSign } from "lucide-react";
+import { CheckCircle, ExternalLink, DollarSign } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
 
 export default function WaysToDonate() {
@@ -9,105 +9,35 @@ export default function WaysToDonate() {
   const acceptedSources = [
     {
       title: "Cash, Checks, and Credit Cards",
-      description: "Direct monetary donations through traditional payment methods"
-    },
-    {
-      title: "Charitybuzz",
-      description: "You are responsible for delivering any packages/items sold via Charitybuzz"
+      description: "Make a direct donation using your preferred payment method"
     },
     {
       title: "Stock Transfers",
-      description: "Valued based on the date received by LLS's brokerage account"
+      description: "Donate appreciated securities and potentially reduce your tax burden"
     },
     {
       title: "Donor Advised Funds",
-      description: "Must be coordinated with the \"donor's intent\""
+      description: "Recommend a grant from your donor advised fund to support our campaign"
     },
     {
-      title: "Sponsorships",
-      description: "Must be secured via a signed commitment form. Funds can be received from July 1st until the deadline"
+      title: "Corporate Sponsorships",
+      description: "Partner with us through your company's community giving program"
     },
     {
       title: "Facebook Fundraisers",
-      description: "Must be linked directly through LLS Fundraising Tools (note: not confidential to the public)"
+      description: "Create a Facebook fundraiser linked to our campaign to amplify your impact"
     },
     {
       title: "Matching Gifts & Volunteer Grants",
-      description: "Must follow specific guidelines. These must be tied to direct donations only (not raffles or ticket sales)"
-    }
-  ];
-
-  const approvalRequired = [
-    {
-      title: "Silent Auction Donations for Grand Finale",
-      description: "Must be credited at the sale amount (not actual item value). No firearms or live animals allowed"
-    },
-    {
-      title: "Pharmaceutical or Biotech Companies",
-      description: "Require written approval"
-    },
-    {
-      title: "In-Kind Credit Donations",
-      description: "First-come, first-served. Maximum of $10,000 per team"
-    },
-    {
-      title: "Third-Party Platforms (besides Facebook)",
-      description: "Requires approval from LLS National Office"
-    },
-    {
-      title: "Consumer Campaigns, Promotions, and Retail",
-      description: "Must be pre-approved"
-    },
-    {
-      title: "National Corporation Donations",
-      description: "Must be pre-approved and secured by LLS National"
-    }
-  ];
-
-  const notCounted = [
-    {
-      title: "Workplace Giving or Employee Match Programs",
-      description: "Unless unrestricted"
-    },
-    {
-      title: "Bachelor/Bachelorette Auctions",
-      description: "Not eligible for competition totals"
-    },
-    {
-      title: "Restricted Funds",
-      description: "Cannot be counted toward competition"
-    },
-    {
-      title: "Portions of Multi-Year Pledges",
-      description: "That go beyond the competition timeframe"
-    },
-    {
-      title: "Commercial Co-Ventures/Charitable Sales Promotions",
-      description: "Not eligible for competition totals"
-    },
-    {
-      title: "Raffles/Gambling",
-      description: "Unless legally compliant"
+      description: "Double your donation impact through your employer's matching program"
     }
   ];
 
   const southCentralTexasStats = {
-    households: "2,100",
-    firstConnections: "47",
-    patients: "478",
-    localPatients: "296",
-    resourceCenter: "18",
-    copayAssistance: "$3,412,000",
-    southCentralTexas: "$362,900",
-    urgentNeedFunds: "$123,000",
-    patientsAssisted: "1,041",
-    generalTravelAssistance: "$34,000",
-    preCaTTravelAssistance: "$20,000",
-    researchFunding: "$1,829,913",
-    institutions: "4",
-    scholarships: "2",
-    totalPatients: "2,164",
-    financialAssistance: "$362,900"
+    households: "2,164",
+    copayAssistance: "$$3,412,000",
+    financialAssistance: "$$362,900",
+    patients: "478"
   };
 
   return (
@@ -118,8 +48,8 @@ export default function WaysToDonate() {
             Ways to Donate
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Your donation guidelines for the Student Visionaries of the Year campaign. 
-            All donations must comply with LLS policies to count toward competition totals.
+            Support our mission to end blood cancer through these accepted donation methods. 
+            Your contribution will count toward our $50,000 fundraising goal.
           </p>
         </div>
 
@@ -142,43 +72,11 @@ export default function WaysToDonate() {
         <div className="mb-12">
           <div className="flex items-center mb-6">
             <CheckCircle className="w-8 h-8 text-green-600 mr-3" />
-            <h3 className="text-2xl font-bold text-gray-900">Accepted Donation Sources</h3>
+            <h3 className="text-2xl font-bold text-gray-900">Accepted Donation Methods</h3>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {acceptedSources.map((source, index) => (
               <div key={index} className="bg-white rounded-lg p-6 shadow-md border-l-4 border-green-500">
-                <h4 className="font-semibold text-gray-900 mb-2">{source.title}</h4>
-                <p className="text-gray-600 text-sm">{source.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Approval Required */}
-        <div className="mb-12">
-          <div className="flex items-center mb-6">
-            <AlertTriangle className="w-8 h-8 text-yellow-600 mr-3" />
-            <h3 className="text-2xl font-bold text-gray-900">Donation Sources Requiring Prior LLS Staff Approval</h3>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {approvalRequired.map((source, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-md border-l-4 border-yellow-500">
-                <h4 className="font-semibold text-gray-900 mb-2">{source.title}</h4>
-                <p className="text-gray-600 text-sm">{source.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Not Counted */}
-        <div className="mb-12">
-          <div className="flex items-center mb-6">
-            <XCircle className="w-8 h-8 text-gray-500 mr-3" />
-            <h3 className="text-2xl font-bold text-gray-900">Not Counted Toward Competition Totals</h3>
-          </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {notCounted.map((source, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 shadow-md border-l-4 border-gray-400">
                 <h4 className="font-semibold text-gray-900 mb-2">{source.title}</h4>
                 <p className="text-gray-600 text-sm">{source.description}</p>
               </div>
@@ -199,23 +97,23 @@ export default function WaysToDonate() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center p-4 bg-gray-50 rounded-lg">
-              <div className="text-3xl font-bold text-uplift-red mb-2">{southCentralTexasStats.totalPatients}</div>
-              <div className="text-sm text-gray-600">Total patients and caregivers we serve including our Information Resource Center, Clinical Trial Support Center, and local patient education programs</div>
+              <div className="text-3xl font-bold text-uplift-red mb-2">{southCentralTexasStats.households}</div>
+              <div className="text-xs text-gray-600">Total patients and caregivers served</div>
             </div>
             
             <div className="text-center p-4 bg-gray-50 rounded-lg">
-              <div className="text-3xl font-bold text-uplift-red mb-2">${southCentralTexasStats.copayAssistance}</div>
-              <div className="text-sm text-gray-600">Co-Pay Assistance awarded to patients in the South Central Texas region in FY24</div>
+              <div className="text-3xl font-bold text-uplift-red mb-2">{southCentralTexasStats.copayAssistance}</div>
+              <div className="text-xs text-gray-600">Co-Pay Assistance awarded to patients</div>
             </div>
             
             <div className="text-center p-4 bg-gray-50 rounded-lg">
-              <div className="text-3xl font-bold text-uplift-red mb-2">${southCentralTexasStats.financialAssistance}</div>
-              <div className="text-sm text-gray-600">Total Patient Financial Assistance provided in South Central Texas, including Patient Aid, Urgent Need, and Travel Assistance</div>
+              <div className="text-3xl font-bold text-uplift-red mb-2">{southCentralTexasStats.financialAssistance}</div>
+              <div className="text-xs text-gray-600">Total Patient Financial Assistance provided</div>
             </div>
             
             <div className="text-center p-4 bg-gray-50 rounded-lg">
               <div className="text-3xl font-bold text-uplift-red mb-2">{southCentralTexasStats.patients}</div>
-              <div className="text-sm text-gray-600">Patients and caregivers who participated in local patient education programs in FY24</div>
+              <div className="text-xs text-gray-600">Patients in local education programs</div>
             </div>
           </div>
 
@@ -223,21 +121,21 @@ export default function WaysToDonate() {
             <div className="bg-gray-50 rounded-lg p-6">
               <h4 className="font-bold text-gray-900 mb-4">Patient Support Highlights</h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Served over <span className="font-semibold">{southCentralTexasStats.households} households</span></li>
-                <li>• Completed <span className="font-semibold">{southCentralTexasStats.firstConnections} First Connection matches</span></li>
-                <li>• Served <span className="font-semibold">{southCentralTexasStats.localPatients} local patients</span> through our Information Resource Center</li>
-                <li>• Clinical Trial Support Center assisted <span className="font-semibold">{southCentralTexasStats.resourceCenter} patients</span></li>
+                <li>• Served over <span className="font-semibold">2,100 households</span></li>
+                <li>• Completed <span className="font-semibold">47 First Connection matches</span></li>
+                <li>• Served <span className="font-semibold">296 local patients</span> through our Information Resource Center</li>
+                <li>• Clinical Trial Support Center assisted <span className="font-semibold">18 patients</span></li>
               </ul>
             </div>
             
             <div className="bg-gray-50 rounded-lg p-6">
               <h4 className="font-bold text-gray-900 mb-4">Financial Assistance Breakdown</h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• <span className="font-semibold">${southCentralTexasStats.urgentNeedFunds}</span> in Urgent Need funds to <span className="font-semibold">{southCentralTexasStats.patientsAssisted} patients</span></li>
-                <li>• <span className="font-semibold">${southCentralTexasStats.generalTravelAssistance}</span> in General Travel Assistance to 36 patients</li>
-                <li>• <span className="font-semibold">${southCentralTexasStats.preCaTTravelAssistance}</span> in Pre-CaT Travel Assistance</li>
-                <li>• <span className="font-semibold">${southCentralTexasStats.researchFunding}</span> in research funding at <span className="font-semibold">{southCentralTexasStats.institutions} institutions</span></li>
-                <li>• <span className="font-semibold">{southCentralTexasStats.scholarships} college scholarships</span> awarded to blood cancer survivors</li>
+                <li>• <span className="font-semibold">$$123,000</span> in Urgent Need funds to <span className="font-semibold">1,041 patients</span></li>
+                <li>• <span className="font-semibold">$$34,000</span> in General Travel Assistance to 36 patients</li>
+                <li>• <span className="font-semibold">$$20,000</span> in Pre-CaT Travel Assistance</li>
+                <li>• <span className="font-semibold">$$1,829,913</span> in research funding at <span className="font-semibold">4 institutions</span></li>
+                <li>• <span className="font-semibold">2 college scholarships</span> awarded to blood cancer survivors</li>
               </ul>
             </div>
           </div>
