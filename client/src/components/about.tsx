@@ -1,4 +1,4 @@
-import { Users } from "lucide-react";
+import { Users, Instagram } from "lucide-react";
 
 export default function About() {
   return (
@@ -40,6 +40,20 @@ export default function About() {
               <div>
                 <p className="font-semibold text-gray-900">Student Visionaries of the Year</p>
                 <p className="text-gray-600">Leukemia & Lymphoma Society</p>
+              </div>
+            </div>
+            
+            <div className="mt-8 flex justify-center">
+              <div className="p-0.5 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400">
+                <button 
+                  onClick={() => window.open("https://www.instagram.com/p/DMdoluLSK0l/?img_index=1", "_blank")}
+                  className="bg-white text-gray-700 px-6 py-3 rounded-full text-base font-semibold hover:bg-gray-50 transition-colors flex items-center shadow-lg"
+                >
+                  <div className="w-5 h-5 mr-3 rounded-sm bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center">
+                    <Instagram className="w-4 h-4 text-white" />
+                  </div>
+                  Meet Our Team
+                </button>
               </div>
             </div>
             

@@ -55,19 +55,7 @@ export default function Hero() {
               Learn More
             </Button>
           </div>
-          <div className="mt-4 flex justify-center">
-            <div className="p-0.5 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400">
-              <button 
-                onClick={() => window.open("https://www.instagram.com/p/DMdoluLSK0l/?img_index=1", "_blank")}
-                className="bg-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors flex items-center"
-              >
-                <div className="w-4 h-4 mr-2 rounded-sm bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center">
-                  <Instagram className="w-3 h-3 text-white" />
-                </div>
-                Our Team
-              </button>
-            </div>
-          </div>
+
         </div>
       </div>
     </section>
