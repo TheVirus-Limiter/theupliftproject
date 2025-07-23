@@ -93,7 +93,7 @@ export default function Chatbot() {
     <>
       {/* Chat Button */}
       {!isOpen && (
-        <div className="fixed bottom-6 right-6 z-50">
+        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
           <Button
             onClick={() => setIsOpen(true)}
             className="bg-uplift-red hover:bg-red-800 text-white rounded-full w-14 h-14 shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
@@ -105,7 +105,7 @@ export default function Chatbot() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="fixed bottom-6 right-6 z-50 w-80 bg-white rounded-lg shadow-2xl border border-gray-200">
+        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 w-[calc(100vw-2rem)] max-w-80 sm:w-80 bg-white rounded-lg shadow-2xl border border-gray-200">
           {/* Header */}
           <div className="bg-uplift-red text-white p-4 rounded-t-lg flex justify-between items-center">
             <div className="flex items-center space-x-2">
@@ -123,7 +123,7 @@ export default function Chatbot() {
           </div>
 
           {/* Messages */}
-          <div className="h-80 overflow-y-auto p-4 space-y-4">
+          <div className="h-64 sm:h-80 overflow-y-auto p-4 space-y-4">
             {messages.map((message) => (
               <div
                 key={message.id}
