@@ -35,8 +35,8 @@ export default function WaysToDonate() {
 
   const southCentralTexasStats = {
     households: "2,164",
-    copayAssistance: "$$3,412,000",
-    financialAssistance: "$$362,900",
+    copayAssistance: "$3,412,000",
+    financialAssistance: "$362,900",
     patients: "478"
   };
 
@@ -131,10 +131,10 @@ export default function WaysToDonate() {
             <div className="bg-gray-50 rounded-lg p-6">
               <h4 className="font-bold text-gray-900 mb-4">Financial Assistance Breakdown</h4>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• <span className="font-semibold">$$123,000</span> in Urgent Need funds to <span className="font-semibold">1,041 patients</span></li>
-                <li>• <span className="font-semibold">$$34,000</span> in General Travel Assistance to 36 patients</li>
-                <li>• <span className="font-semibold">$$20,000</span> in Pre-CaT Travel Assistance</li>
-                <li>• <span className="font-semibold">$$1,829,913</span> in research funding at <span className="font-semibold">4 institutions</span></li>
+                <li>• <span className="font-semibold">$123,000</span> in Urgent Need funds to <span className="font-semibold">1,041 patients</span></li>
+                <li>• <span className="font-semibold">$34,000</span> in General Travel Assistance to 36 patients</li>
+                <li>• <span className="font-semibold">$20,000</span> in Pre-CaT Travel Assistance</li>
+                <li>• <span className="font-semibold">$1,829,913</span> in research funding at <span className="font-semibold">4 institutions</span></li>
                 <li>• <span className="font-semibold">2 college scholarships</span> awarded to blood cancer survivors</li>
               </ul>
             </div>
