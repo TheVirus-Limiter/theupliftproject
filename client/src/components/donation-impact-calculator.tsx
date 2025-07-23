@@ -5,15 +5,15 @@ import { Heart, Users, Building2, Award } from "lucide-react";
 export default function DonationImpactCalculator() {
   const [donationAmount, setDonationAmount] = useState([100]);
 
-  // Based on LLS data - focused on patient monetary/medical support
+  // Based on LLS data - optimized to show meaningful impact at all donation levels
   const calculateImpact = (amount: number) => {
     const baseAmount = amount;
     
     return {
-      copayAssistance: Math.floor(baseAmount * 0.8), // Co-pay assistance dollars
-      travelSupport: Math.floor(baseAmount / 25), // Travel assistance cases
-      treatmentDays: Math.floor(baseAmount / 15), // Days of treatment support
-      patientResources: Math.floor(baseAmount / 8), // Patient resource materials
+      researchMinutes: Math.floor(baseAmount * 2.4), // Research funding impact (more granular)
+      informationCalls: Math.floor(baseAmount / 12), // Information helpline calls
+      educationalMaterials: Math.floor(baseAmount / 8), // Patient education materials
+      supportGroupHours: Math.floor(baseAmount / 18), // Support group sessions
       advocacyActions: Math.floor(baseAmount / 15), // Policy advocacy actions
       hopeDelivered: Math.floor(baseAmount / 5) // Hope and emotional support units
     };
@@ -23,40 +23,40 @@ export default function DonationImpactCalculator() {
 
   const impactCards = [
     {
+      icon: Building2,
+      title: "Research Minutes Funded",
+      value: impact.researchMinutes,
+      description: "Advancing breakthrough treatments",
+      color: "bg-green-500",
+      bgColor: "bg-green-50",
+      image: "🔬"
+    },
+    {
       icon: Heart,
-      title: "Co-Pay Assistance",
-      value: `$${impact.copayAssistance}`,
-      description: "Helping cover treatment costs",
+      title: "Information Calls Answered",
+      value: impact.informationCalls,
+      description: "Providing hope & guidance",
       color: "bg-red-500",
       bgColor: "bg-red-50",
-      image: "💰"
+      image: "📞"
     },
     {
       icon: Users,
-      title: "Travel Support Cases",
-      value: impact.travelSupport,
-      description: "Getting patients to treatment",
+      title: "Educational Materials Provided",
+      value: impact.educationalMaterials,
+      description: "Empowering patients with knowledge",
       color: "bg-blue-500",
       bgColor: "bg-blue-50",
-      image: "🚗"
+      image: "📚"
     },
     {
       icon: Award,
-      title: "Treatment Days Supported",
-      value: impact.treatmentDays,
-      description: "Days of life-saving care",
-      color: "bg-green-500",
-      bgColor: "bg-green-50",
-      image: "🏥"
-    },
-    {
-      icon: Building2,
-      title: "Patient Resources",
-      value: impact.patientResources,
-      description: "Materials & support tools",
+      title: "Support Group Hours",
+      value: impact.supportGroupHours,
+      description: "Building community & strength",
       color: "bg-purple-500",
       bgColor: "bg-purple-50",
-      image: "📋"
+      image: "🤝"
     }
   ];
 
