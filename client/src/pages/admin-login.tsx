@@ -13,47 +13,47 @@ export default function AdminLogin() {
   const [, navigate] = useLocation();
 
   const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsLoading(true);
-  setError("");
+    e.preventDefault();
+    setIsLoading(true);
+    setError("");
 
-  // Check if we're in development (with server) or production (static)
-  const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname.includes('replit');
-  
-  if (isDevelopment) {
-    // Development: Use server authentication
-    try {
-      const response = await fetch('/api/admin/auth', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ password }),
-      });
+    // Check if we're in development (with server) or production (static)
+    const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname.includes('replit');
+    
+    if (isDevelopment) {
+      // Development: Use server authentication
+      try {
+        const response = await fetch('/api/admin/auth', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ password }),
+        });
 
-      if (response.ok) {
+        if (response.ok) {
+          localStorage.setItem('adminAuth', password);
+          navigate('/admin');
+        } else {
+          const errorData = await response.json().catch(() => ({}));
+          setError(errorData.error || 'Invalid password');
+        }
+      } catch (error) {
+        console.error('Authentication error:', error);
+        setError('Authentication failed - please try again');
+      }
+    } else {
+      // Production (GitHub Pages): Client-side authentication
+      if (password === 'upliftproject50k2025$$$$') {
         localStorage.setItem('adminAuth', password);
         navigate('/admin');
       } else {
-        const errorData = await response.json().catch(() => ({}));
-        setError(errorData.error || 'Invalid password');
+        setError('Invalid password');
       }
-    } catch (error) {
-      console.error('Authentication error:', error);
-      setError('Authentication failed - please try again');
     }
-  } else {
-    // Production (GitHub Pages): Client-side authentication
-    if (password === 'upliftproject50k2025$$$$') {
-      localStorage.setItem('adminAuth', password);
-      navigate('/admin');
-    } else {
-      setError('Invalid password');
-    }
-  }
-  
-  setIsLoading(false);
-};
+    
+    setIsLoading(false);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
