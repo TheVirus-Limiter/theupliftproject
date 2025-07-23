@@ -53,6 +53,13 @@ export default function Hero() {
             >
               Learn More
             </Button>
+            <Button 
+              onClick={() => window.open("https://www.instagram.com/p/DMdoluLSK0l/?img_index=1", "_blank")}
+              variant="outline"
+              className="border-2 border-gray-400 text-gray-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 hover:shadow-lg transition-colors"
+            >
+              Our Team
+            </Button>
           </div>
         </div>
       </div>

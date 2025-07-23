@@ -50,6 +50,16 @@ export default function Footer() {
               <li><a href="#impact" className="hover:text-white transition-colors">Impact</a></li>
               <li><a href="#updates" className="hover:text-white transition-colors">Updates</a></li>
               <li><a href="#facts" className="hover:text-white transition-colors">Facts</a></li>
+              <li>
+                <a 
+                  href="https://www.instagram.com/p/DMdoluLSK0l/?img_index=1" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Our Team
+                </a>
+              </li>
             </ul>
           </div>
           
