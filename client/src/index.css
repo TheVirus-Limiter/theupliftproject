@@ -100,6 +100,7 @@
 }
 
 /* Custom 5-second pulse animation for donation button */
+/* Custom 5-second pulse animation for donation button */
 @keyframes pulse-5s {
   0%, 90% {
     opacity: 0;
@@ -108,7 +109,12 @@
     opacity: 0.2;
   }
 }
+
 .custom-pulse-5s {
   animation: pulse-5s 5s infinite;
 }
 
+/* 3D perspective utility */
+.perspective-1000 {
+  perspective: 1000px;
+}
