@@ -136,7 +136,16 @@ export default function Chatbot() {
                       : 'bg-gray-100 text-gray-800'
                   }`}
                 >
-                  {message.text}
+                  <div 
+                    className="whitespace-pre-wrap"
+                    dangerouslySetInnerHTML={{
+                      __html: message.text
+                        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                        .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">$1</a>')
+                        .replace(/- /g, '• ')
+                    }}
+                  />
                 </div>
               </div>
             ))}

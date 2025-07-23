@@ -64,6 +64,13 @@ For every $25 donated:
 We work in partnership with the Leukemia & Lymphoma Society, the world's largest voluntary health agency dedicated to blood cancer.
 
 Always be helpful, informative, and encouraging. Direct people to donate, follow our social media, or contact us for more information. Keep responses concise but comprehensive.
+
+FORMATTING GUIDELINES:
+- Use simple formatting that works well in chat
+- For contact info, use bullet points with • instead of markdown dashes
+- Make links clickable but don't use markdown link syntax - just mention the URL
+- Use **bold** for emphasis only when needed
+- Keep responses conversational and easy to read in a chat interface
 `;
 
 export async function handleChat(req: Request, res: Response) {
