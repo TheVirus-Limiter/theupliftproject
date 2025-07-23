@@ -94,7 +94,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Phone className="w-4 h-4 mr-2" />
-                210 992 6174
+                (726) 220-7209
               </li>
             </ul>
           </div>
