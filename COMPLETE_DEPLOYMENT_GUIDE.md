@@ -137,7 +137,7 @@ Update **package.json** scripts:
 
 The admin dashboard uses simple password authentication compatible with GitHub Pages:
 - **Login URL**: `theupliftproject.us/admin-login`
-- **Admin Password**: `upliftproj`
+- **Admin Password**: `upliftproject50k2025$$$$`
 - **Dashboard URL**: `theupliftproject.us/admin`
 
 ### 2. Admin Features
@@ -163,9 +163,9 @@ The admin dashboard is fully responsive with:
 - Touch-friendly interface elements
 - Optimized typography and spacing
 
-## Part 3: OpenAI API Integration (Optional)
+## Part 3: OpenAI Chatbot Integration
 
-### 1. OpenAI API Setup
+### 1. OpenAI API Setup for Chatbot
 
 1. **Get OpenAI API Key**
    - Visit [OpenAI Platform](https://platform.openai.com)
@@ -180,160 +180,30 @@ The admin dashboard is fully responsive with:
    - Name: `VITE_OPENAI_API_KEY`
    - Value: Your OpenAI API key
 
-### 2. AI-Powered Features Implementation
+### 2. Client-Side Configuration
 
-Add the following optional AI features to enhance the admin dashboard:
+The chatbot will automatically use the OpenAI API key when available. No additional client-side configuration is needed as the chatbot component is already implemented and will detect the API key presence.
 
-#### A. Content Generation Assistant
+### 3. Chatbot Features
 
-**client/src/components/ai-content-assistant.tsx**
-```tsx
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { Sparkles, Copy } from "lucide-react";
+**Functionality:**
+- Interactive Q&A about The Uplift Project
+- Information about blood cancer research
+- Donation guidance and campaign details
+- Automatic responses about team members and goals
+- Integration with existing website design
 
-interface AIContentAssistantProps {
-  onContentGenerated: (content: string) => void;
-}
+**Usage Guidelines:**
+- The chatbot appears as a floating button on the website
+- Users can ask questions about the campaign, team, or blood cancer research
+- Responses are contextually aware of The Uplift Project's mission
+- Costs approximately $0.01-0.05 per conversation
 
-export function AIContentAssistant({ onContentGenerated }: AIContentAssistantProps) {
-  const [prompt, setPrompt] = useState("");
-  const [generatedContent, setGeneratedContent] = useState("");
-  const [isGenerating, setIsGenerating] = useState(false);
-
-  const generateContent = async () => {
-    if (!prompt.trim()) return;
-    
-    setIsGenerating(true);
-    try {
-      const response = await fetch('/api/ai/generate-content', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('adminAuth')}`
-        },
-        body: JSON.stringify({ 
-          prompt: `Generate fundraising campaign content for The Uplift Project (blood cancer research): ${prompt}` 
-        })
-      });
-      
-      const data = await response.json();
-      setGeneratedContent(data.content);
-    } catch (error) {
-      console.error('Content generation failed:', error);
-    } finally {
-      setIsGenerating(false);
-    }
-  };
-
-  return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="flex items-center">
-          <Sparkles className="w-5 h-5 mr-2 text-purple-600" />
-          AI Content Assistant
-        </CardTitle>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        <Textarea
-          placeholder="Describe the content you want to generate (e.g., 'Write an update about reaching 25% of our goal')"
-          value={prompt}
-          onChange={(e) => setPrompt(e.target.value)}
-          rows={3}
-        />
-        <Button 
-          onClick={generateContent}
-          disabled={!prompt.trim() || isGenerating}
-          className="bg-purple-600 hover:bg-purple-700"
-        >
-          {isGenerating ? "Generating..." : "Generate Content"}
-        </Button>
-        
-        {generatedContent && (
-          <div className="space-y-2">
-            <div className="flex justify-between items-center">
-              <h4 className="font-medium">Generated Content:</h4>
-              <Button
-                size="sm"
-                variant="outline"
-                onClick={() => onContentGenerated(generatedContent)}
-              >
-                <Copy className="w-4 h-4 mr-1" />
-                Use Content
-              </Button>
-            </div>
-            <div className="p-3 bg-gray-50 rounded border">
-              <p className="whitespace-pre-wrap text-sm">{generatedContent}</p>
-            </div>
-          </div>
-        )}
-      </CardContent>
-    </Card>
-  );
-}
-```
-
-#### B. Server-Side OpenAI Integration
-
-Add to **server/routes.ts**:
-```typescript
-import OpenAI from 'openai';
-
-// Initialize OpenAI (add to the top of the file)
-const openai = process.env.VITE_OPENAI_API_KEY 
-  ? new OpenAI({ apiKey: process.env.VITE_OPENAI_API_KEY })
-  : null;
-
-// Add AI content generation endpoint
-app.post('/api/ai/generate-content', adminAuth, async (req, res) => {
-  if (!openai) {
-    return res.status(503).json({ error: 'OpenAI API not configured' });
-  }
-  
-  try {
-    const { prompt } = req.body;
-    
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4o", // Latest OpenAI model
-      messages: [
-        {
-          role: "system",
-          content: "You are a professional fundraising content writer for The Uplift Project, a blood cancer research campaign by high school students. Write engaging, heartfelt, and professional content that connects with donors and highlights the impact of their contributions."
-        },
-        {
-          role: "user",
-          content: prompt
-        }
-      ],
-      max_tokens: 500,
-      temperature: 0.7,
-    });
-
-    res.json({ 
-      content: completion.choices[0].message.content,
-      usage: completion.usage 
-    });
-  } catch (error) {
-    console.error('OpenAI API error:', error);
-    res.status(500).json({ error: 'Content generation failed' });
-  }
-});
-```
-
-### 3. Usage Guidelines
-
-**OpenAI API Costs:**
-- GPT-4o: ~$0.015 per 1K input tokens, ~$0.060 per 1K output tokens
-- Typical campaign update generation: ~$0.05-0.10 per request
-- Budget $10-20/month for moderate usage
-
-**Best Practices:**
-- Use specific, detailed prompts for better results
-- Review and edit AI-generated content before publishing
-- Maintain your authentic voice and messaging
-- Test prompts to find what works best for your campaign
+**API Cost Management:**
+- GPT-4o model: ~$0.015 per 1K input tokens, ~$0.060 per 1K output tokens
+- Typical chatbot conversation: $0.02-0.10 per interaction
+- Budget $5-15/month for moderate usage
+- No content generation features to minimize costs
 
 ## Part 4: SEO & Performance Optimization
 
@@ -496,7 +366,7 @@ After deployment, verify:
    - Clear browser cache
 
 2. **Admin dashboard not working**
-   - Verify password is correct (`upliftproj`)
+   - Verify password is correct (`upliftproject50k2025$$$$`)
    - Check browser console for errors
    - Try incognito/private browsing mode
 
@@ -548,6 +418,6 @@ For additional support or questions, contact the development team or refer to th
 **Quick Reference:**
 - Website: https://theupliftproject.us
 - Admin Login: https://theupliftproject.us/admin-login
-- Admin Password: `upliftproj`
+- Admin Password: `upliftproject50k2025$$$$`
 - Repository: [GitHub Repository URL]
 - Team Contact: rehanraj0911@gmail.com

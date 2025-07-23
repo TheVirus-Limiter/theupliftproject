@@ -185,6 +185,6 @@ The static deployment maintains all functionality while being optimized for GitH
 
 ### Admin Dashboard Access
 - **URL**: theupliftproject.us/admin-login
-- **Password**: upliftproj
+- **Password**: upliftproject50k2025$$$$
 - **Features**: Fundraising progress updates, campaign content management, publish/unpublish controls
 - **Responsive**: Fully optimized for mobile, tablet, and desktop administration

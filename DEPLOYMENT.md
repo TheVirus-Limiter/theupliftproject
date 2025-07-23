@@ -1,144 +1,63 @@
-# Deployment Guide - The Uplift Project
+# The Uplift Project - Deployment Guide
 
-## GitHub Pages Deployment
+## Quick Setup for GitHub Pages
 
-This guide walks you through deploying The Uplift Project website to GitHub Pages with a custom domain (theupliftproject.us).
+### 1. Repository Configuration
 
-### Prerequisites
+1. **GitHub Pages Settings**
+   - Go to Settings > Pages
+   - Set Source to "GitHub Actions"
+   - Add custom domain: `theupliftproject.us`
 
-- GitHub account
-- Domain ownership (theupliftproject.us)
-- Node.js installed locally
-
-### Step 1: Prepare Your Repository
-
-1. **Create a GitHub Repository**
-   ```bash
-   # Create a new repository on GitHub named 'the-uplift-project'
-   # Clone it locally or push your existing code
-   git clone https://github.com/your-username/the-uplift-project.git
-   cd the-uplift-project
-   ```
-
-2. **Install GitHub Pages Package**
-   ```bash
-   npm install --save-dev gh-pages
-   ```
-
-3. **Update package.json**
-   Add the following to your `package.json`:
-   ```json
-   {
-     "homepage": "https://theupliftproject.us",
-     "scripts": {
-       "predeploy": "npm run build",
-       "deploy": "gh-pages -d dist/public"
-     }
-   }
-   ```
-
-### Step 2: Configure Build for Static Deployment
-
-1. **Update vite.config.ts**
-   Ensure your Vite config includes the correct base path:
-   ```typescript
-   import { defineConfig } from 'vite';
-   import react from '@vitejs/plugin-react';
+2. **Required Files**
    
-   export default defineConfig({
-     plugins: [react()],
-     base: '/', // Use '/' for custom domain
-     build: {
-       outDir: 'dist/public'
-     }
-   });
+   **client/public/CNAME**
+   ```
+   theupliftproject.us
    ```
 
-2. **Create a Static Build Script**
-   Add to package.json scripts:
-   ```json
-   {
-     "build:static": "vite build --mode production"
-   }
+   **client/public/404.html**
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="utf-8">
+       <title>The Uplift Project</title>
+       <script>
+           var pathSegmentsToKeep = 1;
+           var l = window.location;
+           l.replace(
+               l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+               l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + 
+               '/?p=/' +
+               l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+               (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+               l.hash
+           );
+       </script>
+   </head>
+   <body></body>
+   </html>
    ```
 
-### Step 3: Build and Deploy
+### 2. GitHub Actions Deployment
 
-1. **Build the Application**
-   ```bash
-   npm run build
-   ```
-
-2. **Deploy to GitHub Pages**
-   ```bash
-   npm run deploy
-   ```
-
-### Step 4: Domain Configuration
-
-#### A. GitHub Pages Settings
-
-1. Go to your repository on GitHub
-2. Navigate to **Settings** → **Pages**
-3. Under **Source**, select "Deploy from a branch"
-4. Choose **gh-pages** branch and **/ (root)** folder
-5. Under **Custom domain**, enter: `theupliftproject.us`
-6. Check "Enforce HTTPS"
-
-#### B. DNS Configuration
-
-Configure your domain's DNS settings with your domain registrar:
-
-**For Apex Domain (theupliftproject.us):**
-```
-Type: A
-Name: @
-Value: 185.199.108.153
-TTL: 3600
-
-Type: A  
-Name: @
-Value: 185.199.109.153
-TTL: 3600
-
-Type: A
-Name: @
-Value: 185.199.110.153  
-TTL: 3600
-
-Type: A
-Name: @
-Value: 185.199.111.153
-TTL: 3600
-```
-
-**For WWW Subdomain:**
-```
-Type: CNAME
-Name: www
-Value: your-username.github.io
-TTL: 3600
-```
-
-#### C. Create CNAME File
-
-Create a file named `CNAME` in your `public` directory:
-```
-theupliftproject.us
-```
-
-### Step 5: Automated Deployment with GitHub Actions
-
-Create `.github/workflows/deploy.yml`:
-
+**.github/workflows/deploy.yml**
 ```yaml
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
@@ -146,133 +65,148 @@ jobs:
     
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       
     - name: Setup Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '20'
         cache: 'npm'
         
     - name: Install dependencies
       run: npm ci
       
-    - name: Build
-      run: npm run build
+    - name: Build static site
+      run: npm run build:static
+      env:
+        VITE_GA_MEASUREMENT_ID: ${{ secrets.VITE_GA_MEASUREMENT_ID }}
+        VITE_OPENAI_API_KEY: ${{ secrets.VITE_OPENAI_API_KEY }}
+        
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
       
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      if: github.ref == 'refs/heads/main'
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./dist/public
-        cname: theupliftproject.us
+        path: './dist'
+        
+    - name: Deploy to GitHub Pages
+      uses: actions/deploy-pages@v4
 ```
 
-### Step 6: Environment Variables
+## Admin Dashboard Setup
 
-For production deployment, ensure any environment variables are properly configured:
+### Admin Access
+- **Login URL**: `theupliftproject.us/admin-login`
+- **Password**: `upliftproject50k2025$$$$`
+- **Dashboard**: `theupliftproject.us/admin`
 
-1. **In GitHub Repository Settings:**
-   - Go to **Settings** → **Secrets and variables** → **Actions**
-   - Add any required secrets (API keys, etc.)
+### Admin Features
+- Update fundraising progress (current amount, goal, donor count)
+- Create and manage campaign updates
+- Publish/unpublish content
+- Mobile-responsive interface
+- Real-time progress visualization
 
-2. **Update Build Process:**
-   Make sure your build process includes environment variables:
-   ```bash
-   # Example for build with environment variables
-   VITE_API_URL=https://your-api.com npm run build
-   ```
+## OpenAI Chatbot Integration
 
-### Step 7: Verification
+### 1. Get OpenAI API Key
 
-1. **Check Deployment Status**
-   - Monitor the Actions tab in your GitHub repository
-   - Verify the build completes successfully
+1. Visit [OpenAI Platform](https://platform.openai.com)
+2. Create account or sign in
+3. Go to API Keys section
+4. Create new secret key
+5. Copy the key (starts with `sk-`)
 
-2. **Test Domain**
-   - Visit `https://theupliftproject.us`
-   - Verify all functionality works
-   - Test responsive design on mobile devices
+### 2. Add API Key to GitHub
 
-3. **SSL Certificate**
-   - GitHub Pages automatically provides SSL
-   - Verify HTTPS is working: `https://theupliftproject.us`
+1. Go to Repository Settings
+2. Navigate to Secrets and Variables > Actions
+3. Click "New repository secret"
+4. **Name**: `VITE_OPENAI_API_KEY`
+5. **Value**: Your OpenAI API key (sk-...)
 
-### Troubleshooting
+### 3. Chatbot Features (when API key is added)
 
-#### Common Issues
+**Automatic Integration:**
+- Chatbot button appears on website
+- Interactive Q&A about the campaign
+- Information about blood cancer research
+- Team and donation guidance
+- No additional setup required
 
-1. **404 Errors on Refresh**
-   - Create a `404.html` file that redirects to `index.html`
-   - For SPAs, this handles client-side routing
+**Cost Estimates:**
+- ~$0.015 per 1K input tokens
+- ~$0.060 per 1K output tokens  
+- Typical conversation: $0.02-0.10
+- Budget: $5-15/month for regular use
 
-2. **CSS/JS Not Loading**
-   - Verify the base path in `vite.config.ts`
-   - Check that assets are using relative paths
+### 4. Without OpenAI Key
+- Website works normally without chatbot
+- All other features remain functional
+- Admin dashboard works independently
 
-3. **Domain Not Resolving**
-   - DNS changes can take 24-48 hours to propagate
-   - Use `dig theupliftproject.us` to check DNS status
+## Google Analytics (Optional)
 
-4. **Build Failures**
-   - Check Node.js version compatibility
-   - Verify all dependencies are in `package.json`
+### Setup
+1. Create Google Analytics account
+2. Get Measurement ID (G-XXXXXXXXXX)
+3. Add to GitHub Secrets as `VITE_GA_MEASUREMENT_ID`
 
-### Maintenance
+## Deployment Process
 
-#### Regular Updates
-1. Update dependencies regularly
-2. Monitor GitHub Actions for failed builds
-3. Renew domain registration annually
-4. Review and update content regularly
+### Automatic Deployment
+Every push to `main` branch automatically:
+1. Builds the static site
+2. Deploys to GitHub Pages
+3. Updates theupliftproject.us
 
-#### Content Updates
-1. Make changes to your local repository
-2. Push to main branch
-3. GitHub Actions will automatically redeploy
+### Manual Deployment
+```bash
+npm run build:static
+git add .
+git commit -m "Deploy updates"
+git push origin main
+```
 
-### Security Considerations
+## Verification Checklist
 
-1. **Secrets Management**
-   - Never commit API keys to the repository
-   - Use GitHub Secrets for sensitive data
+After deployment, verify:
+- [ ] Main site loads: https://theupliftproject.us
+- [ ] Admin login works with new password
+- [ ] All images display correctly  
+- [ ] Donation links function
+- [ ] Mobile responsiveness
+- [ ] Chatbot appears (if API key added)
 
-2. **HTTPS Enforcement**
-   - Always use HTTPS in production
-   - GitHub Pages provides free SSL certificates
+## Troubleshooting
 
-3. **Domain Security**
-   - Enable domain lock with your registrar
-   - Use strong passwords for domain management
+**Site not updating:**
+- Check GitHub Actions tab for errors
+- Clear browser cache
+- Verify CNAME file exists
 
-### Performance Optimization
+**Admin dashboard issues:**
+- Use correct password: `upliftproject50k2025$$$$`
+- Try incognito/private browsing
+- Check browser console for errors
 
-1. **Asset Optimization**
-   - Images are optimized during build
-   - CSS and JS are minified automatically
+**Chatbot not working:**
+- Verify OpenAI API key in GitHub Secrets
+- Check API key format (starts with sk-)
+- Ensure sufficient API credits
 
-2. **Caching**
-   - GitHub Pages provides CDN caching
-   - Set appropriate cache headers
+## Support
 
-3. **Monitoring**
-   - Use Google Analytics for traffic monitoring
-   - Monitor Core Web Vitals for performance
+For issues or questions:
+- Team Contact: rehanraj0911@gmail.com
+- Check repository documentation
+- Review GitHub Actions logs for deployment errors
 
 ---
 
-## Quick Deployment Checklist
-
-- [ ] Repository created on GitHub
-- [ ] `gh-pages` package installed
-- [ ] `package.json` scripts configured
-- [ ] Application builds successfully
-- [ ] Domain DNS configured
-- [ ] CNAME file created
-- [ ] GitHub Pages settings configured
-- [ ] GitHub Actions workflow created
-- [ ] SSL certificate verified
-- [ ] Website accessible at `https://theupliftproject.us`
-
-For support with this deployment, contact the development team or refer to the [GitHub Pages documentation](https://docs.github.com/en/pages).
+**Quick Reference:**
+- Website: https://theupliftproject.us
+- Admin: https://theupliftproject.us/admin-login  
+- Password: `upliftproject50k2025$$$$`
+- Required Secrets: `VITE_OPENAI_API_KEY`, `VITE_GA_MEASUREMENT_ID`

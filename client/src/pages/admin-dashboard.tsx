@@ -53,7 +53,7 @@ export default function AdminDashboard() {
 
   useEffect(() => {
     // Check authentication
-    if (!authToken || authToken !== 'upliftproj') {
+    if (!authToken || authToken !== 'upliftproject50k2025$$$$') {
       navigate('/admin-login');
       return;
     }

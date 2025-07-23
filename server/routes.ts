@@ -60,7 +60,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Simple admin authentication middleware
   const adminAuth = (req: any, res: any, next: any) => {
     const password = req.headers.authorization?.replace('Bearer ', '');
-    if (password === 'upliftproj') {
+    if (password === 'upliftproject50k2025$$$$') {
       next();
     } else {
       res.status(401).json({ error: 'Unauthorized' });
@@ -70,7 +70,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Admin API endpoints
   app.post('/api/admin/auth', (req, res) => {
     const { password } = req.body;
-    if (password === 'upliftproj') {
+    if (password === 'upliftproject50k2025$$$$') {
       res.json({ success: true, message: 'Authentication successful' });
     } else {
       res.status(401).json({ error: 'Invalid password' });
