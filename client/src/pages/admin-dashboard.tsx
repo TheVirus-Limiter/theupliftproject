@@ -62,22 +62,82 @@ export default function AdminDashboard() {
     loadDashboardData();
   }, [authToken, navigate]);
 
-  const apiRequest = async (url: string, options: RequestInit = {}) => {
-    const response = await fetch(url, {
-      ...options,
-      headers: {
-        ...options.headers,
-        'Authorization': `Bearer ${authToken}`,
-        'Content-Type': 'application/json',
-      },
-    });
-    
-    if (!response.ok) {
-      throw new Error(`API request failed: ${response.statusText}`);
+  // Check if we're in development or production
+const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname.includes('replit');
+
+const apiRequest = async (url: string, options: RequestInit = {}) => {
+  if (!isDevelopment) {
+    // For GitHub Pages (static), use localStorage-based storage
+    return handleStaticApiRequest(url, options);
+  }
+  
+  const response = await fetch(url, {
+    ...options,
+    headers: {
+      ...options.headers,
+      'Authorization': `Bearer ${authToken}`,
+      'Content-Type': 'application/json',
+    },
+  });
+  
+  if (!response.ok) {
+    throw new Error(`API request failed: ${response.statusText}`);
+  }
+  
+  return response.json();
+};
+
+// Handle API requests for static GitHub Pages deployment
+const handleStaticApiRequest = async (url: string, options: RequestInit = {}) => {
+  const method = options.method || 'GET';
+  
+  if (url === '/api/admin/fundraising-progress') {
+    if (method === 'GET') {
+      const saved = localStorage.getItem('fundraisingProgress');
+      return saved ? JSON.parse(saved) : { id: 1, currentAmount: 0, goalAmount: 50000, donorCount: 0 };
+    } else if (method === 'PUT') {
+      const data = JSON.parse(options.body as string);
+      localStorage.setItem('fundraisingProgress', JSON.stringify(data));
+      return data;
     }
+  }
+  
+  if (url === '/api/admin/campaign-updates') {
+    if (method === 'GET') {
+      const saved = localStorage.getItem('campaignUpdates');
+      return saved ? JSON.parse(saved) : [];
+    } else if (method === 'POST') {
+      const updates = JSON.parse(localStorage.getItem('campaignUpdates') || '[]');
+      const newUpdate = JSON.parse(options.body as string);
+      newUpdate.id = Date.now();
+      newUpdate.createdAt = new Date().toISOString();
+      updates.push(newUpdate);
+      localStorage.setItem('campaignUpdates', JSON.stringify(updates));
+      return newUpdate;
+    }
+  }
+  
+  if (url.startsWith('/api/admin/campaign-updates/')) {
+    const id = parseInt(url.split('/').pop() || '0');
+    const updates = JSON.parse(localStorage.getItem('campaignUpdates') || '[]');
     
-    return response.json();
-  };
+    if (method === 'PUT') {
+      const updateData = JSON.parse(options.body as string);
+      const index = updates.findIndex((u: any) => u.id === id);
+      if (index !== -1) {
+        updates[index] = { ...updates[index], ...updateData };
+        localStorage.setItem('campaignUpdates', JSON.stringify(updates));
+        return updates[index];
+      }
+    } else if (method === 'DELETE') {
+      const filtered = updates.filter((u: any) => u.id !== id);
+      localStorage.setItem('campaignUpdates', JSON.stringify(filtered));
+      return { success: true };
+    }
+  }
+  
+  throw new Error('API endpoint not found');
+};
 
   const loadDashboardData = async () => {
     try {
