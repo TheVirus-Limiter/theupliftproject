@@ -13,6 +13,7 @@ import BloodCancerFacts from "@/components/blood-cancer-facts";
 import FAQ from "@/components/faq";
 import CallToAction from "@/components/call-to-action";
 import Footer from "@/components/footer";
+import GitHubPagesChatbot from "@/components/github-pages-chatbot";
 import { updateSEO, seoData } from "@/utils/seo";
 
 export default function Home() {
@@ -36,6 +37,7 @@ export default function Home() {
       <FAQ />
       <CallToAction />
       <Footer />
+      <GitHubPagesChatbot />
     </div>
   );
 }
