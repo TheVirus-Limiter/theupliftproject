@@ -80,12 +80,16 @@ export default function HonoredHero() {
 
         {/* Donate Button */}
         <div className="text-center mt-12">
-          <Button 
+                   <Button 
             onClick={handleDonateClick}
-            className="bg-uplift-red text-white px-12 py-4 rounded-full text-lg font-semibold hover:bg-red-800 transition-colors shadow-lg"
+            className="relative bg-uplift-red text-white px-12 py-4 rounded-full text-lg font-semibold shadow-lg overflow-hidden group transition-all duration-400 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/40"
           >
-            <Heart className="w-5 h-5 mr-2" />
-            Donate in Miguel's Honor
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+            <div className="absolute inset-0 bg-white/15 -translate-y-full group-hover:translate-y-full transition-transform duration-600 rotate-12"></div>
+            <div className="absolute -inset-2 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-300/40 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-800 skew-x-12"></div>
+            <Heart className="w-5 h-5 mr-2 relative z-10 group-hover:scale-125 group-hover:text-blue-100 transition-all duration-300 animate-pulse group-hover:animate-bounce group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,1)]" />
+            <span className="relative z-10 group-hover:tracking-wide group-hover:drop-shadow-[0_0_8px_rgba(59,130,246,0.8)] transition-all duration-400">Donate in Miguel's Honor</span>
           </Button>
           <p className="text-gray-600 mt-4 text-sm">
             Every donation helps support families like Miguel's
