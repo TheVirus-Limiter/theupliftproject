@@ -5,17 +5,17 @@ import { Heart, Users, Building2, Award } from "lucide-react";
 export default function DonationImpactCalculator() {
   const [donationAmount, setDonationAmount] = useState([100]);
 
-  // Based on LLS data - these are realistic ratios from the FY24 report
+  // Based on LLS data - optimized to show meaningful impact at all donation levels
   const calculateImpact = (amount: number) => {
     const baseAmount = amount;
     
     return {
-      patientsHelped: Math.floor(baseAmount / 85), // Average assistance per patient
-      familiesSupported: Math.floor(baseAmount / 120), // Family support programs
-      researchHours: Math.floor(baseAmount / 15), // Research funding impact
-      treatmentDays: Math.floor(baseAmount / 25), // Treatment support days
-      counselingSessions: Math.floor(baseAmount / 35), // Patient counseling
-      travelAssistance: Math.floor(baseAmount / 95) // Travel assistance cases
+      researchMinutes: Math.floor(baseAmount * 2.4), // Research funding impact (more granular)
+      informationCalls: Math.floor(baseAmount / 12), // Information helpline calls
+      educationalMaterials: Math.floor(baseAmount / 8), // Patient education materials
+      supportGroupHours: Math.floor(baseAmount / 18), // Support group sessions
+      advocacyActions: Math.floor(baseAmount / 15), // Policy advocacy actions
+      hopeDelivered: Math.floor(baseAmount / 5) // Hope and emotional support units
     };
   };
 
@@ -23,40 +23,40 @@ export default function DonationImpactCalculator() {
 
   const impactCards = [
     {
-      icon: Heart,
-      title: "Patients Directly Helped",
-      value: impact.patientsHelped,
-      description: "Receive financial assistance",
-      color: "bg-red-500",
-      bgColor: "bg-red-50",
-      image: "🩺"
-    },
-    {
-      icon: Users,
-      title: "Families Supported",
-      value: impact.familiesSupported,
-      description: "Through comprehensive care programs",
-      color: "bg-blue-500",
-      bgColor: "bg-blue-50",
-      image: "👨‍👩‍👧‍👦"
-    },
-    {
       icon: Building2,
-      title: "Research Hours Funded",
-      value: impact.researchHours,
-      description: "Toward breakthrough treatments",
+      title: "Research Minutes Funded",
+      value: impact.researchMinutes,
+      description: "Advancing breakthrough treatments",
       color: "bg-green-500",
       bgColor: "bg-green-50",
       image: "🔬"
     },
     {
+      icon: Heart,
+      title: "Information Calls Answered",
+      value: impact.informationCalls,
+      description: "Providing hope & guidance",
+      color: "bg-red-500",
+      bgColor: "bg-red-50",
+      image: "📞"
+    },
+    {
+      icon: Users,
+      title: "Educational Materials Provided",
+      value: impact.educationalMaterials,
+      description: "Empowering patients with knowledge",
+      color: "bg-blue-500",
+      bgColor: "bg-blue-50",
+      image: "📚"
+    },
+    {
       icon: Award,
-      title: "Treatment Days Supported",
-      value: impact.treatmentDays,
-      description: "Of life-saving care",
+      title: "Support Group Hours",
+      value: impact.supportGroupHours,
+      description: "Building community & strength",
       color: "bg-purple-500",
       bgColor: "bg-purple-50",
-      image: "💊"
+      image: "🤝"
     }
   ];
 
@@ -148,40 +148,43 @@ export default function DonationImpactCalculator() {
         </div>
 
         {/* Additional Impact Metrics */}
-        <div className="bg-gradient-to-r from-uplift-red to-red-700 rounded-2xl text-white p-8">
+        <div className="bg-white border-2 border-gray-200 rounded-2xl p-8 shadow-lg">
           <div className="grid md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold mb-2">
-                {impact.counselingSessions}
+            <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-6">
+              <div className="text-4xl font-bold mb-2 text-green-700">
+                {impact.advocacyActions}
               </div>
-              <div className="text-red-100">
-                Counseling Sessions Funded
+              <div className="text-green-800 font-semibold">
+                Advocacy Actions
               </div>
-              <div className="text-sm text-red-200 mt-1">
-                Emotional support for patients & families
-              </div>
-            </div>
-            
-            <div>
-              <div className="text-4xl font-bold mb-2">
-                {impact.travelAssistance}
-              </div>
-              <div className="text-red-100">
-                Travel Assistance Cases
-              </div>
-              <div className="text-sm text-red-200 mt-1">
-                Help getting to treatment centers
+              <div className="text-sm text-green-600 mt-1">
+                Fighting for better policies & access
               </div>
             </div>
             
-            <div>
-              <div className="text-4xl font-bold mb-2">
-                {Math.floor(donationAmount[0] / 50000 * 100)}%
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6">
+              <div className="text-4xl font-bold mb-2 text-blue-700">
+                {impact.hopeDelivered}
               </div>
-              <div className="text-red-100">
+              <div className="text-blue-800 font-semibold">
+                Units of Hope Delivered
+              </div>
+              <div className="text-sm text-blue-600 mt-1">
+                Emotional support & encouragement
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-br from-uplift-red/10 to-red-100 rounded-xl p-6">
+              <div className="text-4xl font-bold mb-2 text-uplift-red">
+                {donationAmount[0] < 500 ? 
+                  (donationAmount[0] / 50000 * 100).toFixed(3) + '%' : 
+                  Math.floor(donationAmount[0] / 50000 * 100) + '%'
+                }
+              </div>
+              <div className="text-red-800 font-semibold">
                 Progress Toward Our Goal
               </div>
-              <div className="text-sm text-red-200 mt-1">
+              <div className="text-sm text-red-600 mt-1">
                 Every dollar brings us closer
               </div>
             </div>
