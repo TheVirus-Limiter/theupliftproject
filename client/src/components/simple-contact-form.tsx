@@ -62,7 +62,7 @@ export default function SimpleContactForm() {
             </div>
             <div className="mt-4 space-y-1 text-sm text-gray-600">
               <p>rehanraj0911@gmail.com</p>
-              <p>(210) 992-6174</p>
+              <p>(726) 220-7209</p>
             </div>
           </div>
         </Card>
