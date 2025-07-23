@@ -399,7 +399,7 @@ export default function Corporations() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <Button
                   variant="outline"
-                  className="flex items-center border-uplift-red text-uplift-red hover:bg-uplift-red hover:text-white"
+                  className="flex items-center border-uplift-red text-uplift-red hover:shadow-lg"
                   onClick={() => window.open('mailto:rehanraj0911@gmail.com?subject=Corporate Partnership Inquiry - The Uplift Project', '_blank')}
                 >
                   <Mail className="w-5 h-5 mr-2" />
@@ -407,8 +407,8 @@ export default function Corporations() {
                 </Button>
                 <Button
                   variant="outline"
-                  className="flex items-center border-uplift-red text-uplift-red hover:bg-uplift-red hover:text-white"
-                  onClick={() => window.open('tel:2109926174', '_blank')}
+                  className="flex items-center border-uplift-red text-uplift-red hover:shadow-lg"
+                  onClick={() => window.open('tel:7262207209', '_blank')}
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   Call Us
@@ -416,7 +416,7 @@ export default function Corporations() {
               </div>
               <div className="mt-4 space-y-1 text-sm text-gray-600">
                 <p>rehanraj0911@gmail.com</p>
-                <p>(210) 992-6174</p>
+                <p>(726) 220-7209</p>
               </div>
             </div>
           </Card>
