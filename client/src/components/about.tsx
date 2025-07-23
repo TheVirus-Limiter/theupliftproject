@@ -42,17 +42,18 @@ export default function About() {
                 <p className="text-gray-600">Leukemia & Lymphoma Society</p>
               </div>
             </div>
-            
-            <div className="mt-8 flex justify-center">
-              <div className="p-0.5 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400">
+                        <div className="mt-8 flex justify-center">
+              <div className="relative p-0.5 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 group hover:p-1 transition-all duration-300">
+                <div className="absolute -inset-2 bg-gradient-to-r from-purple-400 via-pink-400 to-orange-300 rounded-full opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-300"></div>
                 <button 
                   onClick={() => window.open("https://www.instagram.com/p/DMdoluLSK0l/?img_index=1", "_blank")}
-                  className="bg-white text-gray-700 px-6 py-3 rounded-full text-base font-semibold hover:bg-gray-50 transition-colors flex items-center shadow-lg"
+                  className="relative bg-white text-gray-700 px-6 py-3 rounded-full text-base font-semibold flex items-center shadow-lg overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl group-hover:bg-gradient-to-r group-hover:from-purple-50 group-hover:to-orange-50"
                 >
-                  <div className="w-5 h-5 mr-3 rounded-sm bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center">
-                    <Instagram className="w-4 h-4 text-white" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-100/50 via-pink-100/50 to-orange-100/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="w-5 h-5 mr-3 rounded-sm bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400 flex items-center justify-center relative z-10 group-hover:rotate-12 group-hover:scale-110 transition-transform duration-300">
+                    <Instagram className="w-4 h-4 text-white group-hover:drop-shadow-sm transition-all duration-300" />
                   </div>
-                  Meet Our Team
+                  <span className="relative z-10 group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:via-pink-600 group-hover:to-orange-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">Meet Our Team</span>
                 </button>
               </div>
             </div>
