@@ -58,10 +58,13 @@ export default function FundraisingProgress() {
         <div className="flex justify-center">
           <Button 
             onClick={handleDonateClick}
-            className="bg-uplift-red text-white px-12 py-4 rounded-full text-xl font-semibold hover:bg-red-800 transition-colors shadow-lg flex items-center justify-center"
+            className="relative bg-uplift-red text-white px-12 py-4 rounded-full text-xl font-semibold shadow-lg flex items-center justify-center overflow-hidden group transition-all duration-400 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/30"
           >
-            <Heart className="w-5 h-5 mr-2" />
-            <span>Support Our Mission</span>
+            <div className="absolute inset-0 bg-gradient-to-r from-red-700 via-red-600 to-red-800 opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+            <div className="absolute inset-0 bg-white/15 -rotate-45 -translate-x-full group-hover:translate-x-full transition-transform duration-700 w-12"></div>
+            <div className="absolute -inset-1 bg-gradient-to-r from-red-300 to-red-500 rounded-full opacity-0 group-hover:opacity-40 blur transition-opacity duration-400"></div>
+            <Heart className="w-5 h-5 mr-2 relative z-10 group-hover:scale-110 group-hover:text-red-100 transition-all duration-300 group-hover:drop-shadow-lg" />
+            <span className="relative z-10 group-hover:drop-shadow-lg transition-all duration-300">Support Our Mission</span>
           </Button>
         </div>
       </div>
