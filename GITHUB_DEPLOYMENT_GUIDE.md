@@ -214,6 +214,7 @@ Value: thevirus-limiter.github.io
 - [ ] "Our Team" button links to Instagram
 - [ ] Donation calculator works
 - [ ] Contact forms function properly
-- [ ] Images and assets load correctly
+- [ ] All images load from GitHub file storage (no Discord links)
+- [ ] Footer shows "Website made by Rehan Raj"
 
 Your site should now be live at https://theupliftproject.us with all the latest features!

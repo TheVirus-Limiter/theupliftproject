@@ -10,19 +10,19 @@ interface Logo {
 const logos: Logo[] = [
   {
     id: 1,
-    src: "https://media.discordapp.net/attachments/1212245437080408124/1395802004986531983/5096bfd1-9d9c-4785-bf71-75bc530e7a96.png?ex=687bc56a&is=687a73ea&hm=14f8ee42b6e3eccd6d7ea2d8778902bba919cf540fabebaee7595215de437f9c&=&format=webp&quality=lossless&width=595&height=595",
+    src: "https://thevirus-limiter.github.io/filestorage/lhssa.png",
     alt: "LHSSA Logo",
     link: "https://www.lhssa.org/"
   },
   {
     id: 2,
-    src: "https://media.discordapp.net/attachments/1212245437080408124/1395802321816129607/LLS_logo_for_digital_2_1.png?ex=687bc5b6&is=687a7436&hm=15c4c5e1c9984469b0a401a0b4bbde0f09179f0bbdfda3f2ba7c6242acd5ae6b&=&format=webp&quality=lossless&width=1295&height=423",
+    src: "https://thevirus-limiter.github.io/filestorage/llslogo.png",
     alt: "Leukemia & Lymphoma Society",
     link: "https://www.lls.org/"
   },
   {
     id: 3,
-    src: "https://media.discordapp.net/attachments/1212245437080408124/1395803610050334750/Your-Logo-here.png?ex=687bc6e9&is=687a7569&hm=c0f0db561ec0a4c2042c9272ad2ad84434df1d0155c3f70319a18ffe4bfd9e30&=&format=webp&quality=lossless&width=438&height=281",
+    src: "https://thevirus-limiter.github.io/filestorage/yourlogohere.png",
     alt: "Your Logo Here",
     link: "https://theupliftproject.us/corporations"
   }

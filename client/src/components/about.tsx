@@ -60,7 +60,7 @@ export default function About() {
             <div className="mt-8 pt-8 border-t border-gray-200">
               <div className="flex justify-center">
                 <img 
-                  src="https://media.discordapp.net/attachments/1212245437080408124/1395527132087713923/LLS_logo_for_digital_2_1_1.png?ex=687ac56b&is=687973eb&hm=ace521b14d83aae281a285b32148cca456d8adccb527896d745cf0d4ac7ac489&=&format=webp&quality=lossless&width=1295&height=423" 
+                  src="https://thevirus-limiter.github.io/filestorage/llslogo.png" 
                   alt="Leukemia & Lymphoma Society" 
                   className="h-16 w-auto opacity-80"
                 />

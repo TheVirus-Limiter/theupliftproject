@@ -27,7 +27,7 @@ export default function HonoredHero() {
               <div className="lg:w-1/2 flex justify-center lg:justify-start">
                 <div className="w-full max-w-sm lg:max-w-none lg:w-full lg:h-full">
                   <img
-                    src="https://media.discordapp.net/attachments/1212245437080408124/1395807174755618948/image.png?ex=687bca3b&is=687a78bb&hm=124f61085ef638a39831fac90b2848741fb760a5f2c60b32f6ba2367d256da9b&=&format=webp&quality=lossless&width=655&height=765"
+                    src="https://thevirus-limiter.github.io/filestorage/honoredhero.png"
                     alt="Miguel Roman"
                     className="w-full h-80 lg:h-full object-cover object-center"
                   />

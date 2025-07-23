@@ -277,7 +277,7 @@ export default function Corporations() {
                   variant="outline" 
                   className="w-full"
                   onClick={() => {
-                    window.open('https://cdn.discordapp.com/attachments/1212245437080408124/1395612526724644985/SponsorshipPacket.pdf?ex=687b14f3&is=6879c373&hm=3b46d78217dbebdd0b5839aa4b9b02118b3b60e9b9433f72e25612e4ce5549b0&', '_blank');
+                    window.open('https://thevirus-limiter.github.io/filestorage/sponsorshippacket.pdf', '_blank');
                   }}
                 >
                   <Download className="w-4 h-4 mr-2" />
@@ -295,7 +295,7 @@ export default function Corporations() {
                   variant="outline" 
                   className="w-full"
                   onClick={() => {
-                    window.open('https://cdn.discordapp.com/attachments/1212245437080408124/1395612526724644985/SponsorshipPacket.pdf?ex=687b14f3&is=6879c373&hm=3b46d78217dbebdd0b5839aa4b9b02118b3b60e9b9433f72e25612e4ce5549b0&', '_blank');
+                    window.open('https://thevirus-limiter.github.io/filestorage/sponsorshippacket.pdf', '_blank');
                   }}
                 >
                   <Download className="w-4 h-4 mr-2" />
@@ -313,7 +313,7 @@ export default function Corporations() {
                   variant="outline" 
                   className="w-full"
                   onClick={() => {
-                    window.open('https://cdn.discordapp.com/attachments/1212245437080408124/1395612526724644985/SponsorshipPacket.pdf?ex=687b14f3&is=6879c373&hm=3b46d78217dbebdd0b5839aa4b9b02118b3b60e9b9433f72e25612e4ce5549b0&', '_blank');
+                    window.open('https://thevirus-limiter.github.io/filestorage/sponsorshippacket.pdf', '_blank');
                   }}
                 >
                   <Download className="w-4 h-4 mr-2" />
