@@ -33,11 +33,19 @@ export default function Navigation() {
     setIsMenuOpen(false);
   };
 
-  const handleLogoClick = () => {
+ const handleLogoClick = () => {
+  // If we're already on the home page, just scroll to top
+  if (location === '/') {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else {
+    // Navigate to home page first, then scroll to top
     navigate('/');
-    setIsMenuOpen(false);
-  };
-
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  }
+  setIsMenuOpen(false);
+};
   return (
     <nav className="bg-white shadow-sm fixed w-full z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
