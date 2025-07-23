@@ -72,14 +72,6 @@ export default function Navigation() {
             >
               Ways to Donate
             </button>
-            <a 
-              href="https://www.instagram.com/p/DMdoluLSK0l/?img_index=1" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-gray-700 hover:text-uplift-red transition-colors"
-            >
-              Our Team
-            </a>
             <button 
               onClick={() => handleSectionClick("faq")}
               className="text-gray-700 hover:text-uplift-red transition-colors"
@@ -131,15 +123,6 @@ export default function Navigation() {
               >
                 Ways to Donate
               </button>
-              <a 
-                href="https://www.instagram.com/p/DMdoluLSK0l/?img_index=1" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-700 hover:text-uplift-red transition-colors py-2 text-left"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Our Team
-              </a>
               <button 
                 onClick={() => handleSectionClick("faq")}
                 className="text-gray-700 hover:text-uplift-red transition-colors py-2 text-left"
