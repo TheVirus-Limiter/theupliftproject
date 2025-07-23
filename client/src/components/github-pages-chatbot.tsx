@@ -81,12 +81,19 @@ Be helpful, encouraging, and focused on the mission. Keep responses concise and 
     setIsLoading(true);
 
     try {
-      // Note: In production, you'll need to add your OPENAI_API_KEY
-      // For GitHub Pages, this would need to be handled differently (see instructions below)
+      // Check if API key is available
+      const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+      console.log('API Key available:', !!apiKey);
+      console.log('API Key prefix:', apiKey ? apiKey.substring(0, 10) + '...' : 'none');
+      
+      if (!apiKey) {
+        throw new Error('OpenAI API key not configured');
+      }
+      
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
-          'Authorization': `Bearer ${process.env.VITE_OPENAI_API_KEY || 'your-api-key-here'}`,
+          'Authorization': `Bearer ${apiKey}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
@@ -101,7 +108,9 @@ Be helpful, encouraging, and focused on the mission. Keep responses concise and 
       });
 
       if (!response.ok) {
-        throw new Error('API request failed');
+        const errorData = await response.text();
+        console.error('OpenAI API Error:', response.status, errorData);
+        throw new Error(`OpenAI API error: ${response.status}`);
       }
 
       const data = await response.json();
@@ -113,11 +122,27 @@ Be helpful, encouraging, and focused on the mission. Keep responses concise and 
       };
 
       setMessages(prev => [...prev, botMessage]);
-    } catch (error) {
+    } catch (error: any) {
       console.error('Chat error:', error);
+      console.error('Error details:', {
+        message: error?.message || 'Unknown error',
+        stack: error?.stack,
+        apiKey: !!import.meta.env.VITE_OPENAI_API_KEY
+      });
+      
+      let errorText = "I'm having trouble connecting right now. You can always contact us directly at rehanraj0911@gmail.com or check out our Instagram @theupliftproject25!";
+      
+      if (error?.message?.includes('not configured')) {
+        errorText = "OpenAI API key is not configured. Please check the environment variables.";
+      } else if (error?.message?.includes('401')) {
+        errorText = "Invalid API key. Please check your OpenAI API key configuration.";
+      } else if (error?.message?.includes('429')) {
+        errorText = "Rate limit exceeded. Please try again in a moment.";
+      }
+      
       const errorMessage: Message = {
         id: Date.now().toString() + '_error',
-        text: "I'm having trouble connecting right now. You can always contact us directly at rehanraj0911@gmail.com or check out our Instagram @theupliftproject25!",
+        text: errorText,
         isUser: false,
         timestamp: new Date()
       };
