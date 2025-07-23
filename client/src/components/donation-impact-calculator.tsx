@@ -18,11 +18,7 @@ export default function DonationImpactCalculator() {
         console.log("Popup blocked, using window.location redirect");
         window.location.href = "https://pages.lls.org/svoy/stx/svoysa26/rrajlf";
       }
-    } catch (error) {
-      console.error("Error opening donation page:", error);
-      // Fallback: direct redirect
-      window.location.href = "https://pages.lls.org/svoy/stx/svoysa26/rrajlf";
-    }
+    } 
   };
 
   // Based on LLS data - optimized to show meaningful impact at all donation levels
