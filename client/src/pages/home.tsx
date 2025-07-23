@@ -8,6 +8,7 @@ import HonoredHero from "@/components/honored-hero";
 import ImpactStats from "@/components/impact-stats";
 import InstagramPosts from "@/components/instagram-posts";
 import WaysToDonate from "@/components/ways-to-donate";
+import DonationImpactCalculator from "@/components/donation-impact-calculator";
 import BloodCancerFacts from "@/components/blood-cancer-facts";
 import FAQ from "@/components/faq";
 import CallToAction from "@/components/call-to-action";
@@ -30,6 +31,7 @@ export default function Home() {
       <ImpactStats />
       <InstagramPosts />
       <WaysToDonate />
+      <DonationImpactCalculator />
       <BloodCancerFacts />
       <FAQ />
       <CallToAction />
