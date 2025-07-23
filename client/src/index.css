@@ -111,7 +111,7 @@
 }
 
 .custom-pulse-5s {
-  animation: pulse-2s 2s infinite;
+  animation: pulse-5s 1s infinite;
 }
 
 /* 3D perspective utility */
