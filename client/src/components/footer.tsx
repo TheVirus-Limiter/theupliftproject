@@ -96,7 +96,7 @@ export default function Footer() {
           <div className="flex flex-col items-center space-y-6">
             <div className="flex justify-center">
               <img 
-                src="https://github.com/TheVirus-Limiter/filestorage/blob/main/svoywhite.png" 
+                src="https://thevirus-limiter.github.io/filestorage/svoywhite.png" 
                 alt="Student Visionaries of the Year" 
                 className="h-24 w-auto"
               />
