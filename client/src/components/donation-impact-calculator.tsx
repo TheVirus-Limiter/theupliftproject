@@ -16,7 +16,6 @@ export default function DonationImpactCalculator() {
     // Method 2: If popup blocked, use window.location
     if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
       console.log("Popup blocked, using window.location redirect");
-      window.location.href = "https://pages.lls.org/svoy/stx/svoysa26/rrajlf";
     }
   } catch (error) {
     console.error("Error opening donation page:", error);
