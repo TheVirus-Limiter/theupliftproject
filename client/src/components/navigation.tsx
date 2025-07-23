@@ -67,10 +67,10 @@ export default function Navigation() {
               Honored Hero
             </button>
             <button 
-              onClick={() => handleSectionClick("updates")}
+              onClick={() => handleSectionClick("ways-to-donate")}
               className="text-gray-700 hover:text-uplift-red transition-colors"
             >
-              Updates
+              Ways to Donate
             </button>
             <button 
               onClick={() => handleSectionClick("faq")}
@@ -118,10 +118,10 @@ export default function Navigation() {
                 Honored Hero
               </button>
               <button 
-                onClick={() => handleSectionClick("updates")}
+                onClick={() => handleSectionClick("ways-to-donate")}
                 className="text-gray-700 hover:text-uplift-red transition-colors py-2 text-left"
               >
-                Updates
+                Ways to Donate
               </button>
               <button 
                 onClick={() => handleSectionClick("faq")}
