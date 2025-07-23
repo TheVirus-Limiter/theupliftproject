@@ -4,22 +4,25 @@ import { Heart, Users, Building2, Award } from "lucide-react";
 
 export default function DonationImpactCalculator() {
   const [donationAmount, setDonationAmount] = useState([100]);
-    const handleDonateClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    console.log("Button clicked! Redirecting to donation page...");
+   const handleDonateClick = (e: React.MouseEvent) => {
+  e.preventDefault();
+  console.log("Button clicked! Redirecting to donation page...");
+  
+  // Try multiple methods for maximum compatibility
+  try {
+    // Method 1: window.open
+    const newWindow = window.open("https://pages.lls.org/svoy/stx/svoysa26/rrajlf", "_blank", "noopener,noreferrer");
     
-    // Try multiple methods for maximum compatibility
-    try {
-      // Method 1: window.open
-      const newWindow = window.open("https://pages.lls.org/svoy/stx/svoysa26/rrajlf", "_blank", "noopener,noreferrer");
-      
-      // Method 2: If popup blocked, use window.location
-      if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
-        console.log("Popup blocked, using window.location redirect");
-        window.location.href = "https://pages.lls.org/svoy/stx/svoysa26/rrajlf";
-      }
-    } 
-  };
+    // Method 2: If popup blocked, use window.location
+    if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+      console.log("Popup blocked, using window.location redirect");
+      window.location.href = "https://pages.lls.org/svoy/stx/svoysa26/rrajlf";
+    }
+  } catch (error) {
+    console.error("Error opening donation page:", error);
+    // Fallback: direct redirect
+  }
+};
 
   // Based on LLS data - optimized to show meaningful impact at all donation levels
   const calculateImpact = (amount: number) => {
