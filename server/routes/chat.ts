@@ -68,12 +68,21 @@ Always be helpful, informative, and encouraging. Direct people to donate, follow
 
 export async function handleChat(req: Request, res: Response) {
   try {
+    console.log('Chat API called with:', req.body);
+    
     const { message } = req.body;
 
     if (!message || typeof message !== 'string') {
+      console.log('Invalid message:', message);
       return res.status(400).json({ error: 'Message is required' });
     }
 
+    if (!process.env.OPENAI_API_KEY) {
+      console.error('OpenAI API key not found');
+      return res.status(500).json({ error: 'OpenAI API key not configured' });
+    }
+
+    console.log('Making OpenAI request...');
     const completion = await openai.chat.completions.create({
       model: "gpt-4o", // the newest OpenAI model is "gpt-4o" which was released May 13, 2024. do not change this unless explicitly requested by the user
       messages: [
@@ -91,13 +100,15 @@ export async function handleChat(req: Request, res: Response) {
     });
 
     const response = completion.choices[0]?.message?.content || "I'm sorry, I couldn't generate a response.";
+    console.log('OpenAI response received:', response.substring(0, 100) + '...');
 
     res.json({ response });
   } catch (error) {
     console.error('Chat API error:', error);
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
     res.status(500).json({ 
       error: 'Failed to process chat message',
-      details: error instanceof Error ? error.message : 'Unknown error'
+      details: errorMessage
     });
   }
 }
