@@ -1,6 +1,7 @@
 import { Heart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackEvent } from "@/lib/analytics";
+import { Instagram } from "lucide-react";
 
 export default function Hero() {
   const handleDonateClick = () => {
@@ -55,13 +56,18 @@ export default function Hero() {
             </Button>
           </div>
           <div className="mt-4 flex justify-center">
-            <Button 
-              onClick={() => window.open("https://www.instagram.com/p/DMdoluLSK0l/?img_index=1", "_blank")}
-              size="sm"
-              className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white px-4 py-2 rounded-full text-sm font-medium hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 transition-all duration-300 shadow-md"
-            >
-              Our Team
-            </Button>
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 p-0.5">
+                <Button 
+                  onClick={() => window.open("https://www.instagram.com/p/DMdoluLSK0l/?img_index=1", "_blank")}
+                  size="sm"
+                  className="bg-white text-gray-700 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-50 transition-colors w-full h-full relative z-10"
+                >
+                  <Instagram className="w-4 h-4 mr-2 text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 bg-clip-text" />
+                  Our Team
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
