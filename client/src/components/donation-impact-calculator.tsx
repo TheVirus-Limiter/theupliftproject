@@ -4,6 +4,26 @@ import { Heart, Users, Building2, Award } from "lucide-react";
 
 export default function DonationImpactCalculator() {
   const [donationAmount, setDonationAmount] = useState([100]);
+    const handleDonateClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    console.log("Button clicked! Redirecting to donation page...");
+    
+    // Try multiple methods for maximum compatibility
+    try {
+      // Method 1: window.open
+      const newWindow = window.open("https://pages.lls.org/svoy/stx/svoysa26/rrajlf", "_blank", "noopener,noreferrer");
+      
+      // Method 2: If popup blocked, use window.location
+      if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+        console.log("Popup blocked, using window.location redirect");
+        window.location.href = "https://pages.lls.org/svoy/stx/svoysa26/rrajlf";
+      }
+    } catch (error) {
+      console.error("Error opening donation page:", error);
+      // Fallback: direct redirect
+      window.location.href = "https://pages.lls.org/svoy/stx/svoysa26/rrajlf";
+    }
+  };
 
   // Based on LLS data - optimized to show meaningful impact at all donation levels
   const calculateImpact = (amount: number) => {
@@ -201,38 +221,35 @@ export default function DonationImpactCalculator() {
             {/* 3D Shadow Layer */}
             <div className="absolute inset-0 bg-gradient-to-r from-red-800 to-red-900 rounded-full blur-sm opacity-30 transform translate-y-2 translate-x-1 group-hover:translate-y-4 group-hover:translate-x-2 transition-transform duration-300"></div>
             
-            {/* Main Button with 3D Transform */}
-            <a
-              href="https://pages.lls.org/svoy/stx/svoysa26/rrajlf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="relative inline-flex items-center px-8 py-4 bg-uplift-red text-white text-lg font-semibold rounded-full shadow-2xl overflow-hidden transform-gpu transition-all duration-300 hover:scale-110 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(220,38,38,0.4)]"
+                        {/* Main Button with 3D Transform */}
+            <button
+              onClick={handleDonateClick}
+              className="relative inline-flex items-center px-8 py-4 bg-uplift-red text-white text-lg font-semibold rounded-full shadow-2xl overflow-hidden transform-gpu transition-all duration-300 hover:scale-110 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(220,38,38,0.4)] cursor-pointer z-20"
               style={{
                 transformStyle: 'preserve-3d',
                 transformOrigin: 'center center'
               }}
             >
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-red-600 via-red-700 to-red-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-red-600 via-red-700 to-red-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
               
               {/* Shine Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12 pointer-events-none"></div>
               
               {/* Depth Highlight */}
-              <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/20 to-transparent rounded-t-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/20 to-transparent rounded-t-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
               
               {/* Heart Icon with 3D Effect */}
-              <Heart className="w-6 h-6 mr-2 relative z-10 transform transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:drop-shadow-[0_4px_8px_rgba(255,255,255,0.3)]" />
+              <Heart className="w-6 h-6 mr-2 relative z-30 transform transition-all duration-300 group-hover:scale-125 group-hover:rotate-12 group-hover:drop-shadow-[0_4px_8px_rgba(255,255,255,0.3)] pointer-events-none" />
               
               {/* Text with 3D Shadow */}
-              <span className="relative z-10 transform transition-all duration-300">
+              <span className="relative z-30 transform transition-all duration-300 group-hover:text-shadow-[0_2px_4px_rgba(0,0,0,0.5)] pointer-events-none">
                 Make This Impact Real - Donate ${donationAmount[0].toLocaleString()}
               </span>
               
               {/* Bottom Edge Shadow for Depth */}
-              <div className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-t from-red-800/50 to-transparent rounded-b-full"></div>
-            </a>
-            
+              <div className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-t from-red-800/50 to-transparent rounded-b-full pointer-events-none"></div>
+            </button>
             {/* Pulsing Glow Ring */}
             <div className="absolute -inset-4 bg-gradient-to-r from-red-400 to-red-600 rounded-full opacity-0 group-hover:opacity-20 blur-xl custom-pulse-5s transition-opacity duration-300"></div>
           </div>
