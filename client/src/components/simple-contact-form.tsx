@@ -45,7 +45,7 @@ export default function SimpleContactForm() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button
                 variant="outline"
-                className="flex items-center border-uplift-red text-uplift-red hover:shadow-lg"
+                className="flex items-center border-uplift-red text-uplift-red"
                 onClick={() => window.open('mailto:rehanraj0911@gmail.com?subject=Corporate Partnership Inquiry - The Uplift Project', '_blank')}
               >
                 <Mail className="w-5 h-5 mr-2" />
@@ -53,8 +53,8 @@ export default function SimpleContactForm() {
               </Button>
               <Button
                 variant="outline"
-                className="flex items-center border-uplift-red text-uplift-red hover:shadow-lg"
-                onClick={() => window.open('tel:2109926174', '_blank')}
+                className="flex items-center border-uplift-red text-uplift-red"
+                onClick={() => window.open('tel:7262207209', '_blank')}
               >
                 <Phone className="w-5 h-5 mr-2" />
                 Call Us
