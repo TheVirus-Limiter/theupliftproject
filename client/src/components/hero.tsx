@@ -41,21 +41,23 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
               onClick={handleDonateClick}
-              className="bg-uplift-red text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-800 transition-colors shadow-lg"
+              className="relative bg-uplift-red text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg overflow-hidden group transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/30"
             >
-              <Heart className="w-5 h-5 mr-2" />
-              Donate Now
+              <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12"></div>
+              <Heart className="w-5 h-5 mr-2 relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
+              <span className="relative z-10">Donate Now</span>
             </Button>
             <Button 
               onClick={scrollToAbout}
               variant="outline"
-               className="border-2 border-uplift-red text-uplift-red px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg"
-
+              className="relative border-2 border-uplift-red text-uplift-red px-8 py-4 rounded-full text-lg font-semibold group overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-red-500/20 hover:border-red-700"
             >
-              Learn More
+              <div className="absolute inset-0 bg-uplift-red opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-red-500/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
+              <span className="relative z-10 group-hover:text-red-700 transition-colors duration-300">Learn More</span>
             </Button>
           </div>
-
         </div>
       </div>
     </section>
