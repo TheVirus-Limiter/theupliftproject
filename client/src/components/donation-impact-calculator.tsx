@@ -5,15 +5,15 @@ import { Heart, Users, Building2, Award } from "lucide-react";
 export default function DonationImpactCalculator() {
   const [donationAmount, setDonationAmount] = useState([100]);
 
-  // Based on LLS data - optimized to show meaningful impact at all donation levels
+  // Based on LLS data - focused on patient monetary/medical support
   const calculateImpact = (amount: number) => {
     const baseAmount = amount;
     
     return {
-      researchMinutes: Math.floor(baseAmount * 2.4), // Research funding impact (more granular)
-      informationCalls: Math.floor(baseAmount / 12), // Information helpline calls
-      educationalMaterials: Math.floor(baseAmount / 8), // Patient education materials
-      supportGroupHours: Math.floor(baseAmount / 18), // Support group sessions
+      copayAssistance: Math.floor(baseAmount * 0.8), // Co-pay assistance dollars
+      travelSupport: Math.floor(baseAmount / 25), // Travel assistance cases
+      treatmentDays: Math.floor(baseAmount / 15), // Days of treatment support
+      patientResources: Math.floor(baseAmount / 8), // Patient resource materials
       advocacyActions: Math.floor(baseAmount / 15), // Policy advocacy actions
       hopeDelivered: Math.floor(baseAmount / 5) // Hope and emotional support units
     };
@@ -23,40 +23,40 @@ export default function DonationImpactCalculator() {
 
   const impactCards = [
     {
-      icon: Building2,
-      title: "Research Minutes Funded",
-      value: impact.researchMinutes,
-      description: "Advancing breakthrough treatments",
-      color: "bg-green-500",
-      bgColor: "bg-green-50",
-      image: "🔬"
-    },
-    {
       icon: Heart,
-      title: "Information Calls Answered",
-      value: impact.informationCalls,
-      description: "Providing hope & guidance",
+      title: "Co-Pay Assistance",
+      value: `$${impact.copayAssistance}`,
+      description: "Helping cover treatment costs",
       color: "bg-red-500",
       bgColor: "bg-red-50",
-      image: "📞"
+      image: "💰"
     },
     {
       icon: Users,
-      title: "Educational Materials Provided",
-      value: impact.educationalMaterials,
-      description: "Empowering patients with knowledge",
+      title: "Travel Support Cases",
+      value: impact.travelSupport,
+      description: "Getting patients to treatment",
       color: "bg-blue-500",
       bgColor: "bg-blue-50",
-      image: "📚"
+      image: "🚗"
     },
     {
       icon: Award,
-      title: "Support Group Hours",
-      value: impact.supportGroupHours,
-      description: "Building community & strength",
+      title: "Treatment Days Supported",
+      value: impact.treatmentDays,
+      description: "Days of life-saving care",
+      color: "bg-green-500",
+      bgColor: "bg-green-50",
+      image: "🏥"
+    },
+    {
+      icon: Building2,
+      title: "Patient Resources",
+      value: impact.patientResources,
+      description: "Materials & support tools",
       color: "bg-purple-500",
       bgColor: "bg-purple-50",
-      image: "🤝"
+      image: "📋"
     }
   ];
 
@@ -132,7 +132,7 @@ export default function DonationImpactCalculator() {
                 </div>
                 
                 <div className="text-3xl font-bold text-gray-900 mb-2">
-                  {card.value.toLocaleString()}
+                  {typeof card.value === 'string' ? card.value : card.value.toLocaleString()}
                 </div>
                 
                 <h3 className="font-semibold text-gray-800 mb-1">
@@ -176,10 +176,14 @@ export default function DonationImpactCalculator() {
             
             <div className="bg-gradient-to-br from-uplift-red/10 to-red-100 rounded-xl p-6">
               <div className="text-4xl font-bold mb-2 text-uplift-red">
-                {donationAmount[0] < 500 ? 
-                  (donationAmount[0] / 50000 * 100).toFixed(3) + '%' : 
-                  Math.floor(donationAmount[0] / 50000 * 100) + '%'
-                }
+                {(() => {
+                  const percentage = donationAmount[0] / 50000 * 100;
+                  if (percentage < 1) {
+                    return parseFloat(percentage.toFixed(3)).toString() + '%';
+                  } else {
+                    return Math.floor(percentage) + '%';
+                  }
+                })()}
               </div>
               <div className="text-red-800 font-semibold">
                 Progress Toward Our Goal
