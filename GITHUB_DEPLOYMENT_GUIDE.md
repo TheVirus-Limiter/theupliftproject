@@ -117,7 +117,7 @@ jobs:
 git add .
 
 # Commit changes
-git commit -m "Update to latest version with chatbot and improved features"
+git commit -m "Update to latest version with improved features"
 
 # Push to GitHub
 git push origin main
@@ -135,9 +135,9 @@ git push origin main
    - Verify all features work:
      - Navigation
      - Donation calculator
-     - Chatbot (red button in bottom-right)
      - "Our Team" button
      - Mobile responsiveness
+     - All sections and animations
 
 ## Step 7: Manual Deployment (If Needed)
 
@@ -168,9 +168,11 @@ These files are crucial for deployment:
 2. Verify GitHub Pages settings point to `gh-pages` branch
 3. Check GitHub Actions for build errors
 
-### If the chatbot doesn't work:
-- The chatbot requires server functionality and won't work on static GitHub Pages
-- All other features will work correctly
+### Features on GitHub Pages:
+- All website features work perfectly on static GitHub Pages
+- Interactive donation calculator
+- Responsive design for all devices
+- Contact forms (open email client)
 
 ### If custom domain doesn't work:
 1. Verify DNS settings point to GitHub Pages IPs

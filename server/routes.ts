@@ -2,7 +2,6 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertCorporateInquirySchema } from "@shared/schema";
-import { handleChat } from "./routes/chat";
 // Simple email function using mailto (no external service required)
 function generateEmailBody(data: any): string {
   return `
@@ -52,9 +51,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.status(400).json({ error: 'Invalid request data' });
     }
   });
-
-  // Chat endpoint
-  app.post("/api/chat", handleChat);
 
   const httpServer = createServer(app);
 
