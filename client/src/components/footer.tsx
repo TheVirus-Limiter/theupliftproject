@@ -60,6 +60,14 @@ export default function Footer() {
                   Our Team
                 </a>
               </li>
+              <li>
+                <a 
+                  href="/admin-login" 
+                  className="hover:text-uplift-red transition-colors text-sm opacity-75"
+                >
+                  Admin
+                </a>
+              </li>
             </ul>
           </div>
           

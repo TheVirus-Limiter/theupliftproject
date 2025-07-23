@@ -173,25 +173,27 @@ export default function AdminDashboard() {
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <Settings className="w-8 h-8 text-uplift-red mr-3" />
-              <h1 className="text-xl font-semibold text-gray-900">
-                The Uplift Project - Admin Dashboard
+          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center h-auto sm:h-16 py-4">
+            <div className="flex items-center mb-4 sm:mb-0">
+              <Settings className="w-6 h-6 sm:w-8 sm:h-8 text-uplift-red mr-2 sm:mr-3" />
+              <h1 className="text-lg sm:text-xl font-semibold text-gray-900">
+                The Uplift Project - Admin
               </h1>
             </div>
-            <div className="flex items-center space-x-4">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-4 w-full sm:w-auto">
               <Button
                 variant="ghost"
                 onClick={() => navigate('/')}
-                className="text-gray-600"
+                className="text-gray-600 w-full sm:w-auto justify-start sm:justify-center"
+                size="sm"
               >
                 View Website
               </Button>
               <Button
                 variant="outline"
                 onClick={handleLogout}
-                className="text-red-600 border-red-600 hover:bg-red-50"
+                className="text-red-600 border-red-600 hover:bg-red-50 w-full sm:w-auto justify-start sm:justify-center"
+                size="sm"
               >
                 <LogOut className="w-4 h-4 mr-2" />
                 Logout
@@ -204,14 +206,16 @@ export default function AdminDashboard() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <Tabs defaultValue="progress" className="space-y-6">
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="progress" className="flex items-center">
-              <DollarSign className="w-4 h-4 mr-2" />
-              Fundraising Progress
+          <TabsList className="grid w-full grid-cols-1 sm:grid-cols-2 h-auto sm:h-10">
+            <TabsTrigger value="progress" className="flex items-center justify-center py-2 text-sm">
+              <DollarSign className="w-4 h-4 mr-1 sm:mr-2" />
+              <span className="hidden sm:inline">Fundraising Progress</span>
+              <span className="sm:hidden">Progress</span>
             </TabsTrigger>
-            <TabsTrigger value="updates" className="flex items-center">
-              <FileText className="w-4 h-4 mr-2" />
-              Campaign Updates
+            <TabsTrigger value="updates" className="flex items-center justify-center py-2 text-sm">
+              <FileText className="w-4 h-4 mr-1 sm:mr-2" />
+              <span className="hidden sm:inline">Campaign Updates</span>
+              <span className="sm:hidden">Updates</span>
             </TabsTrigger>
           </TabsList>
 
@@ -273,21 +277,21 @@ export default function AdminDashboard() {
                   <CardTitle>Current Progress</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                     <div className="text-center p-4 bg-green-50 rounded-lg">
-                      <div className="text-2xl font-bold text-green-600">
+                      <div className="text-xl sm:text-2xl font-bold text-green-600">
                         ${fundraisingProgress.currentAmount.toLocaleString()}
                       </div>
                       <div className="text-sm text-green-700">Raised</div>
                     </div>
                     <div className="text-center p-4 bg-blue-50 rounded-lg">
-                      <div className="text-2xl font-bold text-blue-600">
+                      <div className="text-xl sm:text-2xl font-bold text-blue-600">
                         ${fundraisingProgress.goalAmount.toLocaleString()}
                       </div>
                       <div className="text-sm text-blue-700">Goal</div>
                     </div>
                     <div className="text-center p-4 bg-purple-50 rounded-lg">
-                      <div className="text-2xl font-bold text-purple-600">
+                      <div className="text-xl sm:text-2xl font-bold text-purple-600">
                         {fundraisingProgress.donorCount}
                       </div>
                       <div className="text-sm text-purple-700">Donors</div>
@@ -437,10 +441,10 @@ export default function AdminDashboard() {
 
       {/* Edit Update Modal */}
       {editingUpdate && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <Card className="w-full max-w-2xl">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 overflow-y-auto">
+          <Card className="w-full max-w-2xl my-8">
             <CardHeader>
-              <CardTitle>Edit Campaign Update</CardTitle>
+              <CardTitle className="text-lg sm:text-xl">Edit Campaign Update</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
