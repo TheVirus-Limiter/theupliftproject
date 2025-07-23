@@ -8,6 +8,31 @@ The Uplift Project is a React-based single-page application built for a Leukemia
 
 Preferred communication style: Simple, everyday language.
 
+## Team Information
+
+**Leadership:**
+- Team Leader: Rehan Raj (LHS, 11th grade)
+- Co-Leader: Alexis Holmes (LHS, 12th grade)
+
+**Team Members:**
+- Abraham Sutton (LHS, 12th grade)
+- Benjamin Storandt (LHS, 12th grade) 
+- Landon Hansen (RIT, Freshman)
+- Keegan Stinson (LHS, 12th grade)
+- Sierra Rogler (LHS, 10th grade)
+- Hildie Villagomez (LHS, 11th grade)
+
+**Adult Sponsors & Support:**
+- Andrew Eickstead (LHS Principal)
+- Matthew Bomersbach (LHS Finance Teacher)
+- Meagan Rikard (LLS Biology Teacher)
+- Andrew Schuetze (LHS Robotics Teacher)
+
+**Honored Hero:**
+- Miguel Roman (Blinn College, Freshman) - Campaign's Honored Hero
+
+Note: LHS = Local High School, RIT = Rochester Institute of Technology
+
 ## System Architecture
 
 ### Frontend Architecture
