@@ -53,10 +53,12 @@ export default function Hero() {
             >
               Learn More
             </Button>
+          </div>
+          <div className="mt-4 flex justify-center">
             <Button 
               onClick={() => window.open("https://www.instagram.com/p/DMdoluLSK0l/?img_index=1", "_blank")}
-              variant="outline"
-              className="border-2 border-gray-400 text-gray-700 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-50 hover:shadow-lg transition-colors"
+              size="sm"
+              className="bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 text-white px-4 py-2 rounded-full text-sm font-medium hover:from-purple-600 hover:via-pink-600 hover:to-orange-500 transition-all duration-300 shadow-md"
             >
               Our Team
             </Button>
