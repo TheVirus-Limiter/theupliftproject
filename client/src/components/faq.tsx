@@ -9,19 +9,23 @@ interface FAQItem {
 const faqData: FAQItem[] = [
   {
     question: "Is my donation tax deductible?",
-    answer: "Yes! All donations made through The Uplift Project to the Leukemia & Lymphoma Society are tax deductible. You will receive a receipt for your records after making your donation."
+    answer: "Yes! All donations made through The Uplift Project to Blood Cancer United (formerly LLS) are tax deductible. You will receive a receipt for your records after making your donation."
+  },
+  {
+  question: "How do I make a corporate matching donation?",
+  answer: "To make a corporate matching donation, go to your company’s corporate donation or matching gifts page and donate to Blood Cancer United. Then, send us proof of your donation, and your employer should match or add to your contribution."
   },
   {
     question: "Where does the money go?",
-    answer: "100% of your donation goes directly to the Leukemia & Lymphoma Society to support patients who can't afford their medical bills and to fund critical blood cancer research. The LLS has invested over $1.3 billion in research since 1949."
+    answer: "100% of your donation goes directly to the Blood Cancer United to support patients who can't afford their medical bills and to fund critical blood cancer research. The LLS has invested over $1.3 billion in research since 1949."
   },
   {
     question: "How do I join the team?",
-    answer: "We'd love to have you join our mission! Please email us at rehanraj0911@gmail.com to learn about volunteer opportunities and how you can help us reach our $50,000 goal."
+    answer: "We'd love to have you join our mission! Please email us at rehan.raj@lhssa.org to learn about volunteer opportunities and how you can help us reach our $50,000 goal."
   },
   {
     question: "What is Student Visionaries of the Year?",
-    answer: "Student Visionaries of the Year is LLS's premier philanthropic leadership program for high school students. Participants compete in a 7-week fundraising campaign to support LLS's mission to cure blood cancer."
+    answer: "Student Visionaries of the Year is Blood Cancer United's premier philanthropic leadership program for high school students. Participants compete in a 7-week fundraising campaign to support Blood Cancer United's mission to cure blood cancer."
   },
   {
     question: "How long does the campaign run?",
