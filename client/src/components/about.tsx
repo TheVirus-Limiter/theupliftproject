@@ -22,12 +22,21 @@ export default function About() {
           </div>
           <div>
             <h3 className="font-playfair text-2xl font-bold text-gray-900 mb-6">Our Mission</h3>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              As Student Visionaries of the Year, we are committed to raising funds and awareness 
-              for Blood Cancer United (formerly the Leukemia and Lymphoma Society). Our fundraising window runs from 
-              <strong> January 16, 2026 to March 7, 2026</strong>, during which we aim to reach our ambitious 
-              goal of $50,000.
-            </p>
+<p className="text-gray-600 mb-6 leading-relaxed">
+    As Student Visionaries of the Year, we are committed to raising funds and awareness 
+    for{" "}
+    <a
+      href="https://bloodcancerunited.org/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="font-medium text-gray-900 underline hover:text-gray-700"
+    >
+      Blood Cancer United
+    </a>.
+    Our fundraising window runs from
+    <strong> January 16, 2026 to March 7, 2026</strong>, during which we aim to reach our ambitious 
+    goal of $50,000.
+  </p>
             <p className="text-gray-600 mb-8 leading-relaxed">
               We will be raising funds through gala events, corporate donations, individual 
               donations, and various community initiatives. Every contribution, no matter the size, 
