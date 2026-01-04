@@ -20,7 +20,7 @@ export default function BloodCancerFacts() {
     {
       icon: Microscope,
       value: "$1.3 Billion",
-      description: "LLS has invested in blood cancer research since 1949"
+      description: "Blood Cancer United has invested in blood cancer research since 1949"
     },
     {
       icon: Pill,
