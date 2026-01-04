@@ -27,7 +27,7 @@ export default function Footer() {
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
-                href="mailto:rehanraj0911@gmail.com" 
+                href="mailto:rehan.raj@lhssa.org" 
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <Mail className="w-5 h-5" />
@@ -77,7 +77,7 @@ export default function Footer() {
               <li>Goal: $50,000</li>
               <li>Duration: Jan 16, 2026 - Mar 7, 2026</li>
               <li>Student Visionaries Program</li>
-              <li>Leukemia & Lymphoma Society</li>
+              <li>Blood Cancer United</li>
             </ul>
           </div>
           
@@ -90,7 +90,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Mail className="w-4 h-4 mr-2" />
-                rehanraj0911@gmail.com
+                rehan.raj@lhssa.org
               </li>
               <li className="flex items-center">
                 <Phone className="w-4 h-4 mr-2" />
@@ -110,16 +110,16 @@ export default function Footer() {
               />
             </div>
             <div className="text-center text-gray-400">
-              <p>&copy; 2025 The Uplift Project. All rights reserved.</p>
+              <p>&copy; 2026 The Uplift Project. All rights reserved.</p>
               <p className="mt-2">
-                In partnership with the{" "}
+                In partnership with {" "}
                 <a 
-                  href="https://www.lls.org" 
+                  href="https://www.bloodcancerunited.org" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-uplift-red hover:text-red-300 transition-colors"
                 >
-                  Leukemia & Lymphoma Society
+                  Blood Cancer United (formerly LLS)
                 </a>
               </p>
               <p className="mt-2 text-sm">
