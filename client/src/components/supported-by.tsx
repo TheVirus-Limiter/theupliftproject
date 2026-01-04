@@ -23,8 +23,8 @@ const logos: Logo[] = [
   {
     id: 3,
     src: "https://thevirus-limiter.github.io/filestorage/yourlogohere.png",
-    alt: "Your Logo Here",
-    link: "https://theupliftproject.us/corporations"
+    alt: "Lumora Sleep",
+    link: "https://uselumora.co"
   }
 ];
 
@@ -76,6 +76,19 @@ export default function SupportedBy() {
               </div>
             ))}
           </div>
+          {/* Supporting text */}
+          <p className="mt-6 text-sm text-gray-500 text-center">
+            Interested in adding your company here? Visit{" "}
+            <a
+              href="https://theupliftproject.us/corporations"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-gray-700 transition-colors"
+            >
+              theupliftproject.us/corporations
+            </a>{" "}
+            to partner as a corporate supporter.
+          </p>
 
 
         </div>
