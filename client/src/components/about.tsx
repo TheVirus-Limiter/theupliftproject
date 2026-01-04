@@ -24,7 +24,7 @@ export default function About() {
             <h3 className="font-playfair text-2xl font-bold text-gray-900 mb-6">Our Mission</h3>
             <p className="text-gray-600 mb-6 leading-relaxed">
               As Student Visionaries of the Year, we are committed to raising funds and awareness 
-              for the Leukemia & Lymphoma Society. Our fundraising window runs from 
+              for Blood Cancer United (formerly the Leukemia and Lymphoma Society). Our fundraising window runs from 
               <strong> January 16, 2026 to March 7, 2026</strong>, during which we aim to reach our ambitious 
               goal of $50,000.
             </p>
@@ -39,7 +39,7 @@ export default function About() {
               </div>
               <div>
                 <p className="font-semibold text-gray-900">Student Visionaries of the Year</p>
-                <p className="text-gray-600">Leukemia & Lymphoma Society</p>
+                <p className="text-gray-600">Blood Cancer United</p>
               </div>
             </div>
                                  <div className="mt-8 flex justify-center">
@@ -62,7 +62,7 @@ export default function About() {
               <div className="flex justify-center">
                 <img 
                   src="https://thevirus-limiter.github.io/filestorage/llslogo.png" 
-                  alt="Leukemia & Lymphoma Society" 
+                  alt="Blood Cancer United" 
                   className="h-16 w-auto opacity-80"
                 />
               </div>
