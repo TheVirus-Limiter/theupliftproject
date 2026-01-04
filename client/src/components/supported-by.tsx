@@ -77,17 +77,17 @@ export default function SupportedBy() {
             ))}
           </div>
           {/* Supporting text */}
-          <p className="mt-6 text-sm text-gray-500 text-center">
-            Interested in adding your company here? Visit{" "}
+          <p className="mt-10 text-xs text-gray-500 text-center">
+            Interested in adding your company here?{" "}
             <a
               href="https://theupliftproject.us/corporations"
               target="_blank"
               rel="noopener noreferrer"
-              className="underline hover:text-gray-700 transition-colors"
+              className="underline hover:text-gray-600 transition-colors"
             >
-              theupliftproject.us/corporations
+              Learn more here
             </a>{" "}
-            to partner as a corporate supporter.
+            about partnering as a corporate supporter.
           </p>
 
 
