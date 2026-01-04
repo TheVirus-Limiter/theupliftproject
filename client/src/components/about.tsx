@@ -32,7 +32,7 @@ export default function About() {
       className="font-medium text-gray-900 underline hover:text-gray-700"
     >
       Blood Cancer United
-    </a>(formerly the Leukemia and Lymphoma Society).
+    </a> (formerly the Leukemia and Lymphoma Society).
      Our fundraising window runs from
     <strong> January 16, 2026 to March 7, 2026</strong>, during which we aim to reach our ambitious 
     goal of $50,000.
