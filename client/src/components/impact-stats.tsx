@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
+  Heart,
   HeartHandshake,
   Users,
   Timer,
@@ -53,6 +54,16 @@ export default function MissionInteractive() {
     }
   ];
 
+  // If you want this button to open your donation page, keep this handler.
+  // If you already have a donate button elsewhere, you can remove this + the Button below.
+  const handleDonateClick = () => {
+    window.open(
+      "https://pages.lls.org/svoy/stx/svoysa26/rrajlf",
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
   return (
     <section id="impact" className="py-20 bg-uplift-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -85,7 +96,9 @@ export default function MissionInteractive() {
                     <div className="flex items-start gap-4">
                       <div
                         className={`p-3 rounded-xl ${
-                          isActive ? "bg-uplift-red text-white" : "bg-gray-100 text-gray-700"
+                          isActive
+                            ? "bg-uplift-red text-white"
+                            : "bg-gray-100 text-gray-700"
                         }`}
                       >
                         <Icon className="w-6 h-6" />
@@ -98,9 +111,8 @@ export default function MissionInteractive() {
                         <p className="text-gray-600">{t.subtitle}</p>
                       </div>
 
-                      <div className="text-uplift-red">
-                        <Sparkles className={`w-5 h-5 ${isActive ? "opacity-100" : "opacity-30"}`} />
-                      </div>
+                      {/* Sparkles removed (kept layout spacing minimal) */}
+                      <div className="w-5 h-5" aria-hidden="true" />
                     </div>
                   </CardContent>
                 </Card>
@@ -164,7 +176,10 @@ export default function MissionInteractive() {
                     </p>
 
                     <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
-                      <div className="bg-uplift-red h-4 rounded-full transition-all duration-700" style={gaugeStyle} />
+                      <div
+                        className="bg-uplift-red h-4 rounded-full transition-all duration-700"
+                        style={gaugeStyle}
+                      />
                     </div>
                     <div className="flex justify-between mt-2 text-xs text-gray-500">
                       <span>0%</span>
@@ -229,20 +244,19 @@ export default function MissionInteractive() {
                         Millions of people are impacted by blood cancer every year. Someone is diagnosed
                         with blood cancer every 3 minutes. While we unfortunately cannot stop all of these
                         diagnoses worldwide, we can zoom in on our own community. In a small private school
-                        of only 100 kids, one of them (our honored hero, Miguel) got diagnosed with leukemia. Fortunately, he made a
-                        full recovery and is expected to be cancer-free soon. However, this is not the case
-                        for everyone. While we cannot reverse the diagnosis, we can do our best to help the
-                        struggling families in our very own communities. Reports say that around 65% of
-                        families of people impacted by blood cancer struggle to make their hospital
-                        payments. That's almost 7 out of 10 people. Our fundraiser aims to raise money for
-                        this very cause, with every penny going to those who have a loved one struggling
-                        and can not pay their bills
+                        of only 100 kids, one of them (our honored hero, Miguel) got diagnosed with leukemia.
+                        Fortunately, he made a full recovery and is expected to be cancer-free soon. However,
+                        this is not the case for everyone. While we cannot reverse the diagnosis, we can do
+                        our best to help the struggling families in our very own communities. Reports say
+                        that around 65% of families of people impacted by blood cancer struggle to make their
+                        hospital payments. That's almost 7 out of 10 people. Our fundraiser aims to raise
+                        money for this very cause, with every penny going to those who have a loved one
+                        struggling and can not pay their bills
                       </p>
                     )}
                   </button>
 
-                  <p className="mt-3 text-xs text-gray-500">
-                  </p>
+                  <p className="mt-3 text-xs text-gray-500"></p>
                 </div>
               </div>
             )}
@@ -276,8 +290,9 @@ export default function MissionInteractive() {
 
                 <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-6">
                   <div className="flex items-center gap-3 mb-3">
+                    {/* Sparkles removed - keep spacing consistent */}
                     <div className="p-3 rounded-xl bg-uplift-red text-white">
-                      <Sparkles className="w-6 h-6" />
+                      <HeartHandshake className="w-6 h-6" />
                     </div>
                     <h4 className="font-playfair text-2xl font-bold text-gray-900">
                       Make it real (quick actions)
@@ -300,15 +315,15 @@ export default function MissionInteractive() {
                   </ul>
 
                   <div className="mt-6">
-                    <Button 
-              onClick={handleDonateClick}
-              className="relative bg-uplift-red text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg overflow-hidden group transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/30"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12"></div>
-              <Heart className="w-5 h-5 mr-2 relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
-              <span className="relative z-10">Donate Now</span>
-            </Button>
+                    <Button
+                      onClick={handleDonateClick}
+                      className="relative bg-uplift-red text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg overflow-hidden group transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/30"
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12"></div>
+                      <Heart className="w-5 h-5 mr-2 relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
+                      <span className="relative z-10">Donate Now</span>
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -316,11 +331,8 @@ export default function MissionInteractive() {
           </CardContent>
         </Card>
 
-        {/* Optional: keep your existing donate button below, or use the anchor helper */}
         <div id="donate-button-anchor" className="mt-10 flex justify-center">
-          {/* Keep your original donate button wherever it already lives; this is just an optional anchor target */}
-          <div className="text-center text-sm text-gray-500">
-          </div>
+          <div className="text-center text-sm text-gray-500"></div>
         </div>
       </div>
     </section>
