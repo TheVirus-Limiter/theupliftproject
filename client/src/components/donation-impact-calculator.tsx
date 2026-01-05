@@ -79,7 +79,7 @@ export default function DonationImpactCalculator() {
   ];
 
   return (
-  <section className="py-6 bg-gradient-to-br from-blue-50 via-white to-red-50">
+  <section id="donation-impact-calculator" className="py-6 bg-gradient-to-br from-blue-50 via-white to-red-50">
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-6">
         <h2 className="text-2xl md:text-3xl font-playfair font-bold text-gray-900 mb-2">
