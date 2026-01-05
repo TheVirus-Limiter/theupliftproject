@@ -41,7 +41,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "What if I can't donate but want to help?",
-    answer: "There are many ways to support our mission! You can share our campaign on social media, volunteer with our team, or help spread awareness about blood cancer. Contact us at rehanraj0911@gmail.com to learn more."
+    answer: "There are many ways to support our mission! You can share our campaign on social media, volunteer with our team, or help spread awareness about blood cancer. Contact us at rehan.raj@lhssa.org to learn more."
   }
 ];
 
@@ -106,7 +106,7 @@ export default function FAQ() {
             Have another question?
           </p>
           <a 
-            href="mailto:rehanraj0911@gmail.com"
+            href="mailto:rehan.raj@lhssa.org"
             className="inline-flex items-center px-6 py-3 bg-uplift-red text-white rounded-full font-semibold hover:bg-red-800 transition-colors"
           >
             Contact Us
