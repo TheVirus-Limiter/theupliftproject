@@ -17,7 +17,7 @@ export default function Corporations() {
     {
       icon: Heart,
       title: "Tax-Deductible Contributions",
-      description: "All donations are fully tax-deductible as LLS is a 501(c)(3) nonprofit organization, maximizing your corporate tax benefits."
+      description: "All donations are fully tax-deductible as Blood Cancer United (formerly LLS) is a 501(c)(3) nonprofit organization, maximizing your corporate tax benefits."
     },
     {
       icon: Users,
@@ -32,7 +32,7 @@ export default function Corporations() {
     {
       icon: Building2,
       title: "Networking Opportunities",
-      description: "Connect with other corporate sponsors, community leaders, and LLS representatives at exclusive events and recognition ceremonies."
+      description: "Connect with other corporate sponsors, community leaders, and Blood Cancer United (formerly LLS) representatives at exclusive events and recognition ceremonies."
     },
     {
       icon: CheckCircle,
@@ -71,7 +71,7 @@ export default function Corporations() {
         "Company logo on programs and event signage",
         "Recognition on event screens during Grand Finale",
         "10 Grand Finale guests included",
-        "Mission Impact Meeting with LLS leadership"
+        "Mission Impact Meeting with Blood Cancer United leadership"
       ]
     },
     {
@@ -83,7 +83,7 @@ export default function Corporations() {
         "Recognition in group social media posts",
         "Continual logo placement on audio visual scroll",
         "8 Grand Finale guests included",
-        "Listing in LLS Annual Report"
+        "Listing in Blood Cancer United Annual Report"
       ]
     },
     {
@@ -143,7 +143,7 @@ export default function Corporations() {
               Corporate Partnership Opportunities
             </h1>
             <p className="text-xl max-w-3xl mx-auto mb-8" style={{color: '#000000'}}>
-              Join The Uplift Project and the Leukemia & Lymphoma Society in the fight against blood cancer. 
+              Join The Uplift Project and Blood Cancer United in the fight against blood cancer. 
               Your corporate partnership creates lasting impact while providing valuable business benefits.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -176,7 +176,7 @@ export default function Corporations() {
               Why Partner With Us?
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Corporate partnerships with LLS Student Visionaries provide meaningful business value 
+              Corporate partnerships with Blood Cancer United (formerly LLS) Student Visionaries provide meaningful business value 
               while supporting life-saving research and patient care.
             </p>
           </div>
@@ -333,7 +333,7 @@ export default function Corporations() {
               Your Impact
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              When you partner with LLS, you're supporting proven results in the fight against blood cancer.
+              When you partner with Blood Cancer United, you're supporting proven results in the fight against blood cancer.
             </p>
           </div>
 
@@ -400,7 +400,7 @@ export default function Corporations() {
                 <Button
                   variant="outline"
                   className="flex items-center border-uplift-red text-uplift-red hover:shadow-lg"
-                  onClick={() => window.open('mailto:rehanraj0911@gmail.com?subject=Corporate Partnership Inquiry - The Uplift Project', '_blank')}
+                  onClick={() => window.open('mailto:rehan.raj@lhssa.org?subject=Corporate Partnership Inquiry - The Uplift Project', '_blank')}
                 >
                   <Mail className="w-5 h-5 mr-2" />
                   Email Us
@@ -415,7 +415,7 @@ export default function Corporations() {
                 </Button>
               </div>
               <div className="mt-4 space-y-1 text-sm text-gray-600">
-                <p>rehanraj0911@gmail.com</p>
+                <p>rehan.raj@lhssa.org</p>
                 <p>(726) 220-7209</p>
               </div>
             </div>
