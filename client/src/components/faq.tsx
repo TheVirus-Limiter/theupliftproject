@@ -13,11 +13,11 @@ const faqData: FAQItem[] = [
   },
   {
   question: "How do I make a corporate matching donation?",
-  answer: "To make a corporate matching donation, go to your company’s corporate donation or matching gifts page and donate to Blood Cancer United. Then, send us proof of your donation, and your employer should match or add to your contribution."
+  answer: "To make a corporate matching donation, go to your company’s corporate donation or matching gifts page and donate to Blood Cancer United (formerly LLS). Then, send us proof of your donation, and your employer should match or add to your contribution."
   },
   {
     question: "Where does the money go?",
-    answer: "100% of your donation goes directly to the Blood Cancer United to support patients who can't afford their medical bills and to fund critical blood cancer research. The LLS has invested over $1.3 billion in research since 1949."
+    answer: "100% of your donation goes directly to the Blood Cancer United (formerly LLS) to support patients who can't afford their medical bills and to fund critical blood cancer research. Blood Cancer United has invested over $1.3 billion in research since 1949."
   },
   {
     question: "How do I join the team?",
@@ -33,7 +33,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "Can I donate if I'm not in the US?",
-    answer: "Yes! The LLS donation platform accepts international donations. Your contribution will help support blood cancer patients and research efforts worldwide."
+    answer: "Yes! The Blood Cancer United (formerly LLS) donation platform accepts international donations. Your contribution will help support blood cancer patients and research efforts worldwide."
   },
   {
     question: "How do I track the campaign's progress?",
