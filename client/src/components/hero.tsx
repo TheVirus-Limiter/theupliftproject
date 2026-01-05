@@ -35,7 +35,7 @@ export default function Hero() {
             Ending Blood Cancer
           </p>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            We are a Leukemia & Lymphoma Society Student Visionaries of the Year fundraiser 
+            We are a Blood Cancer United (formerly LLS) Student Visionaries of the Year fundraiser 
             seeking to raise thousands to support those struggling with blood cancer.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
