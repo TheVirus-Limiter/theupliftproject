@@ -1,12 +1,14 @@
 import { useEffect, useMemo, useState } from "react";
-import { Heart, Timer, CalendarRange } from "lucide-react";
+import { Heart, Timer, Target } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function FundraisingProgress() {
-  // Campaign window (local time). If you prefer exact Central Time handling, see note below.
+  // Campaign window (local time)
   const campaignStart = useMemo(() => new Date(2026, 0, 16, 0, 0, 0), []); // Jan = 0
   const campaignEnd = useMemo(() => new Date(2026, 2, 7, 23, 59, 59), []); // Mar = 2
+
+  const goalAmount = 50000;
 
   const [now, setNow] = useState(() => new Date());
 
@@ -16,7 +18,11 @@ export default function FundraisingProgress() {
   }, []);
 
   const handleDonateClick = () => {
-    window.open("https://pages.lls.org/svoy/stx/svoysa26/rrajlf", "_blank", "noopener,noreferrer");
+    window.open(
+      "https://pages.lls.org/svoy/stx/svoysa26/rrajlf",
+      "_blank",
+      "noopener,noreferrer"
+    );
   };
 
   const clamp = (v, min, max) => Math.min(max, Math.max(min, v));
@@ -115,7 +121,7 @@ export default function FundraisingProgress() {
             Our Fundraising Goal
           </h2>
           <p className="text-lg text-gray-600">
-            Every penny goes to those struggling with blood cancer and in need
+            Donations help support those affected by blood cancer and in need
           </p>
         </div>
 
@@ -128,19 +134,30 @@ export default function FundraisingProgress() {
                   <Timer className="w-5 h-5" />
                   <h3 className="font-playfair text-3xl font-bold">{headline}</h3>
                 </div>
+
                 <p className="text-gray-600">{subline}</p>
 
+                {/* Replaces date range line with goal line + new icon */}
                 <div className="mt-5 flex items-center gap-2 text-gray-600">
-                  <CalendarRange className="w-4 h-4" />
+                  <Target className="w-4 h-4" />
                   <span className="text-sm">
-                    Jan 16, 2026 <span className="mx-2">→</span> Mar 7, 2026
+                    Our goal is <span className="font-semibold text-gray-800">${goalAmount.toLocaleString()}</span>
                   </span>
                 </div>
               </div>
 
               <div className="md:text-right">
                 <p className="text-sm text-gray-500 mb-1">{timeLeftLabel}</p>
-                <div className="font-playfair text-2xl font-bold text-uplift-red tracking-tight">
+
+                {/* Readable timer font + tabular numbers */}
+                <div
+                  className="text-3xl md:text-4xl font-semibold text-uplift-red tracking-wide"
+                  style={{
+                    fontFamily:
+                      'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"',
+                    fontVariantNumeric: "tabular-nums"
+                  }}
+                >
                   {days}d {pad2(hours)}:{pad2(minutes)}:{pad2(seconds)}
                 </div>
 
