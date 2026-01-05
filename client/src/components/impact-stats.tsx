@@ -5,7 +5,6 @@ import {
   Timer,
   MapPin,
   Receipt,
-  Sparkles,
   ChevronDown,
   ChevronUp
 } from "lucide-react";
@@ -185,7 +184,7 @@ export default function MissionInteractive() {
                   </h3>
                   <p className="text-gray-700 leading-relaxed">
                     In a small private school of only 100 kids, one of them was diagnosed with leukemia.
-                    Fortunately, he made a full recovery and is expected to be cancer free soon.
+                    Fortunately, he made a full recovery and is expected to be cancer-free soon.
                     However, this is not the case for everyone.
                   </p>
 
@@ -195,7 +194,7 @@ export default function MissionInteractive() {
                         <Users className="w-6 h-6" />
                       </div>
                       <p className="font-playfair text-2xl font-bold text-gray-900">
-                        One student out of 100
+                        1 student out of 100
                       </p>
                     </div>
                     <p className="text-gray-700">
@@ -243,7 +242,6 @@ export default function MissionInteractive() {
                   </button>
 
                   <p className="mt-3 text-xs text-gray-500">
-                    Tip: You can keep this collapsed by default to make the section feel lighter.
                   </p>
                 </div>
               </div>
@@ -297,21 +295,20 @@ export default function MissionInteractive() {
                     </li>
                     <li className="flex gap-2">
                       <span className="mt-1 h-2 w-2 rounded-full bg-uplift-red" />
-                      Donate any amount—consistency matters more than size.
+                      Donate any amount. Consistency matters more than size.
                     </li>
                   </ul>
 
                   <div className="mt-6">
-                    <Button
-                      onClick={() => {
-                        const el = document.getElementById("donate-button-anchor");
-                        if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
-                      }}
-                      variant="outline"
-                      className="w-full rounded-xl border-uplift-red text-uplift-red hover:bg-uplift-red hover:text-white"
-                    >
-                      Jump to donate button
-                    </Button>
+                    <Button 
+              onClick={handleDonateClick}
+              className="relative bg-uplift-red text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg overflow-hidden group transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/30"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12"></div>
+              <Heart className="w-5 h-5 mr-2 relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
+              <span className="relative z-10">Donate Now</span>
+            </Button>
                   </div>
                 </div>
               </div>
@@ -323,7 +320,6 @@ export default function MissionInteractive() {
         <div id="donate-button-anchor" className="mt-10 flex justify-center">
           {/* Keep your original donate button wherever it already lives; this is just an optional anchor target */}
           <div className="text-center text-sm text-gray-500">
-            (Your “Support Our Mission” button can remain in your fundraising section.)
           </div>
         </div>
       </div>
