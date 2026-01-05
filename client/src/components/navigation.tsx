@@ -75,10 +75,10 @@ export default function Navigation() {
               Honored Hero
             </button>
             <button 
-              onClick={() => handleSectionClick("ways-to-donate")}
+              onClick={() => handleSectionClick("donation-impact-calculator")}
               className="text-gray-700 hover:text-uplift-red transition-colors"
             >
-              Ways to Donate
+              Your Impact
             </button>
             <button 
               onClick={() => handleSectionClick("faq")}
@@ -126,10 +126,10 @@ export default function Navigation() {
                 Honored Hero
               </button>
               <button 
-                onClick={() => handleSectionClick("ways-to-donate")}
+                onClick={() => handleSectionClick("donation-impact-calculator")}
                 className="text-gray-700 hover:text-uplift-red transition-colors py-2 text-left"
               >
-                Ways to Donate
+                Your Impact
               </button>
               <button 
                 onClick={() => handleSectionClick("faq")}
