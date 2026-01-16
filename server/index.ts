@@ -6,6 +6,41 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+// -------------------------------------------------------
+// Instant redirects: theupliftproject.us/<slug> -> LLS pages
+// MUST be before Vite/static/catch-all handlers
+// -------------------------------------------------------
+const redirectMap: Record<string, string> = {
+  schuetze: "https://pages.lls.org/svoy/stx/svoysa26/aschuetze",
+  miguel: "https://pages.lls.org/svoy/stx/svoysa26/mroman",
+  abraham: "https://pages.lls.org/svoy/stx/svoysa26/asutton",
+  hildie: "https://pages.lls.org/svoy/stx/svoysa26/hvillagome",
+  landon: "https://pages.lls.org/svoy/stx/svoysa26/lhansen",
+  matthew: "https://pages.lls.org/svoy/stx/svoysa26/mbomersbac",
+  sierra: "https://pages.lls.org/svoy/stx/svoysa26/srogler",
+  ben: "https://pages.lls.org/svoy/stx/svoysa26/bstorandt",
+  andrew: "https://pages.lls.org/svoy/stx/svoysa26/aeickstead",
+  milly: "https://pages.lls.org/svoy/stx/svoysa26/mcardenas",
+  chris: "https://pages.lls.org/svoy/stx/svoysa26/cjohnson",
+  keegan: "https://pages.lls.org/svoy/stx/svoysa26/kstinson",
+};
+
+// Handles /schuetze, /schuetze/, /SCHUETZE, etc.
+// Only redirects known slugs; everything else continues normally.
+app.get(/^\/([^\/]+)\/?$/, (req, res, next) => {
+  const slug = String(req.params[0] || "").toLowerCase();
+  const target = redirectMap[slug];
+
+  if (target) {
+    // 302 is recommended during campaign (safe if you ever change destinations)
+    return res.redirect(302, target);
+    // If you want permanent redirects, use:
+    // return res.redirect(301, target);
+  }
+
+  next();
+});
+
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
@@ -60,12 +95,15 @@ app.use((req, res, next) => {
   // Other ports are firewalled. Default to 5000 if not specified.
   // this serves both the API and the client.
   // It is the only port that is not firewalled.
-  const port = parseInt(process.env.PORT || '5000', 10);
-  server.listen({
-    port,
-    host: "0.0.0.0",
-    reusePort: true,
-  }, () => {
-    log(`serving on port ${port}`);
-  });
+  const port = parseInt(process.env.PORT || "5000", 10);
+  server.listen(
+    {
+      port,
+      host: "0.0.0.0",
+      reusePort: true,
+    },
+    () => {
+      log(`serving on port ${port}`);
+    },
+  );
 })();
