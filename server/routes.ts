@@ -8,24 +8,6 @@ import {
   insertCampaignUpdateSchema,
 } from "@shared/schema";
 
-// -----------------------------
-// Redirects: theupliftproject.us/<slug> -> external page
-// -----------------------------
-const redirectMap: Record<string, string> = {
-  schuetze: "https://pages.lls.org/svoy/stx/svoysa26/aschuetze",
-  miguel: "https://pages.lls.org/svoy/stx/svoysa26/mroman",
-  abraham: "https://pages.lls.org/svoy/stx/svoysa26/asutton",
-  hildie: "https://pages.lls.org/svoy/stx/svoysa26/hvillagome",
-  landon: "https://pages.lls.org/svoy/stx/svoysa26/lhansen",
-  matthew: "https://pages.lls.org/svoy/stx/svoysa26/mbomersbac",
-  sierra: "https://pages.lls.org/svoy/stx/svoysa26/srogler",
-  ben: "https://pages.lls.org/svoy/stx/svoysa26/bstorandt",
-  andrew: "https://pages.lls.org/svoy/stx/svoysa26/aeickstead",
-  milly: "https://pages.lls.org/svoy/stx/svoysa26/mcardenas",
-  chris: "https://pages.lls.org/svoy/stx/svoysa26/cjohnson",
-  keegan: "https://pages.lls.org/svoy/stx/svoysa26/kstinson",
-};
-
 // Simple email function using mailto (no external service required)
 function generateEmailBody(data: any): string {
   return `
@@ -45,27 +27,6 @@ Submitted: ${new Date().toISOString()}
 }
 
 export async function registerRoutes(app: Express): Promise<Server> {
-  // -------------------------------------------------------
-  // Instant redirect routes (MUST be before /api routes)
-  // -------------------------------------------------------
-  // Supports:
-  // - /schuetze
-  // - /schuetze/
-  // - /SCHUETZE (case-insensitive)
-  app.get(/^\/([^\/]+)\/?$/, (req: any, res: any, next: any) => {
-    const slug = String(req.params[0] || "").toLowerCase();
-    const target = redirectMap[slug];
-
-    if (target) {
-      // Use 302 during campaign (safe if URLs ever change)
-      return res.redirect(302, target);
-      // If you want permanent redirects, use:
-      // return res.redirect(301, target);
-    }
-
-    next();
-  });
-
   // Corporate inquiry submission endpoint
   app.post("/api/corporate-inquiry", async (req, res) => {
     try {
@@ -162,10 +123,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Update campaign update
   app.put("/api/admin/campaign-updates/:id", adminAuth, async (req, res) => {
     try {
-      const id = parseInt(req.params.id);
-      const validatedData = insertCampaignUpdateSchema
-        .partial()
-        .parse(req.body);
+      const id = parseInt(req.params.id, 10);
+      const validatedData = insertCampaignUpdateSchema.partial().parse(req.body);
       const update = await storage.updateCampaignUpdate(id, validatedData);
       res.json(update);
     } catch (error) {
@@ -176,7 +135,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Delete campaign update
   app.delete("/api/admin/campaign-updates/:id", adminAuth, async (req, res) => {
     try {
-      const id = parseInt(req.params.id);
+      const id = parseInt(req.params.id, 10);
       const success = await storage.deleteCampaignUpdate(id);
       res.json({ success });
     } catch (error) {
@@ -206,6 +165,5 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   const httpServer = createServer(app);
-
   return httpServer;
 }
