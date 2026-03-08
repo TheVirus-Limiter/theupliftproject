@@ -2,11 +2,11 @@ import { useEffect } from "react";
 import Navigation from "@/components/navigation";
 import Hero from "@/components/hero";
 import FundraisingProgress from "@/components/fundraising-progress";
-import About from "@/components/about";
-import HonoredHero from "@/components/honored-hero";
 import BestDayEver from "@/components/best-day-ever";
 import KsatSection from "@/components/ksat-section";
 import ForbesFeature from "@/components/forbes-feature";
+import About from "@/components/about";
+import HonoredHero from "@/components/honored-hero";
 import ImpactStats from "@/components/impact-stats";
 import InstagramPosts from "@/components/instagram-posts";
 import BloodCancerFacts from "@/components/blood-cancer-facts";
@@ -25,11 +25,11 @@ export default function Home() {
       <Navigation />
       <Hero />
       <FundraisingProgress />
-      <About />
-      <HonoredHero />
       <BestDayEver />
       <KsatSection />
       <ForbesFeature />
+      <About />
+      <HonoredHero />
       <ImpactStats />
       <InstagramPosts />
       <BloodCancerFacts />

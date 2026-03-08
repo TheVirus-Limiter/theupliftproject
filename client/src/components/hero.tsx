@@ -30,20 +30,9 @@ export default function Hero() {
           <h1 className="font-playfair text-5xl sm:text-6xl font-bold text-uplift-red mb-4">
             Launching Hope
           </h1>
-          <p className="font-playfair text-3xl sm:text-4xl text-gray-700 mb-6">
+          <p className="font-playfair text-3xl sm:text-4xl text-gray-700 mb-8">
             Ending Blood Cancer
           </p>
-          <div className="mb-8">
-            <p className="text-5xl sm:text-6xl font-bold text-uplift-red mb-2" data-testid="text-total-raised">
-              $15,931
-            </p>
-            <p className="text-xl text-gray-600 font-semibold" data-testid="text-total-raised-label">
-              Total Raised
-            </p>
-            <p className="text-lg text-gray-500 mt-1" data-testid="text-campaign-dates">
-              Jan 16 &ndash; Mar 7, 2026
-            </p>
-          </div>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
             Our Blood Cancer United (formerly LLS) Student Visionaries of the Year campaign has concluded.
             Thank you to everyone who supported our mission to end blood cancer.
