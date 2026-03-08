@@ -16,19 +16,19 @@ export default function GrandFinale() {
   }, []);
 
   return (
-    <section id="grand-finale" className="py-20" style={{ background: 'linear-gradient(135deg, #1a0a0a 0%, #2d0f0f 30%, #1a0a0a 60%, #0f0a05 100%)' }}>
+    <section id="grand-finale" className="py-20" style={{ background: 'linear-gradient(135deg, #fdf8ef 0%, #f9f0dd 30%, #fdf8ef 60%, #faf3e3 100%)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <div className="flex justify-center mb-6">
             <div className="p-4 rounded-full" style={{ background: 'linear-gradient(135deg, #c9a84c 0%, #f0d68a 50%, #c9a84c 100%)' }}>
-              <Trophy className="w-10 h-10" style={{ color: '#1a0a0a' }} />
+              <Trophy className="w-10 h-10" style={{ color: '#5a3e1b' }} />
             </div>
           </div>
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4" style={{ background: 'linear-gradient(135deg, #c9a84c 0%, #f0d68a 40%, #c9a84c 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-4" style={{ background: 'linear-gradient(135deg, #8b6914 0%, #c9a84c 40%, #8b6914 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
             Grand Finale
           </h2>
           <div className="mx-auto mt-2 mb-6 w-32 h-0.5 rounded-full" style={{ background: 'linear-gradient(90deg, transparent, #c9a84c, transparent)' }} />
-          <p className="text-lg max-w-3xl mx-auto" style={{ color: '#d4b87a' }}>
+          <p className="text-lg max-w-3xl mx-auto" style={{ color: '#6b5520' }}>
             On March 7, 2026, The Uplift Project reached its grand finale at the Student Visionaries of the Year Gala. After seven weeks of tireless fundraising, community events, and unwavering dedication, our team celebrated the incredible journey alongside fellow students, families, and supporters who made it all possible.
           </p>
           <div className="mt-6 flex justify-center">
@@ -36,14 +36,13 @@ export default function GrandFinale() {
               src="https://thevirus-limiter.github.io/filestorage/llslogo.png" 
               alt="Blood Cancer United" 
               className="h-14 w-auto animate-logo-pulse"
-              style={{ filter: 'brightness(1.5) sepia(1) hue-rotate(-10deg) saturate(0.5)' }}
             />
           </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 items-start">
           <div className="flex justify-center">
-            <div className="max-w-md w-full rounded-xl overflow-hidden" style={{ border: '2px solid #c9a84c33' }}>
+            <div className="max-w-md w-full rounded-xl overflow-hidden" style={{ border: '2px solid #c9a84c44' }}>
               <blockquote
                 className="instagram-media"
                 data-instgrm-captioned
@@ -94,11 +93,12 @@ export default function GrandFinale() {
           </div>
 
           <div>
-            <p className="text-sm uppercase tracking-widest mb-3 text-center lg:text-left" style={{ color: '#c9a84c' }}>Our Campaign Video</p>
+            <p className="text-sm uppercase tracking-widest mb-3 text-center lg:text-left" style={{ color: '#8b6914' }}>Our Campaign Video</p>
             <div className="flex justify-center lg:justify-start">
-              <div className="max-w-md w-full rounded-xl overflow-hidden" style={{ border: '2px solid #c9a84c33' }}>
+              <div className="max-w-md w-full rounded-xl overflow-hidden" style={{ border: '2px solid #c9a84c44' }}>
                 <blockquote
                   className="instagram-media"
+                  data-instgrm-captioned
                   data-instgrm-permalink="https://www.instagram.com/reel/DTjniyyDNEP/?utm_source=ig_embed&utm_campaign=loading"
                   data-instgrm-version="14"
                   style={{

@@ -33,9 +33,9 @@ export default function Home() {
       <HonoredHero />
       <ImpactStats />
       <InstagramPosts />
+      <GrandFinale />
       <BloodCancerFacts />
       <FAQ />
-      <GrandFinale />
       <CallToAction />
       <Footer />
     </div>
