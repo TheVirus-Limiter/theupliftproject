@@ -5,9 +5,9 @@ export default function About() {
     <section id="about" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="font-playfair text-4xl font-bold text-uplift-red mb-4">Who Are We?</h2>
+          <h2 className="font-playfair text-4xl font-bold text-uplift-red mb-4">Who Were We?</h2>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            The Uplift Project is a dedicated fundraising initiative by passionate students 
+            The Uplift Project was a dedicated fundraising initiative by passionate students
             committed to making a difference in the fight against blood cancer.
           </p>
         </div>
@@ -22,25 +22,25 @@ export default function About() {
           </div>
           <div>
             <h3 className="font-playfair text-2xl font-bold text-gray-900 mb-6">Our Mission</h3>
-<p className="text-gray-600 mb-6 leading-relaxed">
-    As Student Visionaries of the Year, we are committed to raising funds and awareness 
-    for{" "}
-    <a
-      href="https://bloodcancerunited.org/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="font-medium text-gray-900 underline hover:text-gray-700"
-    >
-      Blood Cancer United
-    </a> (formerly the Leukemia and Lymphoma Society).
-     Our fundraising window runs from
-    <strong> January 16, 2026 to March 7, 2026</strong>, during which we aim to reach our ambitious 
-    goal of $50,000.
-  </p>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              As Student Visionaries of the Year, we raised funds and awareness
+              for{" "}
+              <a
+                href="https://bloodcancerunited.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-gray-900 underline hover:text-gray-700"
+              >
+                Blood Cancer United
+              </a> (formerly the Leukemia and Lymphoma Society).
+              Our fundraising campaign ran from
+              <strong> January 16, 2026 to March 7, 2026</strong>, during which we raised
+              a total of <strong>$15,931</strong>.
+            </p>
             <p className="text-gray-600 mb-8 leading-relaxed">
-              We will be raising funds through gala events, corporate donations, individual 
-              donations, and various community initiatives. Every contribution, no matter the size, 
-              brings us closer to our goal of ending blood cancer.
+              We raised funds through gala events, corporate donations, individual
+              donations, and various community initiatives. Every contribution helped
+              support those affected by blood cancer.
             </p>
             <div className="flex items-center space-x-4">
               <div className="bg-uplift-red text-white p-3 rounded-full">
@@ -51,7 +51,7 @@ export default function About() {
                 <p className="text-gray-600">Blood Cancer United</p>
               </div>
             </div>
-                                 <div className="mt-8 flex justify-center">
+            <div className="mt-8 flex justify-center">
               <div className="relative p-0.5 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 group transition-all duration-300">
                 <div className="absolute -inset-2 bg-gradient-to-r from-purple-400 via-pink-400 to-orange-300 rounded-full opacity-0 group-hover:opacity-30 blur-lg transition-opacity duration-300"></div>
                 <button 

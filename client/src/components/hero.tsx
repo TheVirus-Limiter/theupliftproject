@@ -1,12 +1,11 @@
-import { Heart } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { trackEvent } from "@/lib/analytics";
-import { Instagram } from "lucide-react";
 
 export default function Hero() {
-  const handleDonateClick = () => {
-    trackEvent('donate_click', 'engagement', 'hero_section');
-    window.open("https://pages.lls.org/svoy/stx/svoysa26/rrajlf", "_blank");
+  const handleInstagramClick = () => {
+    trackEvent('instagram_click', 'engagement', 'hero_section');
+    window.open("https://instagram.com/theupliftproject25", "_blank");
   };
 
   const scrollToAbout = () => {
@@ -31,26 +30,39 @@ export default function Hero() {
           <h1 className="font-playfair text-5xl sm:text-6xl font-bold text-uplift-red mb-4">
             Launching Hope
           </h1>
-          <p className="font-playfair text-3xl sm:text-4xl text-gray-700 mb-8">
+          <p className="font-playfair text-3xl sm:text-4xl text-gray-700 mb-6">
             Ending Blood Cancer
           </p>
+          <div className="mb-8">
+            <p className="text-5xl sm:text-6xl font-bold text-uplift-red mb-2" data-testid="text-total-raised">
+              $15,931
+            </p>
+            <p className="text-xl text-gray-600 font-semibold" data-testid="text-total-raised-label">
+              Total Raised
+            </p>
+            <p className="text-lg text-gray-500 mt-1" data-testid="text-campaign-dates">
+              Jan 16 &ndash; Mar 7, 2026
+            </p>
+          </div>
           <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            We are a Blood Cancer United (formerly LLS) Student Visionaries of the Year fundraiser 
-            seeking to raise thousands to support those struggling with blood cancer.
+            Our Blood Cancer United (formerly LLS) Student Visionaries of the Year campaign has concluded.
+            Thank you to everyone who supported our mission to end blood cancer.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button 
-              onClick={handleDonateClick}
+              onClick={handleInstagramClick}
+              data-testid="button-view-instagram"
               className="relative bg-uplift-red text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg overflow-hidden group transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/30"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12"></div>
-              <Heart className="w-5 h-5 mr-2 relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
-              <span className="relative z-10">Donate Now</span>
+              <Instagram className="w-5 h-5 mr-2 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+              <span className="relative z-10">View Our Instagram</span>
             </Button>
             <Button 
               onClick={scrollToAbout}
               variant="outline"
+              data-testid="button-learn-more"
               className="relative border-2 border-uplift-red text-uplift-red px-8 py-4 rounded-full text-lg font-semibold group overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-red-500/20 hover:border-red-700"
             >
               <div className="absolute inset-0 bg-uplift-red opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>

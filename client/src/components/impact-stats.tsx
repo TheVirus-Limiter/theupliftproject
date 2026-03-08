@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
 import {
-  Heart,
   HeartHandshake,
   Users,
   Timer,
@@ -10,7 +9,6 @@ import {
   ChevronUp
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 
 export default function MissionInteractive() {
   const [active, setActive] = useState("problem"); // problem | community | action
@@ -54,15 +52,6 @@ export default function MissionInteractive() {
     }
   ];
 
-  // If you want this button to open your donation page, keep this handler.
-  // If you already have a donate button elsewhere, you can remove this + the Button below.
-  const handleDonateClick = () => {
-    window.open(
-      "https://pages.lls.org/svoy/stx/svoysa26/rrajlf",
-      "_blank",
-      "noopener,noreferrer"
-    );
-  };
 
   return (
     <section id="impact" className="py-20 bg-uplift-light">
@@ -302,29 +291,17 @@ export default function MissionInteractive() {
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex gap-2">
                       <span className="mt-1 h-2 w-2 rounded-full bg-uplift-red" />
-                      Share the fundraiser with one person who can donate or match.
+                      We raised <strong>$15,931</strong> to support families affected by blood cancer.
                     </li>
                     <li className="flex gap-2">
                       <span className="mt-1 h-2 w-2 rounded-full bg-uplift-red" />
-                      Ask your workplace about corporate matching.
+                      Corporate matching and workplace giving amplified our donors' impact.
                     </li>
                     <li className="flex gap-2">
                       <span className="mt-1 h-2 w-2 rounded-full bg-uplift-red" />
-                      Donate any amount. Consistency matters more than size.
+                      Every contribution, big and small, made a difference.
                     </li>
                   </ul>
-
-                  <div className="mt-6">
-                    <Button
-                      onClick={handleDonateClick}
-                      className="relative bg-uplift-red text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg overflow-hidden group transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/30"
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                      <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12"></div>
-                      <Heart className="w-5 h-5 mr-2 relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-transform duration-300" />
-                      <span className="relative z-10">Donate Now</span>
-                    </Button>
-                  </div>
                 </div>
               </div>
             )}

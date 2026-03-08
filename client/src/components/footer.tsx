@@ -1,4 +1,4 @@
-import { Instagram, Mail, Phone, DollarSign } from "lucide-react";
+import { Instagram, Mail, Phone } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -23,22 +23,16 @@ export default function Footer() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
+                data-testid="link-footer-instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
                 href="mailto:rehan.raj@lhssa.org" 
                 className="text-gray-400 hover:text-white transition-colors"
+                data-testid="link-footer-email"
               >
                 <Mail className="w-5 h-5" />
-              </a>
-              <a 
-                href="https://pages.lls.org/svoy/stx/svoysa26/rrajlf" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors"
-              >
-                <DollarSign className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -47,9 +41,9 @@ export default function Footer() {
             <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
             <ul className="space-y-2 text-gray-400">
               <li><a href="#about" className="hover:text-white transition-colors">About</a></li>
-              <li><a href="#impact" className="hover:text-white transition-colors">Impact</a></li>
-              <li><a href="#updates" className="hover:text-white transition-colors">Updates</a></li>
-              <li><a href="#facts" className="hover:text-white transition-colors">Facts</a></li>
+              <li><a href="#media" className="hover:text-white transition-colors">Media</a></li>
+              <li><a href="#best-day-ever" className="hover:text-white transition-colors">Best Day Ever</a></li>
+              <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
               <li>
                 <a 
                   href="https://www.instagram.com/p/DMdoluLSK0l/?img_index=1" 
@@ -74,8 +68,8 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-lg mb-4">Campaign Info</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>Goal: $50,000</li>
-              <li>Duration: Jan 16, 2026 - Mar 7, 2026</li>
+              <li className="text-white font-semibold" data-testid="text-footer-total-raised">Total Raised: $15,931</li>
+              <li>Duration: Jan 16, 2026 &ndash; Mar 7, 2026</li>
               <li>Student Visionaries Program</li>
               <li>Blood Cancer United</li>
             </ul>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 
@@ -7,16 +7,13 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [location, navigate] = useLocation();
 
-  const handleDonateClick = () => {
-    // Redirect to external donation platform
-    window.open("https://pages.lls.org/svoy/stx/svoysa26/rrajlf", "_blank");
+  const handleInstagramClick = () => {
+    window.open("https://instagram.com/theupliftproject25", "_blank");
   };
 
   const handleSectionClick = (sectionId: string) => {
-    // If we're not on the home page, navigate there first
     if (location !== '/') {
       navigate('/');
-      // Wait for navigation then scroll to section
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -24,7 +21,6 @@ export default function Navigation() {
         }
       }, 100);
     } else {
-      // We're on home page, just scroll to section
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -34,11 +30,9 @@ export default function Navigation() {
   };
 
  const handleLogoClick = () => {
-  // If we're already on the home page, just scroll to top
   if (location === '/') {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } else {
-    // Navigate to home page first, then scroll to top
     navigate('/');
     setTimeout(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -65,35 +59,38 @@ export default function Navigation() {
             <button 
               onClick={() => handleSectionClick("about")}
               className="text-gray-700 hover:text-uplift-red transition-colors"
+              data-testid="link-about"
             >
               About
             </button>
             <button 
-              onClick={() => handleSectionClick("honored-hero")}
+              onClick={() => handleSectionClick("media")}
               className="text-gray-700 hover:text-uplift-red transition-colors"
+              data-testid="link-media"
             >
-              Honored Hero
+              Media
             </button>
             <button 
-              onClick={() => handleSectionClick("donation-impact-calculator")}
+              onClick={() => handleSectionClick("best-day-ever")}
               className="text-gray-700 hover:text-uplift-red transition-colors"
+              data-testid="link-best-day-ever"
             >
-              Your Impact
+              Best Day Ever
             </button>
             <button 
               onClick={() => handleSectionClick("faq")}
               className="text-gray-700 hover:text-uplift-red transition-colors"
+              data-testid="link-faq"
             >
               FAQ
             </button>
-            <Link href="/corporations" className="text-gray-700 hover:text-uplift-red transition-colors">
-              For Corporations
-            </Link>
             <Button 
-              onClick={handleDonateClick}
+              onClick={handleInstagramClick}
+              data-testid="button-follow-us"
               className="bg-uplift-red text-white px-6 py-2 rounded-full hover:bg-red-800 transition-colors font-medium"
             >
-              Donate Now
+              <Instagram className="w-4 h-4 mr-2" />
+              Follow Us
             </Button>
           </div>
           
@@ -103,13 +100,13 @@ export default function Navigation() {
               size="sm"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 hover:text-uplift-red"
+              data-testid="button-mobile-menu"
             >
               {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
         
-        {/* Mobile menu */}
         {isMenuOpen && (
           <div className="md:hidden pb-4">
             <div className="flex flex-col space-y-2">
@@ -120,16 +117,16 @@ export default function Navigation() {
                 About
               </button>
               <button 
-                onClick={() => handleSectionClick("honored-hero")}
+                onClick={() => handleSectionClick("media")}
                 className="text-gray-700 hover:text-uplift-red transition-colors py-2 text-left"
               >
-                Honored Hero
+                Media
               </button>
               <button 
-                onClick={() => handleSectionClick("donation-impact-calculator")}
+                onClick={() => handleSectionClick("best-day-ever")}
                 className="text-gray-700 hover:text-uplift-red transition-colors py-2 text-left"
               >
-                Your Impact
+                Best Day Ever
               </button>
               <button 
                 onClick={() => handleSectionClick("faq")}
@@ -137,14 +134,13 @@ export default function Navigation() {
               >
                 FAQ
               </button>
-              <Link href="/corporations" className="text-gray-700 hover:text-uplift-red transition-colors py-2 text-left">
-                For Corporations
-              </Link>
               <Button 
-                onClick={handleDonateClick}
+                onClick={handleInstagramClick}
+                data-testid="button-follow-us-mobile"
                 className="bg-uplift-red text-white px-6 py-2 rounded-full hover:bg-red-800 transition-colors font-medium mt-2"
               >
-                Donate Now
+                <Instagram className="w-4 h-4 mr-2" />
+                Follow Us
               </Button>
             </div>
           </div>

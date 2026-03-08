@@ -1,19 +1,18 @@
 import { useEffect } from "react";
 import Navigation from "@/components/navigation";
 import Hero from "@/components/hero";
-import SupportedBy from "@/components/supported-by";
 import FundraisingProgress from "@/components/fundraising-progress";
 import About from "@/components/about";
 import HonoredHero from "@/components/honored-hero";
+import BestDayEver from "@/components/best-day-ever";
+import KsatSection from "@/components/ksat-section";
+import ForbesFeature from "@/components/forbes-feature";
 import ImpactStats from "@/components/impact-stats";
 import InstagramPosts from "@/components/instagram-posts";
-import WaysToDonate from "@/components/ways-to-donate";
-import DonationImpactCalculator from "@/components/donation-impact-calculator";
 import BloodCancerFacts from "@/components/blood-cancer-facts";
 import FAQ from "@/components/faq";
 import CallToAction from "@/components/call-to-action";
 import Footer from "@/components/footer";
-import GitHubPagesChatbot from "@/components/github-pages-chatbot";
 import { updateSEO, seoData } from "@/utils/seo";
 
 export default function Home() {
@@ -26,18 +25,17 @@ export default function Home() {
       <Navigation />
       <Hero />
       <FundraisingProgress />
-      <SupportedBy />
       <About />
       <HonoredHero />
+      <BestDayEver />
+      <KsatSection />
+      <ForbesFeature />
       <ImpactStats />
       <InstagramPosts />
-      <WaysToDonate />
-      <DonationImpactCalculator />
       <BloodCancerFacts />
       <FAQ />
       <CallToAction />
       <Footer />
-      <GitHubPagesChatbot />
     </div>
   );
 }
