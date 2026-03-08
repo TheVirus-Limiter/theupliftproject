@@ -64,11 +64,11 @@ export default function Navigation() {
               About
             </button>
             <button 
-              onClick={() => handleSectionClick("media")}
+              onClick={() => handleSectionClick("news")}
               className="text-gray-700 hover:text-uplift-red transition-colors"
-              data-testid="link-media"
+              data-testid="link-news"
             >
-              Media
+              News
             </button>
             <button 
               onClick={() => handleSectionClick("best-day-ever")}
@@ -117,10 +117,10 @@ export default function Navigation() {
                 About
               </button>
               <button 
-                onClick={() => handleSectionClick("media")}
+                onClick={() => handleSectionClick("news")}
                 className="text-gray-700 hover:text-uplift-red transition-colors py-2 text-left"
               >
-                Media
+                News
               </button>
               <button 
                 onClick={() => handleSectionClick("best-day-ever")}

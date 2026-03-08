@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export default function KsatSection() {
   return (
-    <section id="media" className="py-20 bg-gradient-to-b from-white via-red-50/30 to-white" data-testid="section-ksat-media">
+    <section id="news" className="py-20 bg-white" data-testid="section-ksat-media">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <div className="flex justify-center mb-6">
@@ -15,7 +15,7 @@ export default function KsatSection() {
             />
           </div>
           <h2 className="font-playfair text-4xl font-bold text-uplift-red mb-4">
-            As Seen on KSAT
+            In the News
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             KSAT 12 San Antonio helped share our mission with the community
@@ -27,7 +27,7 @@ export default function KsatSection() {
             Interview with Rehan Raj on Good Morning SA
           </h3>
           <p className="text-gray-500 text-center mb-4">February 19, 2026</p>
-          <div className="relative w-full rounded-xl overflow-hidden shadow-lg ring-1 ring-red-900/10" style={{ paddingBottom: "56.25%" }}>
+          <div className="relative w-full rounded-xl overflow-hidden shadow-lg" style={{ paddingBottom: "56.25%" }}>
             <iframe
               className="absolute top-0 left-0 w-full h-full"
               src="https://www.youtube.com/embed/80Wf-G0ntEg"
@@ -53,7 +53,7 @@ export default function KsatSection() {
             <h3 className="font-playfair text-xl font-semibold mb-4 text-center">
               KSAT Phone Bank — Feb 23
             </h3>
-            <div className="relative w-full rounded-xl overflow-hidden shadow-lg ring-1 ring-red-900/10 flex-1" style={{ paddingBottom: "56.25%" }}>
+            <div className="relative w-full rounded-xl overflow-hidden shadow-lg flex-1" style={{ paddingBottom: "56.25%" }}>
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
                 src="https://www.youtube.com/embed/Ts-cpEkpwTA?start=874"
@@ -64,16 +64,22 @@ export default function KsatSection() {
             </div>
           </div>
 
-          <Card className="p-6 flex flex-col justify-between h-full border-t-4 border-t-red-900/80">
+          <Card className="p-8 flex flex-col justify-between h-full border-t-4 border-t-uplift-red">
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Newspaper className="w-5 h-5 text-uplift-red" />
-                <h3 className="font-playfair text-xl font-semibold">
+                <Newspaper className="w-6 h-6 text-uplift-red" />
+                <h3 className="font-playfair text-2xl font-semibold">
                   KSAT Article
                 </h3>
               </div>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-600 mb-4 leading-relaxed text-lg">
                 KSAT Community hosted a live phone bank supporting local teens fighting blood cancer through the Student Visionaries of the Year campaign.
+              </p>
+              <p className="text-gray-600 mb-4 leading-relaxed">
+                The event brought together students, families, and community members to raise awareness and funds for Blood Cancer United. Viewers called in live to make donations and hear directly from student leaders about their mission.
+              </p>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                The coverage helped amplify our campaign across the San Antonio community and beyond, reaching thousands of viewers who learned about the fight against blood cancer.
               </p>
             </div>
             <div>
@@ -82,8 +88,8 @@ export default function KsatSection() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Button variant="outline" data-testid="button-read-ksat-article">
-                  Read Article <ExternalLink className="w-4 h-4 ml-2" />
+                <Button className="bg-uplift-red text-white px-8 py-3 text-lg font-semibold hover:bg-red-800 transition-colors w-full sm:w-auto">
+                  Read the Full Article <ExternalLink className="w-5 h-5 ml-2" />
                 </Button>
               </a>
             </div>

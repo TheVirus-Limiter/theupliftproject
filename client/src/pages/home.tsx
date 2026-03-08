@@ -11,6 +11,7 @@ import ImpactStats from "@/components/impact-stats";
 import InstagramPosts from "@/components/instagram-posts";
 import BloodCancerFacts from "@/components/blood-cancer-facts";
 import FAQ from "@/components/faq";
+import GrandFinale from "@/components/grand-finale";
 import CallToAction from "@/components/call-to-action";
 import Footer from "@/components/footer";
 import { updateSEO, seoData } from "@/utils/seo";
@@ -34,6 +35,7 @@ export default function Home() {
       <InstagramPosts />
       <BloodCancerFacts />
       <FAQ />
+      <GrandFinale />
       <CallToAction />
       <Footer />
     </div>

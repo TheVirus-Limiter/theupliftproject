@@ -49,8 +49,7 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #fff5f5 50%, #f8f9fa 100%)' }}>
-      <div className="absolute top-0 left-0 w-full h-1" style={{ background: 'linear-gradient(90deg, transparent, #831919, transparent)', opacity: 0.15 }}></div>
+    <section id="faq" className="py-20 bg-uplift-light">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-playfair text-4xl font-bold text-uplift-red mb-4">
@@ -67,28 +66,17 @@ export default function FAQ() {
             return (
               <div 
                 key={index}
-                className="rounded-md border border-gray-200 transition-all duration-300"
-                style={{
-                  background: isOpen
-                    ? 'linear-gradient(135deg, #ffffff 0%, #fff8f8 100%)'
-                    : '#ffffff',
-                  boxShadow: isOpen
-                    ? '0 8px 24px -8px rgba(131, 25, 25, 0.12)'
-                    : '0 1px 3px rgba(0,0,0,0.06)',
-                }}
-                data-testid={`faq-item-${index}`}
+                className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
               >
                 <button
                   onClick={() => toggleItem(index)}
-                  className="w-full px-6 py-4 text-left flex justify-between items-center gap-4 transition-colors duration-200"
-                  data-testid={`button-faq-toggle-${index}`}
+                  className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
                 >
                   <h3 className="font-semibold text-gray-900 pr-4">
                     {item.question}
                   </h3>
                   <ChevronDown 
-                    className="w-5 h-5 text-uplift-red flex-shrink-0 transition-transform duration-300"
-                    style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                    className={`w-5 h-5 text-uplift-red flex-shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
                   />
                 </button>
                 
@@ -119,13 +107,11 @@ export default function FAQ() {
           <a 
             href="mailto:rehan.raj@lhssa.org"
             className="inline-flex items-center px-6 py-3 bg-uplift-red text-white rounded-full font-semibold hover:bg-red-800 transition-colors"
-            data-testid="link-contact-faq"
           >
             Contact Us
           </a>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 w-full h-1" style={{ background: 'linear-gradient(90deg, transparent, #831919, transparent)', opacity: 0.15 }}></div>
     </section>
   );
 }
