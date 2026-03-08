@@ -30,10 +30,10 @@ export default function Home() {
       <KsatSection />
       <ForbesFeature />
       <About />
+      <GrandFinale />
       <HonoredHero />
       <ImpactStats />
       <InstagramPosts />
-      <GrandFinale />
       <BloodCancerFacts />
       <FAQ />
       <CallToAction />

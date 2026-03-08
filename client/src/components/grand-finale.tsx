@@ -93,7 +93,7 @@ export default function GrandFinale() {
           </div>
 
           <div>
-            <p className="text-sm uppercase tracking-widest mb-3 text-center lg:text-left" style={{ color: '#8b6914' }}>Our Campaign Video</p>
+            <p className="text-sm uppercase tracking-widest mb-3 text-center lg:text-left" style={{ color: '#8b6914' }}>Our Campaign Video (Click to watch)</p>
             <div className="flex justify-center lg:justify-start">
               <div className="max-w-md w-full rounded-xl overflow-hidden" style={{ border: '2px solid #c9a84c44' }}>
                 <blockquote

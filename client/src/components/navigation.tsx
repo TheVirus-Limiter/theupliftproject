@@ -78,11 +78,11 @@ export default function Navigation() {
               Best Day Ever
             </button>
             <button 
-              onClick={() => handleSectionClick("faq")}
+              onClick={() => handleSectionClick("honored-hero")}
               className="text-gray-700 hover:text-uplift-red transition-colors"
-              data-testid="link-faq"
+              data-testid="link-miguel"
             >
-              FAQ
+              Miguel
             </button>
             <Button 
               onClick={handleInstagramClick}
@@ -129,10 +129,10 @@ export default function Navigation() {
                 Best Day Ever
               </button>
               <button 
-                onClick={() => handleSectionClick("faq")}
+                onClick={() => handleSectionClick("honored-hero")}
                 className="text-gray-700 hover:text-uplift-red transition-colors py-2 text-left"
               >
-                FAQ
+                Miguel
               </button>
               <Button 
                 onClick={handleInstagramClick}
