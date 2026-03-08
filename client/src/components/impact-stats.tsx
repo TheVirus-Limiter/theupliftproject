@@ -6,15 +6,13 @@ import {
   MapPin,
   Receipt,
   ChevronDown,
-  ChevronUp
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function MissionInteractive() {
-  const [active, setActive] = useState("problem"); // problem | community | action
+  const [active, setActive] = useState("problem");
   const [expanded, setExpanded] = useState(false);
 
-  // Interactive element 1: “Every 3 minutes” live timer (counts down from 180s)
   const [secondsToNextDiagnosis, setSecondsToNextDiagnosis] = useState(180);
 
   useEffect(() => {
@@ -27,7 +25,6 @@ export default function MissionInteractive() {
   const mm = String(Math.floor(secondsToNextDiagnosis / 60)).padStart(2, "0");
   const ss = String(secondsToNextDiagnosis % 60).padStart(2, "0");
 
-  // Interactive element 2: simple “65% of families struggle” gauge
   const strugglePct = 65;
   const gaugeStyle = useMemo(() => ({ width: `${strugglePct}%` }), [strugglePct]);
 
@@ -54,20 +51,23 @@ export default function MissionInteractive() {
 
 
   return (
-    <section id="impact" className="py-20 bg-uplift-light">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
+    <section id="impact" className="relative py-20 bg-gradient-to-b from-uplift-light via-white to-uplift-light overflow-hidden">
+      <div className="absolute top-0 left-0 w-72 h-72 bg-red-100/40 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-50/50 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none" />
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-10 animate-fade-in-up">
           <h2 className="font-playfair text-4xl font-bold text-uplift-red mb-4">
             Our Mission
           </h2>
           <p className="text-lg text-gray-600">
             A story-driven mission, made interactive.
           </p>
+          <div className="mx-auto mt-4 w-24 h-1 rounded-full bg-gradient-to-r from-transparent via-uplift-red to-transparent opacity-40" />
         </div>
 
-        {/* Interactive tabs (cards) */}
         <div className="grid md:grid-cols-3 gap-6 mb-10">
-          {tabs.map((t) => {
+          {tabs.map((t, index) => {
             const Icon = t.icon;
             const isActive = active === t.key;
 
@@ -76,17 +76,18 @@ export default function MissionInteractive() {
                 key={t.key}
                 type="button"
                 onClick={() => setActive(t.key)}
-                className={`text-left rounded-2xl transition-all duration-300 ${
-                  isActive ? "ring-2 ring-uplift-red/40" : "hover:shadow-md"
+                className={`text-left rounded-2xl transition-all duration-300 card-hover ${
+                  isActive ? "ring-2 ring-uplift-red/40 shadow-lg shadow-red-900/10" : "hover:shadow-md"
                 }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <Card className="bg-white rounded-2xl shadow-lg">
+                <Card className="bg-white rounded-2xl shadow-lg border-0">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-4">
                       <div
-                        className={`p-3 rounded-xl ${
+                        className={`p-3 rounded-xl transition-all duration-300 ${
                           isActive
-                            ? "bg-uplift-red text-white"
+                            ? "bg-gradient-to-br from-uplift-red to-red-800 text-white shadow-lg shadow-red-900/20"
                             : "bg-gray-100 text-gray-700"
                         }`}
                       >
@@ -100,7 +101,6 @@ export default function MissionInteractive() {
                         <p className="text-gray-600">{t.subtitle}</p>
                       </div>
 
-                      {/* Sparkles removed (kept layout spacing minimal) */}
                       <div className="w-5 h-5" aria-hidden="true" />
                     </div>
                   </CardContent>
@@ -110,11 +110,11 @@ export default function MissionInteractive() {
           })}
         </div>
 
-        {/* Main content panel */}
-        <Card className="bg-white rounded-2xl shadow-lg">
+        <Card className="bg-white rounded-2xl shadow-lg border-0 overflow-hidden">
+          <div className="h-1 w-full bg-gradient-to-r from-uplift-red via-red-400 to-uplift-red opacity-60" />
           <CardContent className="p-8">
             {active === "problem" && (
-              <div className="grid md:grid-cols-2 gap-8 items-start">
+              <div className="grid md:grid-cols-2 gap-8 items-start animate-fade-in-up">
                 <div>
                   <h3 className="font-playfair text-3xl font-bold text-uplift-red mb-3">
                     Someone is diagnosed every 3 minutes
@@ -126,13 +126,13 @@ export default function MissionInteractive() {
                   </p>
 
                   <div className="mt-6 flex items-center gap-3">
-                    <div className="p-3 rounded-xl bg-gray-100 text-gray-700">
+                    <div className="p-3 rounded-xl bg-gradient-to-br from-gray-100 to-gray-200 text-gray-700">
                       <Timer className="w-6 h-6" />
                     </div>
                     <div>
-                      <p className="text-sm text-gray-500">Next “3-minute” mark in</p>
+                      <p className="text-sm text-gray-500">Next "3-minute" mark in</p>
                       <div
-                        className="text-4xl font-semibold text-uplift-red tracking-wide"
+                        className="text-4xl font-semibold text-uplift-red tracking-wide text-glow"
                         style={{
                           fontFamily:
                             'ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial',
@@ -149,9 +149,9 @@ export default function MissionInteractive() {
                 </div>
 
                 <div>
-                  <div className="rounded-2xl bg-gray-50 border border-gray-100 p-6">
+                  <div className="rounded-2xl bg-gradient-to-br from-gray-50 to-red-50/30 border border-gray-100 p-6">
                     <div className="flex items-center gap-3 mb-3">
-                      <div className="p-3 rounded-xl bg-uplift-red text-white">
+                      <div className="p-3 rounded-xl bg-gradient-to-br from-uplift-red to-red-800 text-white shadow-md shadow-red-900/20">
                         <Receipt className="w-6 h-6" />
                       </div>
                       <h4 className="font-playfair text-2xl font-bold text-gray-900">
@@ -160,13 +160,13 @@ export default function MissionInteractive() {
                     </div>
 
                     <p className="text-gray-700 leading-relaxed mb-4">
-                      Reports say around <span className="font-semibold">65%</span> of families
+                      Reports say around <span className="font-semibold text-uplift-red">65%</span> of families
                       impacted by blood cancer struggle to make hospital payments—nearly 7 out of 10.
                     </p>
 
                     <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
                       <div
-                        className="bg-uplift-red h-4 rounded-full transition-all duration-700"
+                        className="animate-shimmer h-4 rounded-full transition-all duration-700"
                         style={gaugeStyle}
                       />
                     </div>
@@ -181,7 +181,7 @@ export default function MissionInteractive() {
             )}
 
             {active === "community" && (
-              <div className="grid md:grid-cols-2 gap-8 items-start">
+              <div className="grid md:grid-cols-2 gap-8 items-start animate-fade-in-up">
                 <div>
                   <h3 className="font-playfair text-3xl font-bold text-uplift-red mb-3">
                     Zoom in to where we can help
@@ -192,9 +192,9 @@ export default function MissionInteractive() {
                     However, this is not the case for everyone.
                   </p>
 
-                  <div className="mt-6 rounded-2xl bg-gray-50 border border-gray-100 p-6">
+                  <div className="mt-6 rounded-2xl bg-gradient-to-br from-gray-50 to-red-50/30 border border-gray-100 p-6">
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="p-3 rounded-xl bg-uplift-red text-white">
+                      <div className="p-3 rounded-xl bg-gradient-to-br from-uplift-red to-red-800 text-white shadow-md shadow-red-900/20">
                         <Users className="w-6 h-6" />
                       </div>
                       <p className="font-playfair text-2xl font-bold text-gray-900">
@@ -202,7 +202,7 @@ export default function MissionInteractive() {
                       </p>
                     </div>
                     <p className="text-gray-700">
-                      This is why we focus locally. When it happens “close to home,” the need becomes real.
+                      This is why we focus locally. When it happens "close to home," the need becomes real.
                     </p>
                   </div>
                 </div>
@@ -215,20 +215,22 @@ export default function MissionInteractive() {
                   <button
                     type="button"
                     onClick={() => setExpanded((v) => !v)}
-                    className="w-full rounded-2xl border border-gray-100 bg-white shadow-sm p-5 text-left hover:shadow-md transition-all duration-300"
+                    className="w-full rounded-2xl border border-gray-100 bg-white shadow-sm p-5 text-left hover:shadow-md transition-all duration-300 card-hover"
                   >
                     <div className="flex items-center justify-between">
                       <p className="font-semibold text-gray-900">
                         Read the complete mission statement
                       </p>
-                      {expanded ? (
-                        <ChevronUp className="w-5 h-5 text-gray-600" />
-                      ) : (
-                        <ChevronDown className="w-5 h-5 text-gray-600" />
-                      )}
+                      <ChevronDown className={`w-5 h-5 text-gray-600 transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`} />
                     </div>
 
-                    {expanded && (
+                    <div
+                      className="overflow-hidden transition-all duration-500"
+                      style={{
+                        maxHeight: expanded ? '300px' : '0px',
+                        opacity: expanded ? 1 : 0,
+                      }}
+                    >
                       <p className="mt-4 text-gray-700 leading-relaxed">
                         Millions of people are impacted by blood cancer every year. Someone is diagnosed
                         with blood cancer every 3 minutes. While we unfortunately cannot stop all of these
@@ -242,7 +244,7 @@ export default function MissionInteractive() {
                         money for this very cause, with every penny going to those who have a loved one
                         struggling and can not pay their bills
                       </p>
-                    )}
+                    </div>
                   </button>
 
                   <p className="mt-3 text-xs text-gray-500"></p>
@@ -251,7 +253,7 @@ export default function MissionInteractive() {
             )}
 
             {active === "action" && (
-              <div className="grid md:grid-cols-2 gap-8 items-start">
+              <div className="grid md:grid-cols-2 gap-8 items-start animate-fade-in-up">
                 <div>
                   <h3 className="font-playfair text-3xl font-bold text-uplift-red mb-3">
                     What we can do
@@ -262,9 +264,9 @@ export default function MissionInteractive() {
                     overwhelming hospital bills.
                   </p>
 
-                  <div className="mt-6 rounded-2xl bg-gray-50 border border-gray-100 p-6">
+                  <div className="mt-6 rounded-2xl bg-gradient-to-br from-gray-50 to-red-50/30 border border-gray-100 p-6">
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="p-3 rounded-xl bg-uplift-red text-white">
+                      <div className="p-3 rounded-xl bg-gradient-to-br from-uplift-red to-red-800 text-white shadow-md shadow-red-900/20">
                         <HeartHandshake className="w-6 h-6" />
                       </div>
                       <p className="font-playfair text-2xl font-bold text-gray-900">
@@ -277,10 +279,9 @@ export default function MissionInteractive() {
                   </div>
                 </div>
 
-                <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-6">
+                <div className="rounded-2xl bg-gradient-to-br from-white to-red-50/30 border border-gray-100 shadow-sm p-6 card-hover">
                   <div className="flex items-center gap-3 mb-3">
-                    {/* Sparkles removed - keep spacing consistent */}
-                    <div className="p-3 rounded-xl bg-uplift-red text-white">
+                    <div className="p-3 rounded-xl bg-gradient-to-br from-uplift-red to-red-800 text-white shadow-md shadow-red-900/20">
                       <HeartHandshake className="w-6 h-6" />
                     </div>
                     <h4 className="font-playfair text-2xl font-bold text-gray-900">
@@ -290,15 +291,15 @@ export default function MissionInteractive() {
 
                   <ul className="space-y-3 text-gray-700">
                     <li className="flex gap-2">
-                      <span className="mt-1 h-2 w-2 rounded-full bg-uplift-red" />
-                      We raised <strong>$15,931</strong> to support families affected by blood cancer.
+                      <span className="mt-1 h-2 w-2 rounded-full bg-gradient-to-br from-uplift-red to-red-600 flex-shrink-0" />
+                      We raised <strong className="text-uplift-red">$15,931</strong> to support families affected by blood cancer.
                     </li>
                     <li className="flex gap-2">
-                      <span className="mt-1 h-2 w-2 rounded-full bg-uplift-red" />
+                      <span className="mt-1 h-2 w-2 rounded-full bg-gradient-to-br from-uplift-red to-red-600 flex-shrink-0" />
                       Corporate matching and workplace giving amplified our donors' impact.
                     </li>
                     <li className="flex gap-2">
-                      <span className="mt-1 h-2 w-2 rounded-full bg-uplift-red" />
+                      <span className="mt-1 h-2 w-2 rounded-full bg-gradient-to-br from-uplift-red to-red-600 flex-shrink-0" />
                       Every contribution, big and small, made a difference.
                     </li>
                   </ul>

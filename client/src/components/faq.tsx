@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 interface FAQItem {
   question: string;
@@ -8,40 +8,32 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "Is my donation tax deductible?",
-    answer: "Yes! All donations made through The Uplift Project to Blood Cancer United (formerly LLS) are tax deductible. You will receive a receipt for your records after making your donation."
+    question: "Were donations tax deductible?",
+    answer: "Yes! All donations made through The Uplift Project to Blood Cancer United (formerly LLS) were tax deductible. Donors received a receipt for their records after making their donation."
   },
   {
-  question: "How do I make a corporate matching donation?",
-  answer: "To make a corporate matching donation, go to your company’s corporate donation or matching gifts page and donate to Blood Cancer United (formerly LLS). Then, send us proof of your donation, and your employer should match or add to your contribution."
+    question: "How did corporate matching donations work?",
+    answer: "To make a corporate matching donation, supporters went to their company's corporate donation or matching gifts page and donated to Blood Cancer United (formerly LLS). They then sent us proof of their donation, and their employer matched or added to their contribution."
   },
   {
-    question: "Where does the money go?",
-    answer: "100% of your donation goes directly to the Blood Cancer United (formerly LLS) to support patients who can't afford their medical bills and to fund critical blood cancer research. Blood Cancer United has invested over $1.3 billion in research since 1949."
+    question: "Where did the money go?",
+    answer: "100% of donations went directly to Blood Cancer United (formerly LLS) to support patients who can't afford their medical bills and to fund critical blood cancer research. Blood Cancer United has invested over $1.3 billion in research since 1949."
   },
   {
-    question: "How do I join the team?",
-    answer: "We'd love to have you join our mission! Please email us at rehan.raj@lhssa.org to learn about volunteer opportunities and how you can help us reach our $50,000 goal."
+    question: "What was Student Visionaries of the Year?",
+    answer: "Student Visionaries of the Year is Blood Cancer United's premier philanthropic leadership program for high school students. Participants competed in a 7-week fundraising campaign to support Blood Cancer United's mission to cure blood cancer."
   },
   {
-    question: "What is Student Visionaries of the Year?",
-    answer: "Student Visionaries of the Year is Blood Cancer United's premier philanthropic leadership program for high school students. Participants compete in a 7-week fundraising campaign to support Blood Cancer United's mission to cure blood cancer."
+    question: "How long did the campaign run?",
+    answer: "Our campaign ran from January 16, 2026 to March 7, 2026. During that time, we worked to raise funds to support blood cancer patients and research."
   },
   {
-    question: "How long does the campaign run?",
-    answer: "Our campaign runs from January 16, 2026 to March 7, 2026. During this time, we're working to raise $50,000 to support blood cancer patients and research."
+    question: "Could international supporters donate?",
+    answer: "Yes! The Blood Cancer United (formerly LLS) donation platform accepted international donations. Contributions helped support blood cancer patients and research efforts worldwide."
   },
   {
-    question: "Can I donate if I'm not in the US?",
-    answer: "Yes! The Blood Cancer United (formerly LLS) donation platform accepts international donations. Your contribution will help support blood cancer patients and research efforts worldwide."
-  },
-  {
-    question: "How do I track the campaign's progress?",
-    answer: "You can follow our progress right here on our website! We update our fundraising thermometer regularly, and you can also follow us on Instagram @theupliftproject25 for campaign updates."
-  },
-  {
-    question: "What if I can't donate but want to help?",
-    answer: "There are many ways to support our mission! You can share our campaign on social media, volunteer with our team, or help spread awareness about blood cancer. Contact us at rehan.raj@lhssa.org to learn more."
+    question: "How could people help beyond donating?",
+    answer: "There were many ways to support our mission! Supporters shared our campaign on social media, volunteered with our team, and helped spread awareness about blood cancer."
   }
 ];
 
@@ -57,48 +49,67 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-20 bg-gray-50">
+    <section id="faq" className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #fff5f5 50%, #f8f9fa 100%)' }}>
+      <div className="absolute top-0 left-0 w-full h-1" style={{ background: 'linear-gradient(90deg, transparent, #831919, transparent)', opacity: 0.15 }}></div>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-playfair text-4xl font-bold text-uplift-red mb-4">
             Frequently Asked Questions
           </h2>
           <p className="text-lg text-gray-600">
-            Everything you need to know about The Uplift Project
+            Everything you need to know about The Uplift Project campaign
           </p>
         </div>
 
-        <div className="space-y-4">
-          {faqData.map((item, index) => (
-            <div 
-              key={index}
-              className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
-            >
-              <button
-                onClick={() => toggleItem(index)}
-                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50 transition-colors"
+        <div className="space-y-3">
+          {faqData.map((item, index) => {
+            const isOpen = openItems.includes(index);
+            return (
+              <div 
+                key={index}
+                className="rounded-md border border-gray-200 transition-all duration-300"
+                style={{
+                  background: isOpen
+                    ? 'linear-gradient(135deg, #ffffff 0%, #fff8f8 100%)'
+                    : '#ffffff',
+                  boxShadow: isOpen
+                    ? '0 8px 24px -8px rgba(131, 25, 25, 0.12)'
+                    : '0 1px 3px rgba(0,0,0,0.06)',
+                }}
+                data-testid={`faq-item-${index}`}
               >
-                <h3 className="font-semibold text-gray-900 pr-4">
-                  {item.question}
-                </h3>
-                {openItems.includes(index) ? (
-                  <ChevronUp className="w-5 h-5 text-uplift-red flex-shrink-0" />
-                ) : (
-                  <ChevronDown className="w-5 h-5 text-uplift-red flex-shrink-0" />
-                )}
-              </button>
-              
-              {openItems.includes(index) && (
-                <div className="px-6 pb-4">
-                  <div className="pt-2 border-t border-gray-100">
-                    <p className="text-gray-600 leading-relaxed">
-                      {item.answer}
-                    </p>
+                <button
+                  onClick={() => toggleItem(index)}
+                  className="w-full px-6 py-4 text-left flex justify-between items-center gap-4 transition-colors duration-200"
+                  data-testid={`button-faq-toggle-${index}`}
+                >
+                  <h3 className="font-semibold text-gray-900 pr-4">
+                    {item.question}
+                  </h3>
+                  <ChevronDown 
+                    className="w-5 h-5 text-uplift-red flex-shrink-0 transition-transform duration-300"
+                    style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
+                  />
+                </button>
+                
+                <div 
+                  className="overflow-hidden transition-all duration-300 ease-in-out"
+                  style={{
+                    maxHeight: isOpen ? '200px' : '0px',
+                    opacity: isOpen ? 1 : 0,
+                  }}
+                >
+                  <div className="px-6 pb-4">
+                    <div className="pt-2 border-t border-gray-100">
+                      <p className="text-gray-600 leading-relaxed">
+                        {item.answer}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              )}
-            </div>
-          ))}
+              </div>
+            );
+          })}
         </div>
 
         <div className="text-center mt-12">
@@ -108,11 +119,13 @@ export default function FAQ() {
           <a 
             href="mailto:rehan.raj@lhssa.org"
             className="inline-flex items-center px-6 py-3 bg-uplift-red text-white rounded-full font-semibold hover:bg-red-800 transition-colors"
+            data-testid="link-contact-faq"
           >
             Contact Us
           </a>
         </div>
       </div>
+      <div className="absolute bottom-0 left-0 w-full h-1" style={{ background: 'linear-gradient(90deg, transparent, #831919, transparent)', opacity: 0.15 }}></div>
     </section>
   );
 }

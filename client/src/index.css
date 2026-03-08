@@ -24,7 +24,6 @@
   --ring: hsl(20, 14.3%, 4.1%);
   --radius: 0.5rem;
   
-  /* Custom Uplift Project Colors */
   --uplift-red: hsl(0, 65%, 32%);
   --uplift-light: hsl(220, 13%, 97%);
 }
@@ -99,22 +98,110 @@
   color: #7f1d1d;
 }
 
-/* Custom 5-second pulse animation for donation button */
-/* Custom 5-second pulse animation for donation button */
-@keyframes pulse-5s {
-  0%, 90% {
-    opacity: 0;
-  }
-  95%, 100% {
-    opacity: 0.2;
-  }
-}
-
-.custom-pulse-5s {
-  animation: pulse-5s 1s infinite;
-}
-
-/* 3D perspective utility */
 .perspective-1000 {
   perspective: 1000px;
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.7s ease-out both;
+}
+
+.animate-fade-in-up-delay-1 {
+  animation: fade-in-up 0.7s ease-out 0.1s both;
+}
+
+.animate-fade-in-up-delay-2 {
+  animation: fade-in-up 0.7s ease-out 0.2s both;
+}
+
+.animate-fade-in-up-delay-3 {
+  animation: fade-in-up 0.7s ease-out 0.3s both;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    #831919 0%,
+    #a52a2a 25%,
+    #cd5c5c 50%,
+    #a52a2a 75%,
+    #831919 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes subtle-glow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(131, 25, 25, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 40px rgba(131, 25, 25, 0.5), 0 0 60px rgba(131, 25, 25, 0.2);
+  }
+}
+
+.text-glow {
+  animation: subtle-glow 3s ease-in-out infinite;
+}
+
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(131, 25, 25, 0.15);
+}
+
+.section-divider {
+  background: linear-gradient(90deg, transparent, #831919, transparent);
+  height: 2px;
+  opacity: 0.2;
 }

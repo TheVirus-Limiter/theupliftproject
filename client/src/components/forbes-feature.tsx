@@ -18,7 +18,7 @@ export default function ForbesFeature() {
   }, []);
 
   return (
-    <section id="forbes" className="py-20 bg-gray-50">
+    <section id="forbes" className="py-20 bg-gradient-to-b from-gray-50 via-white to-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="font-playfair text-4xl font-bold text-uplift-red mb-4">
@@ -29,34 +29,38 @@ export default function ForbesFeature() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 items-start mb-12">
-          <Card className="p-6">
-            <div className="flex items-center gap-3 mb-4">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Forbes_logo.svg/200px-Forbes_logo.svg.png"
-                alt="Forbes Logo"
-                className="h-8 w-auto"
-              />
+        <div className="grid md:grid-cols-2 gap-8 items-stretch mb-12">
+          <Card className="p-6 flex flex-col justify-between h-full">
+            <div>
+              <div className="flex items-center gap-3 mb-4">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Forbes_logo.svg/200px-Forbes_logo.svg.png"
+                  alt="Forbes Logo"
+                  className="h-8 w-auto"
+                />
+              </div>
+              <h3 className="font-playfair text-xl font-bold text-gray-900 mb-3">
+                When Teens Fundraise To End Blood Cancer, They Change Lives — Including Their Own
+              </h3>
+              <p className="text-gray-600 mb-6 leading-relaxed">
+                Forbes recognized the incredible impact of student-led fundraising campaigns like ours in the fight against blood cancer, showcasing how young leaders are making a real difference in their communities.
+              </p>
             </div>
-            <h3 className="font-playfair text-xl font-bold text-gray-900 mb-3">
-              When Teens Fundraise To End Blood Cancer, They Change Lives — Including Their Own
-            </h3>
-            <p className="text-gray-600 mb-6 leading-relaxed">
-              Forbes recognized the incredible impact of student-led fundraising campaigns like ours in the fight against blood cancer, showcasing how young leaders are making a real difference in their communities.
-            </p>
-            <a
-              href="https://www.forbes.com/sites/bloodcancerunited/2025/11/19/when-teens-fundraise-to-end-blood-cancer-they-change-lives-including-their-own/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button variant="default" className="bg-uplift-red hover:bg-red-800 border-uplift-red">
-                Read the Article
-                <ExternalLink className="w-4 h-4 ml-2" />
-              </Button>
-            </a>
+            <div>
+              <a
+                href="https://www.forbes.com/sites/bloodcancerunited/2025/11/19/when-teens-fundraise-to-end-blood-cancer-they-change-lives-including-their-own/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="default" className="bg-uplift-red border-uplift-red" data-testid="button-read-forbes-article">
+                  Read the Article
+                  <ExternalLink className="w-4 h-4 ml-2" />
+                </Button>
+              </a>
+            </div>
           </Card>
 
-          <div className="flex justify-center">
+          <div className="flex items-center justify-center">
             <div className="max-w-md w-full">
               <blockquote
                 className="instagram-media"
@@ -107,7 +111,7 @@ export default function ForbesFeature() {
           </div>
         </div>
 
-        <div className="max-w-md mx-auto">
+        <div className="max-w-sm mx-auto">
           <p className="text-center text-sm text-gray-500 mb-3">Our Campaign Video</p>
           <blockquote
             className="instagram-media"
@@ -118,9 +122,9 @@ export default function ForbesFeature() {
               border: '0',
               borderRadius: '3px',
               boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)',
-              margin: '1px',
-              maxWidth: '540px',
-              minWidth: '326px',
+              margin: '1px auto',
+              maxWidth: '400px',
+              minWidth: '280px',
               padding: '0',
               width: 'calc(100% - 2px)'
             }}
