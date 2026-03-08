@@ -35,7 +35,7 @@ export default function GrandFinale() {
             <img 
               src="https://thevirus-limiter.github.io/filestorage/llslogo.png" 
               alt="Blood Cancer United" 
-              className="h-14 w-auto"
+              className="h-14 w-auto animate-logo-pulse"
               style={{ filter: 'brightness(1.5) sepia(1) hue-rotate(-10deg) saturate(0.5)' }}
             />
           </div>

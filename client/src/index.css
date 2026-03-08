@@ -128,3 +128,18 @@
 .animate-fade-in-up-delay-3 {
   animation: fade-in-up 0.7s ease-out 0.3s both;
 }
+
+@keyframes logo-pulse {
+  0%, 100% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 0px rgba(131, 25, 25, 0));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(131, 25, 25, 0.25));
+  }
+}
+
+.animate-logo-pulse {
+  animation: logo-pulse 3s ease-in-out infinite;
+}

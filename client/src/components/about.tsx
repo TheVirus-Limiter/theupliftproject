@@ -70,7 +70,7 @@ export default function About() {
                 <img 
                   src="https://thevirus-limiter.github.io/filestorage/llslogo.png" 
                   alt="Blood Cancer United" 
-                  className="h-16 w-auto opacity-80"
+                  className="h-16 w-auto animate-logo-pulse"
                 />
               </div>
             </div>
