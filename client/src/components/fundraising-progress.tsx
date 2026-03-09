@@ -22,7 +22,7 @@ export default function FundraisingProgress() {
                 Total Raised
               </p>
               <p
-                className="text-6xl md:text-7xl font-bold text-uplift-red mb-2"
+                className="text-4xl sm:text-5xl md:text-7xl font-bold text-uplift-red mb-2"
                 style={{ fontVariantNumeric: "tabular-nums" }}
                 data-testid="text-total-raised"
               >
@@ -48,7 +48,7 @@ export default function FundraisingProgress() {
                 <p className="text-xs uppercase tracking-wide text-gray-500 mb-1">
                   Campaign Start
                 </p>
-                <p className="text-2xl font-bold text-uplift-red" data-testid="text-campaign-start">
+                <p className="text-lg sm:text-2xl font-bold text-uplift-red" data-testid="text-campaign-start">
                   Jan 16, 2026
                 </p>
               </div>
@@ -56,7 +56,7 @@ export default function FundraisingProgress() {
                 <p className="text-xs uppercase tracking-wide text-gray-500 mb-1">
                   Campaign End
                 </p>
-                <p className="text-2xl font-bold text-uplift-red" data-testid="text-campaign-end">
+                <p className="text-lg sm:text-2xl font-bold text-uplift-red" data-testid="text-campaign-end">
                   Mar 7, 2026
                 </p>
               </div>
@@ -70,7 +70,7 @@ export default function FundraisingProgress() {
                 </p>
               </div>
               <p
-                className="text-4xl md:text-5xl font-bold text-uplift-red mb-2"
+                className="text-3xl sm:text-4xl md:text-5xl font-bold text-uplift-red mb-2"
                 style={{ fontVariantNumeric: "tabular-nums" }}
                 data-testid="text-south-texas-total"
               >

@@ -91,7 +91,7 @@ export default function BestDayEver() {
                     boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)',
                     margin: '1px',
                     maxWidth: '540px',
-                    minWidth: '326px',
+                    minWidth: '0',
                     padding: '0',
                     width: 'calc(100% - 2px)'
                   }}
@@ -143,7 +143,7 @@ export default function BestDayEver() {
                   boxShadow: '0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15)',
                   margin: '1px',
                   maxWidth: '540px',
-                  minWidth: '326px',
+                  minWidth: '0',
                   padding: '0',
                   width: 'calc(100% - 2px)'
                 }}

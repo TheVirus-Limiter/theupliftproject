@@ -27,7 +27,7 @@ export default function HonoredHero() {
                 </div>
               </div>
 
-              <div className="lg:w-1/2 p-8 lg:p-12">
+              <div className="lg:w-1/2 p-6 sm:p-8 lg:p-12">
                 <div className="flex items-center mb-6">
                   <Heart className="w-8 h-8 text-uplift-red mr-3" />
                   <h3 className="font-playfair text-3xl font-bold text-uplift-red">

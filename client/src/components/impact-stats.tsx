@@ -61,7 +61,7 @@ export default function MissionInteractive() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-10">
           {tabs.map((t) => {
             const Icon = t.icon;
             const isActive = active === t.key;
@@ -105,11 +105,11 @@ export default function MissionInteractive() {
         </div>
 
         <Card className="bg-white rounded-2xl shadow-lg">
-          <CardContent className="p-8">
+          <CardContent className="p-4 sm:p-8">
             {active === "problem" && (
               <div className="grid md:grid-cols-2 gap-8 items-start">
                 <div>
-                  <h3 className="font-playfair text-3xl font-bold text-uplift-red mb-3">
+                  <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-uplift-red mb-3">
                     Someone is diagnosed every 3 minutes
                   </h3>
                   <p className="text-gray-700 leading-relaxed">
@@ -176,7 +176,7 @@ export default function MissionInteractive() {
             {active === "community" && (
               <div className="grid md:grid-cols-2 gap-8 items-start">
                 <div>
-                  <h3 className="font-playfair text-3xl font-bold text-uplift-red mb-3">
+                  <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-uplift-red mb-3">
                     Zoom in to where we can help
                   </h3>
                   <p className="text-gray-700 leading-relaxed">
@@ -248,7 +248,7 @@ export default function MissionInteractive() {
             {active === "action" && (
               <div className="grid md:grid-cols-2 gap-8 items-start">
                 <div>
-                  <h3 className="font-playfair text-3xl font-bold text-uplift-red mb-3">
+                  <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-uplift-red mb-3">
                     What we can do
                   </h3>
                   <p className="text-gray-700 leading-relaxed">

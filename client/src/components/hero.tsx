@@ -24,16 +24,16 @@ export default function Hero() {
             <img 
               src="https://thevirus-limiter.github.io/filestorage/dsda.png" 
               alt="The Uplift Project Logo" 
-              className="mx-auto mb-4 h-48 w-auto object-contain"
+              className="mx-auto mb-4 h-28 sm:h-36 md:h-48 w-auto object-contain"
             />
           </div>
-          <h1 className="font-playfair text-5xl sm:text-6xl font-bold text-uplift-red mb-4 animate-fade-in-up-delay-1">
+          <h1 className="font-playfair text-4xl sm:text-5xl md:text-6xl font-bold text-uplift-red mb-4 animate-fade-in-up-delay-1">
             Launching Hope
           </h1>
-          <p className="font-playfair text-3xl sm:text-4xl text-gray-700 mb-8 animate-fade-in-up-delay-2">
+          <p className="font-playfair text-2xl sm:text-3xl md:text-4xl text-gray-700 mb-8 animate-fade-in-up-delay-2">
             Ending Blood Cancer
           </p>
-          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-3">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up-delay-3">
             Our Blood Cancer United (formerly LLS) Student Visionaries of the Year campaign has concluded.
             Thank you to everyone who supported our mission to end blood cancer.
           </p>

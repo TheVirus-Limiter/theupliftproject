@@ -58,7 +58,7 @@ export default function SupportedBy() {
             Supported By
           </h2>
           
-          <div className="flex justify-center items-center space-x-8 md:space-x-16 lg:space-x-20">
+          <div className="flex justify-center items-center gap-4 sm:gap-8 md:gap-16 lg:gap-20 flex-wrap sm:flex-nowrap">
             {getVisibleLogos().map((logo, index) => (
               <div
                 key={`${logo.id}-${currentIndex}`}
